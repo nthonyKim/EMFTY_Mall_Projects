@@ -1,0 +1,137 @@
+
+ create table member
+ ( userid VARCHAR2(10) PRIMARY KEY,
+   passwd VARCHAR2(10) NOT NULL,
+   username VARCHAR2(10) NOT NULL,
+   post VARCHAR2(6) NOT NULL,
+   addr1 VARCHAR2(500) NOT NULL,
+   addr2 VARCHAR2(500) NOT NULL,
+   phone1 VARCHAR2(3) NOT NULL,
+   phone2 VARCHAR2(4) NOT NULL,
+   phone3 VARCHAR2(4) NOT NULL,
+   email1 VARCHAR2(20) NOT NULL,
+   email2 VARCHAR2(20) NOT NULL );   
+
+
+
+ create table goods
+   ( goods_Code varchar2(20) PRIMARY KEY,
+    goods_Color VARCHAR2(10) not null,
+     goods_Name varchar2(50) not null,
+     goods_Content varchar2(4000),
+goods_Price NUMBER(6),
+goods_Brand varchar2(30) not null,
+goods_Image1 varchar2(20) not null ,
+goods_Image2 varchar2(22) not null,
+ goods_Category varchar2(20) not null,
+goods_Date DATE  DEFAULT SYSDATE); 
+
+
+commit;
+ 
+ -- code, color, gname, gcontents, gprice, designer, gimage1, gimage2, category 
+
+
+insert into goods 
+values (
+'s_1',	
+'brown', 	
+'Faye medium glossed-leather shoulder bag',	
+null,	
+null,	
+'CHLOE',	
+'s_image_1',	
+'shoulder_image_1',	
+'Shoulder_Bags',sysdate); 
+
+
+select *
+from goods; 
+
+insert into goods 
+values 
+(
+'s_2',	'brown', 	'Musubi mini knotted suede shoulder bag',	null,	null,	'ACNE STUDIOS',	's_image_2',	'shoulder_image_2',	'Shoulder_Bags', sysdate);
+insert into goods 
+values (
+'s_3',	'black',	'Intarsia shearling shoulder bag',	null,	null,	'BALENCIAGA',	's_image_3',	'shoulder_image_3',	'Shoulder_Bags', sysdate);
+
+insert into goods 
+values (
+'s_4',	'blue',	'Disc leather and suede shoulder bag',	null,	null,	'JW ANDERSON',	's_image_4',	'shoulder_image_4',	'Shoulder_Bags', sysdate);
+
+
+insert into goods 
+values (
+'s_5'	'brown', 	'Disc leather and suede shoulder bag',	null,	null,	'JW ANDERSON',	's_image_5',	'shoulder_image_5',	'Shoulder_Bags', sysdate);
+
+insert into goods 
+values (
+'s_6',	'green',	'Besa textured-leather shoulder bag'	null,	null,	'ROKSNANDA',	's_image_6',	'shoulder_image_6',	'Shoulder_Bags', sysdate);
+
+insert into goods 
+values (
+'s_7',	'pink',	'Besa textured-leather shoulder bag',	null,	null,	'ROKSNANDA',	's_image_7',	'shoulder_image_7',	'Shoulder_Bags', sysdate);
+
+insert into goods 
+values (
+'s_8',	'red',	'Two-tone woven raffia shoulder bag',	null,	null,	'NANNACAY',	's_image_8',	'shoulder_image_8',	'Shoulder_Bags', sysdate);
+
+insert into goods 
+values (
+'s_9',	'blue',	'Two-tone woven raffia shoulder bag',	null,	null,	'NANNACAY',	's_image_9',	'shoulder_image_9',	'Shoulder_Bags', sysdate);
+
+insert into goods 
+values (
+'s_10',	'green',	'Delila color-block textured-leather and suede shoulder bag',	null,	null,	'YUZEFI',	's_image_10',	'shoulder_image_10',	'Shoulder_Bags', sysdate);
+
+insert into goods 
+values (
+'s_11',	'black',	'Medium Pandora bag in washed-leather',	null,	null,	'GIVENCHY',	's_image_11',	'shoulder_image_11',	'Shoulder_Bags', sysdate);
+
+insert into goods 
+values (
+'s_12',	'white',	'Frame printed textured-leather shoulder bag',	null,	null,	'PRADA',	's_image_12',	'shoulder_image_12',	'Shoulder_Bags', sysdate)
+
+insert into goods 
+values (
+'s_13',	'blue',
+'Paulas Ibiza Hammock color-block textured-leather shoulder bag',	
+null,	null,	'LOWEW',	's_image_13',	
+'shoulder_image_13',	'Shoulder_Bags', sysdate );
+
+insert into goods 
+values 
+'s_14',	'green',	'Tara textured-leather shoulder bag',	null,	null,	'TOM FORD',	's_image_14',	'shoulder_image_14',	'Shoulder_Bags', sysdate);
+
+insert into goods 
+values (
+'s_15',	'black',	'Tara textured-leather shoulder bag',	null,	null,	'TOM FORD',	's_image_15',	'shoulder_image_15',	'Shoulder_Bags', sysdate);
+
+insert into goods 
+values (
+'s_16',	'pink', 'Hortensia medium color-block leather shoulder bag',	null,	null,	'WANDLER',	's_image_16',	'shoulder_image_16',	'Shoulder_Bags', sysdate);
+
+insert into goods 
+values (
+'s_17',	'blue',	'Hortensia medium color-block leather shoulder bag',	null,	null,	'WANDLER',	's_image_17',	'shoulder_image_17',	'Shoulder_Bags', sysdate);
+
+insert into goods 
+values (
+'s_18',	'wine',	'Roy mini leather bucket bag',	null,	null,	'CHLOE',	's_image_18',	'shoulder_image_18',	'Shoulder_Bags', sysdate);
+
+insert into goods 
+values (
+'s_19',	'black',	'Roy mini leather bucket bag'	null,	null,	'CHLOE',	's_image_19',	'shoulder_image_19',	'Shoulder_Bags', sysdate);
+
+insert into goods 
+values (
+'s_20',	'white',	'Roy mini leather bucket bag',	null,	null,	'CHLOE',	's_image_20',	'shoulder_image_20',	'Shoulder_Bags', sysdate);
+
+insert into goods 
+values (
+'s_21',	'blown',	'Roy mini leather bucket bag',	null,	null,	'CHLOE',	's_image_21',	'shoulder_image_21',	'Shoulder_Bags', sysdate); 
+--- GOODS 테이블 21행 완료 
+select *
+from goods; 
+
