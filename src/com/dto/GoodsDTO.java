@@ -113,7 +113,7 @@ public class GoodsDTO {
 	}
 
 	@Override
-	public String toString() {
+	public String toString() { //COMMIT TESET
 		return "GoodsDTO [goods_Code=" + goods_Code + ", goods_Color=" + goods_Color + ", goods_Name=" + goods_Name
 				+ ", goods_Content=" + goods_Content + ", goods_Price=" + goods_Price + ", goods_Brand=" + goods_Brand
 				+ ", goods_Image1=" + goods_Image1 + ", goods_Image2=" + goods_Image2 + ", goods_Category="
