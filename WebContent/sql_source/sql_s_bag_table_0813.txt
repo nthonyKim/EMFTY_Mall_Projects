@@ -1,4 +1,4 @@
-
+--계정이름 및 비밀번호는 저의경우 test2/test2로 했지만 팀원분들은 그때그때 드라이버 이름 수정해주시면 될 것 같아요 ^_^
  create table member
  ( userid VARCHAR2(10) PRIMARY KEY,
    passwd VARCHAR2(10) NOT NULL,
@@ -131,7 +131,7 @@ values (
 insert into goods 
 values (
 's_21',	'blown',	'Roy mini leather bucket bag',	null,	null,	'CHLOE',	's_image_21',	'shoulder_image_21',	'Shoulder_Bags', sysdate); 
---- GOODS ���̺� 21�� �Ϸ� 
+--- GOODS ���̺� 21�� �Ϸ� 
 select *
 from goods; 
 
