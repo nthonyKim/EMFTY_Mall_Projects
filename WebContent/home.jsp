@@ -1,6 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -28,6 +28,3 @@
 	<div class="top"><jsp:include page="common/top.jsp" flush="true"/></div>
 	<div class="contents"><jsp:include page="main.jsp" flush="true"/></div>
 </div>
-
-</body>
-</html>
