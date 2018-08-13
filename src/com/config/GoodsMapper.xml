@@ -6,14 +6,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 
 
- <select id="goodsRetrieve" resultType="GoodsDTO" 
-    parameterType="string">
+ <select id="goodsRetrieve" resultType="GoodsDTO" parameterType="string">
 
-    </select> 
-     <select id="goodsList" resultType="GoodsDTO" 
-    parameterType="string">
-    
-   select goods_Code
+ </select> 
+ <select id="goodsList" resultType="GoodsDTO" parameterType="string">    
+  select goods_Code
    		,goods_Color
    		,goods_Name
    		,goods_Price
@@ -22,8 +19,17 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
    		,goods_Category
   from goods 
   where goods_Category=#{goods_Category} 
-    </select>
-    
+ </select>
+ <select id="goodsListAll" resultType="GoodsDTO">
+ select goods_Code
+   		,goods_Color
+   		,goods_Name
+   		,goods_Price
+   		,goods_Brand
+   		,goods_Image1
+   		,goods_Category
+  from goods  
+ </select>
   
 	
 </mapper>
