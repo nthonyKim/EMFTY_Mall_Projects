@@ -30,6 +30,6 @@
 <jsp:include page="common/top.jsp" flush="true" /><br> 
 <jsp:include page="common/submenu.jsp" flush="true" />
 <hr>
-<img src="images/b_image_1" width="300" height="300" />
+<img src="images/b_image_1.jpg" width="300" height="300" />
 </body>
 </html>
