@@ -7,7 +7,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 
  <select id="goodsRetrieve" resultType="GoodsDTO" parameterType="string">
-
+<!-- dd -->
  </select> 
  <select id="goodsList" resultType="GoodsDTO" parameterType="string">    
   select goods_Code
