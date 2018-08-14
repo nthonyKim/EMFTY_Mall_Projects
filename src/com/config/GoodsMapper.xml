@@ -20,14 +20,14 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   from goods 
   where goods_Category=#{goods_Category} 
  </select>
- <select id="goodsAllList" resultType="GoodsDTO">
+ <select id="goodsAll" resultType="GoodsDTO">
  select goods_Code
    		,goods_Color
    		,goods_Name
    		,goods_Price
    		,goods_Brand
    		,goods_Image1
-   		,goods_Category
+   		<!-- ,goods_Category -->
   from goods  
  </select>
   

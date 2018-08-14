@@ -6,7 +6,7 @@
  <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<div class="adsense" style="text-align: center; padding:0px 0px 10px 10px"> 
+
 <table width="100%" cellspacing="0" cellpadding="0">
 	<tr>
 		<td>
@@ -23,7 +23,7 @@
 					<td height="10"></td>
 				</tr>
 				<tr>
-    <c:forEach var="dto" items="${goodsList}" varStatus="status">	
+    <c:forEach var="dto" items="${goodsAll}" varStatus="status">	
 						<td>
 							<table style='padding:15px'>
 								<tr>

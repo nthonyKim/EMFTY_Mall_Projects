@@ -4,7 +4,7 @@
 <div class="sidemenu">
 	<h1><a href="home.jsp">logo</a></h1>
 	<ul id="side_category">
-		<li><a href="GoodsListServlet">ALL</a></li>
+		<li><a href="GoodsAllServlet">ALL</a></li>
 		<li><a href="GoodsListServlet?goods_Category=backpack">BACKPACK</a></li>
 		<li><a href="GoodsListServlet?goods_Category=shoulderbag">SHOULDER BAG</a></li>
 		<li><a href="GoodsListServlet?goods_Category=clutch">CLTCH</a></li>
