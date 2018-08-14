@@ -14,42 +14,11 @@ import com.dto.GoodsDTO;
 import com.service.GoodsService;
 
 
-@WebServlet("/GoodsListServlet")
-public class goodsAllServlet extends HttpServlet {
+@WebServlet("/GoodsAllServlet")
+public class GoodsAllServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-/*		<%
-	     EmpService service = new EmpService();
-	     List<EmpDTO> list = service.select();
-
-	%>    
-	    
-	<!DOCTYPE html>
-	<html>
-	<head>
-	<meta charset="UTF-8">
-	<title>Insert title here</title>
-	</head>
-	<body>
-	<table border="1">
-	  <tr>
-	    <td>사원번호</td>
-	    <td>사원이름</td>
-	    <td>월급</td>
-	    <td>입사일</td>
-	    <td>부서번호</td>
-	  </tr>
-	  
-	 <%
-	   for(EmpDTO dto: list){
-		  int empno = dto.getEmpno();
-		  String ename = dto.getEname();
-		  int sal = dto.getSal();
-		  String hiredate = dto.getHiredate();
-		  int deptno = dto.getDeptno();
-	 %> */
-		//String goods_Category = request.getParameter(goods_Category);
-		
+		System.out.println("ggg");
 		GoodsService service = new GoodsService();
 		List<GoodsDTO> list = service.goodsAll();
 		
@@ -57,7 +26,7 @@ public class goodsAllServlet extends HttpServlet {
 		
 		
 		RequestDispatcher dis =
-				request.getRequestDispatcher("goodsList.jsp");
+				request.getRequestDispatcher("goodsAll.jsp");
 		dis.forward(request, response);
 	}
 
