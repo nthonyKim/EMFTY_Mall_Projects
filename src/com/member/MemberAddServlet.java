@@ -16,7 +16,7 @@ import com.service.MemberService;
 public class MemberAddServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String userid = request.getParameter("userid");
-		String passwd = request.getParameter("passwd");
+		String passwd = request.getParameter("passwd1");
 		String username = request.getParameter("username");
 		String post = request.getParameter("post");
 		String addr1 = request.getParameter("addr1");
