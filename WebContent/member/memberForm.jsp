@@ -1,21 +1,42 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <link rel="stylesheet" type="text/css" href="../css/common.css" />
+<script type="text/javascript" src="js/jquery-3.1.0.js"></script>
 <script type="text/javascript">
+
+$(document).ready(function(){		
+	
+	$("#passwd1").on("keyup",function(){
+		if($("#passwd2").val()==$(this).val()){
+			$("#presult").text("일치");
+		}else{
+			$("#presult").text("불일치");		
+		}
+	})		
+	
+	$("#passwd2").on("keyup",function(){
+		if($("#passwd1").val()==$(this).val()){
+			$("#presult").text("일치");
+		}else{
+			$("#presult").text("불일치");			
+		}
+	})
+})//
+
 </script>
 
 <form action="MemberAddServlet" method="post">
 <h1>REGISTER</h1>
-<div class="member">
+<div class="memberForm">
 	<div>
 		<table border="1">
 		<tr><td>아이디</td>
 			<td><input type="text" name="userid" id="userid"></td></tr>
 		<tr><td>비밀번호</td>
-			<td><input type="text" name="userpasswd1" id="userpasswd1"></td></tr>
+			<td><input type="text" name="passwd1" id="passwd1"></td></tr>
 		<tr><td>비밀번호 확인</td>
-			<td><input type="text" name="userpasswd2" id="userpasswd2"></td>
-			<td class="pwresult"></td></tr>
+			<td><input type="text" name="passwd2" id="passwd2"></td>
+			<td id="presult"></td></tr>
 		<tr><td>이름</td>
 			<td><input type="text" name="username"></td></tr>
 		<tr><td>주소</td>
