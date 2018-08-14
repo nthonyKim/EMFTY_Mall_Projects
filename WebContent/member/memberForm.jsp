@@ -1,72 +1,136 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<link rel="stylesheet" type="text/css" href="../css/common.css" />
-<script type="text/javascript" src="../js/jquery-3.1.0.js"></script>
 <script type="text/javascript">
-
-$(document).ready(function(){		
-	
-	$("#passwd1").on("keyup",function(){
-		if($("#passwd2").val()==$(this).val()){
-			$("#presult").text("일치");
-		}else{
-			$("#presult").text("불일치");		
-		}
-	})		
-	
-	$("#passwd2").on("keyup",function(){
-		if($("#passwd1").val()==$(this).val()){
-			$("#presult").text("일치");
-		}else{
-			$("#presult").text("불일치");			
-		}
+	$(document).ready(function(){		
+		$("#userid").on("keyup", function(){
+			$.ajax({
+				type:"GET",
+				url:"MemberIdCheckServlet",
+				dataType:"text", 
+				data:{ 
+					userid : $("#userid").val()
+				},
+				success:function(responseData,status,xhr){
+					$("#result").text(responseData);
+					if($("#userid").val().length==0){
+						$("#result").text("");
+					};
+				}, 
+				error:function(xhr,status,error){
+					console.log(error);
+				} 
+			}); 
+		})
+		
+		//비밀번호 확인
+		$("#passwd2").on("keyup", function(){
+			var passwd = $("#passwd1").val();
+			var passwd2 = $(this).val(); 
+			var mesg = "비밀번호 불일치";
+			
+			if(passwd == passwd2){
+				mesg = "비밀번호 일치"
+			}
+			
+			$("#result2").text(mesg);
+			
+			if(passwd2.length==0){
+				$("#result2").text("");
+			}
+		});
+		
+		//form submit
+		$("form").on("submit",function(e){
+			var userid = $("#userid");
+			var passwd = $("#passwd1");
+			var username = $("#username");
+			if(userid.val().length==0){
+				alert("아이디는 필수입력 사항입니다.");
+				userid.focus();
+				e.preventDefault();
+			}else if(passwd.val().length==0){
+				alert("비밀번호는 필수입력 사항입니다.");
+				passwd.focus();
+				e.preventDefault();
+			}else if(username.val().length==0){
+				alert("이름은 필수입력 사항입니다.");
+				username.focus();
+				e.preventDefault();
+			}
+		})
 	})
-})//
-
 </script>
 
 <form action="MemberAddServlet" method="post">
-<h1>REGISTER</h1>
-<div class="memberForm">
-	<div>
-		<table border="1">
-		<tr><td>아이디</td>
-			<td><input type="text" name="userid" id="userid"></td></tr>
-		<tr><td>비밀번호</td>
-			<td><input type="text" name="passwd1" id="passwd1"></td></tr>
-		<tr><td>비밀번호 확인</td>
-			<td><input type="text" name="passwd2" id="passwd2"></td>
-			<td id="presult"></td></tr>
-		<tr><td>이름</td>
-			<td><input type="text" name="username"></td></tr>
-		<tr><td>주소</td>
-		<td><input type="text" name="post" id="sample4_postcode" placeholder="우편번호"></td>
-			<td><input type="button" onclick="sample4_execDaumPostcode()" value="우편번호 찾기"></td>
+<h2>REGISTER</h2>
+	<div class="memberForm">
+		<p class="tblInfo"><span>*</span> 필수입력</p>
+		<table class="tbl">
+			<colgroup>
+				<col width="20%" />
+				<col width="*" />
+			</colgroup>
+			<tr>
+				<th><span class="required" title="필수 입력">아이디</span></th>
+				<td>
+					<input type="text" name="userid" id="userid">
+					<span id="result"></span>
+				</td>
 			</tr>
-		<tr><td></td><td><input type="text" name="addr1" id="sample4_roadAddress" placeholder="도로명주소"></td>
-			<td><input type="text" name="addr2" id="sample4_jibunAddress" placeholder="지번주소"></td></tr>
-		<tr><td>휴대폰</td>	
-	
-			<td><select name="phone1">
-				<option value="011">011</option> 
-				<option value="010">010</option> 
-			</select>
-			<input type="text" name="phone2">
-			<input type="text" name="phone3"></td></tr>
-		<tr><td>이메일</td>
-			<td><input type="text" name="email1">@
-			<input type="text" name="email2" id="emailaddress" placeholder="직접입력"></td>
-			<td><select name="email3" id="emailAdd">
-				<option value="daum.net">daum.net</option> 
-				<option value="naver.com">naver.com</option> 
-			</select></td></tr></table>
-			<br>
-			<div><input type="submit" value="회원가입"></div>
-			<div><input type="reset" value="취소"></div>	
+			<tr>
+				<th><span class="required" title="필수 입력">비밀번호</span></th>
+				<td>
+					<input type="text" name="passwd1" id="passwd1">
+				</td>
+			</tr>
+			<tr>
+				<th>비밀번호 확인</th>
+				<td>
+					<input type="text" name="passwd2" id="passwd2">
+					<span id="result2"></span>
+				</td>
+			</tr>
+			<tr>
+				<th><span class="required" title="필수 입력">이름</span></th>
+				<td><input type="text" name="username" id="username"></td>
+			</tr>
+			<tr>
+				<th>주소</th>
+				<td>
+					<input type="text" name="post" id="sample4_postcode" placeholder="우편번호">
+					<input type="button" onclick="sample4_execDaumPostcode()" class="btn gray small" value="우편번호 찾기">
+					<span class="address">
+						<input type="text" name="addr1" id="sample4_roadAddress" placeholder="도로명주소">
+						<input type="text" name="addr2" id="sample4_jibunAddress" placeholder="지번주소">
+					</span>
+				</td>
+			</tr>
+			<tr>
+				<th>휴대폰</th>
+				<td>
+					<select name="phone1">
+						<option value="011">011</option>
+						<option value="010">010</option>
+					</select> - <input type="text" name="phone2"> <input type="text" name="phone3">
+				</td>
+			</tr>
+			<tr>
+				<th>이메일</th>
+				<td>
+					<input type="text" name="email1"> @ <input type="text" name="email2" id="emailaddress" placeholder="직접입력">
+					<select name="email3" id="emailAdd">
+						<option value="daum.net">daum.net</option>
+						<option value="naver.com">naver.com</option>
+					</select>
+				</td>
+			</tr>
+		</table>
+		<div class="btnGroup">
+			<input type="submit" value="회원가입" class="btn blue">
+			<input type="reset" value="취소" class="btn gray">
+		</div>
 	</div>
-</div>
 </form>
-
 
 <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
 <script>
