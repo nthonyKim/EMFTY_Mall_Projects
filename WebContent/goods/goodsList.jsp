@@ -64,14 +64,7 @@
 								</tr>
 								<br>
 								<tr>
-									<td class= "td_default" align ="center">
-										<a class= "a_black"></a>
-										${dto.goods_Price}<br>
-										</a>
-										<font color="gray">
-										 <br>
-										</font>
-									</td>
+								
 									
 								</tr>
 								<tr>
@@ -89,7 +82,7 @@
 									<td class="td_red" align ="center"><font color="red"><strong>
 									
 					<fmt:formatNumber value="${dto.goods_Price}" type="currency"> </fmt:formatNumber>				
-					${dto.goods_Price}
+					<%-- ${dto.goods_Price} --%>
 										</strong></font></td>
 								</tr>
 							</table>
