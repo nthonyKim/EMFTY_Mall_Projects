@@ -20,7 +20,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   from goods 
   where goods_Category=#{goods_Category} 
  </select>
- <select id="goodsListAll" resultType="GoodsDTO">
+ <select id="goodsAllList" resultType="GoodsDTO">
  select goods_Code
    		,goods_Color
    		,goods_Name
@@ -28,7 +28,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
    		,goods_Brand
    		,goods_Image1
    		,goods_Category
-   		,
   from goods  
  </select>
   

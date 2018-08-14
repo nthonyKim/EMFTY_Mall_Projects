@@ -12,7 +12,13 @@ public class GoodsDAO {
 		List<GoodsDTO> list = 
 				session.selectList("com.goods.goodsList", goods_Category);
 		return list;
-		//price 오류 해결중 
+		
+	}
+	public List<GoodsDTO> goodsAll(SqlSession session
+			){
+		List<GoodsDTO> list = 
+				session.selectList("com.goods.goodsAll");
+		return list;
 	}
 	
 	

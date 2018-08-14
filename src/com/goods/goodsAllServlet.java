@@ -15,16 +15,45 @@ import com.service.GoodsService;
 
 
 @WebServlet("/GoodsListServlet")
-public class GoodsListServlet extends HttpServlet {
+public class goodsAllServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	
-		String goods_Category = request.getParameter("goods_Category");
+/*		<%
+	     EmpService service = new EmpService();
+	     List<EmpDTO> list = service.select();
+
+	%>    
+	    
+	<!DOCTYPE html>
+	<html>
+	<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	</head>
+	<body>
+	<table border="1">
+	  <tr>
+	    <td>사원번호</td>
+	    <td>사원이름</td>
+	    <td>월급</td>
+	    <td>입사일</td>
+	    <td>부서번호</td>
+	  </tr>
+	  
+	 <%
+	   for(EmpDTO dto: list){
+		  int empno = dto.getEmpno();
+		  String ename = dto.getEname();
+		  int sal = dto.getSal();
+		  String hiredate = dto.getHiredate();
+		  int deptno = dto.getDeptno();
+	 %> */
+		//String goods_Category = request.getParameter(goods_Category);
 		
 		GoodsService service = new GoodsService();
-		List<GoodsDTO> list = service.goodsList(goods_Category);
+		List<GoodsDTO> list = service.goodsAll();
 		
-		request.setAttribute("goodsList", list);
+		request.setAttribute("goodsAll", list);
 		
 		
 		RequestDispatcher dis =
