@@ -1,4 +1,4 @@
-package com.service;
+
 
 import java.util.List;
 
@@ -15,6 +15,19 @@ public class MemberService {
 	
 	public MemberService() {
 		dao = new MemberDAO();
+	}
+	
+	public int idCheck(String userid) {
+		SqlSession session = MySqlSessionFactory.getSession();
+		int n = 0;
+		try {
+			n = dao.idCheck(session, userid);
+		}catch(Exception e){
+			e.printStackTrace();
+		}finally {
+			session.close();
+		}
+		return n;
 	}
 	
 	public int memberAdd(MemberDTO dto) {
