@@ -1,4 +1,5 @@
 --계정이름 및 비밀번호는 저의경우 test2/test2로 했지만 팀원분들은 그때그때 드라이버 이름 수정해주시면 될 것 같아요 ^_^
+
  create table member
  ( userid VARCHAR2(10) PRIMARY KEY,
    passwd VARCHAR2(10) NOT NULL,
@@ -14,7 +15,7 @@
 
 
 
- create table goods
+create table goods
    ( goods_Code varchar2(20) PRIMARY KEY,
     goods_Color VARCHAR2(10) not null,
      goods_Name varchar2(50) not null,
@@ -38,7 +39,7 @@ values (
 'brown', 	
 'Faye medium glossed-leather shoulder bag',	
 null,	
-null,	
+50000,	
 'CHLOE',	
 's_image_1',	
 'shoulder_image_1',	
@@ -51,14 +52,14 @@ from goods;
 insert into goods 
 values 
 (
-'s_2',	'brown', 	'Musubi mini knotted suede shoulder bag',	null,	null,	'ACNE STUDIOS',	's_image_2',	'shoulder_image_2',	'Shoulder_Bags', sysdate);
+'s_2',	'brown', 	'Musubi mini knotted suede shoulder bag',	null,	30000,	'ACNE STUDIOS',	's_image_2',	'shoulder_image_2',	'Shoulder_Bags', sysdate);
 insert into goods 
 values (
-'s_3',	'black',	'Intarsia shearling shoulder bag',	null,	null,	'BALENCIAGA',	's_image_3',	'shoulder_image_3',	'Shoulder_Bags', sysdate);
+'s_3',	'black',	'Intarsia shearling shoulder bag',	null,	60000,	'BALENCIAGA',	's_image_3',	'shoulder_image_3',	'Shoulder_Bags', sysdate);
 
 insert into goods 
 values (
-'s_4',	'blue',	'Disc leather and suede shoulder bag',	null,	null,	'JW ANDERSON',	's_image_4',	'shoulder_image_4',	'Shoulder_Bags', sysdate);
+'s_4',	'blue',	'Disc leather and suede shoulder bag',	null,	70000,	'JW ANDERSON',	's_image_4',	'shoulder_image_4',	'Shoulder_Bags', sysdate);
 
 
 insert into goods 
@@ -67,7 +68,7 @@ values (
 
 insert into goods 
 values (
-'s_6',	'green',	'Besa textured-leather shoulder bag'	null,	null,	'ROKSNANDA',	's_image_6',	'shoulder_image_6',	'Shoulder_Bags', sysdate);
+'s_6',	'green',	'Besa textured-leather shoulder bag'	null,	80000,	'ROKSNANDA',	's_image_6',	'shoulder_image_6',	'Shoulder_Bags', sysdate);
 
 insert into goods 
 values (
@@ -79,19 +80,19 @@ values (
 
 insert into goods 
 values (
-'s_9',	'blue',	'Two-tone woven raffia shoulder bag',	null,	null,	'NANNACAY',	's_image_9',	'shoulder_image_9',	'Shoulder_Bags', sysdate);
+'s_9',	'blue',	'Two-tone woven raffia shoulder bag',	null,	90000,	'NANNACAY',	's_image_9',	'shoulder_image_9',	'Shoulder_Bags', sysdate);
 
 insert into goods 
 values (
-'s_10',	'green',	'Delila color-block textured-leather and suede shoulder bag',	null,	null,	'YUZEFI',	's_image_10',	'shoulder_image_10',	'Shoulder_Bags', sysdate);
+'s_10',	'green',	'Delila color-block textured-leather and suede shoulder bag',	null,	30000,	'YUZEFI',	's_image_10',	'shoulder_image_10',	'Shoulder_Bags', sysdate);
 
 insert into goods 
 values (
-'s_11',	'black',	'Medium Pandora bag in washed-leather',	null,	null,	'GIVENCHY',	's_image_11',	'shoulder_image_11',	'Shoulder_Bags', sysdate);
+'s_11',	'black',	'Medium Pandora bag in washed-leather',	null,	70000,	'GIVENCHY',	's_image_11',	'shoulder_image_11',	'Shoulder_Bags', sysdate);
 
 insert into goods 
 values (
-'s_12',	'white',	'Frame printed textured-leather shoulder bag',	null,	null,	'PRADA',	's_image_12',	'shoulder_image_12',	'Shoulder_Bags', sysdate)
+'s_12',	'white',	'Frame printed textured-leather shoulder bag',	null,	8000,	'PRADA',	's_image_12',	'shoulder_image_12',	'Shoulder_Bags', sysdate)
 
 insert into goods 
 values (
@@ -114,7 +115,7 @@ values (
 
 insert into goods 
 values (
-'s_17',	'blue',	'Hortensia medium color-block leather shoulder bag',	null,	null,	'WANDLER',	's_image_17',	'shoulder_image_17',	'Shoulder_Bags', sysdate);
+'s_17',	'blue',	'Hortensia medium color-block leather shoulder bag',	null,	50000,	'WANDLER',	's_image_17',	'shoulder_image_17',	'Shoulder_Bags', sysdate);
 
 insert into goods 
 values (
@@ -126,12 +127,240 @@ values (
 
 insert into goods 
 values (
-'s_20',	'white',	'Roy mini leather bucket bag',	null,	null,	'CHLOE',	's_image_20',	'shoulder_image_20',	'Shoulder_Bags', sysdate);
+'s_20',	'white',	'Roy mini leather bucket bag',	null,	70000,	'CHLOE',	's_image_20',	'shoulder_image_20',	'Shoulder_Bags', sysdate);
 
 insert into goods 
 values (
-'s_21',	'blown',	'Roy mini leather bucket bag',	null,	null,	'CHLOE',	's_image_21',	'shoulder_image_21',	'Shoulder_Bags', sysdate); 
---- GOODS ���̺� 21�� �Ϸ� 
+'s_21',	'blown',	'Roy mini leather bucket bag',	null,	80000,	'CHLOE',	's_image_21',	'shoulder_image_21',	'Shoulder_Bags', sysdate); 
+
+
+commit;
+
 select *
 from goods; 
+
+--------------------------버킷백 ,  -- code, color, gname, gcontents, gprice, designer, gimage1, gimage2, category 
+
+
+select *
+from goods;
+
+
+insert into goods values(
+'b_1',	'brown', 'Cleo woven leather bucket bag',	null,	50000,	'LOEFFLER RANDALL',	'b_image_1',	'bucket_image_1',	'Bucket_Bags', sysdate
+);
+insert into goods values(
+'b_2',	'white',	'Pannier small leather bucket bag',	null,	60000,	'MARNI', 			'b_image_2',	'bucket_image_2',	'Bucket_Bags', sysdate
+);
+
+insert into goods values(
+'b_3',	'brown', 	
+'Lorna mini leather tote',		
+null,	null,	
+'DANSE LENTE', 	
+'b_image_3',	'bucket_image_3',	
+'Bucket_Bags', sysdate
+);
+insert into goods values(
+'b_4',	'brown', 	'Johnny mini smooth and textured-leather bucket bag',	null,	80000,		'DANSE LENTE',	'b_image_4',	'bucket_image_4.jpg',	'Bucket_Bags', sysdate
+);
+insert into goods values(
+'b_5',	'white',	'Woven cotton bucket bag',		null,	90000,	'CATZORANGE',	'b_image_5',	'bucket_image_5',	'Bucket_Bags', sysdate
+);
+insert into goods values(
+'b_6',	
+'brown',	
+'Pannier small leather bucket bag',	  
+null,	10000,	'MARNI', 
+'b_image_6',	'bucket_image_6',	
+'Bucket_Bags', sysdate
+);
+insert into goods values(
+'b_7',	'white',	'Woven cotton bucket bag',	null,	null,	'ALIENINA',	'b_image_7',	'bucket_image_7',	'Bucket_Bags', sysdate
+);
+select * from goods;
+insert into goods values(
+'b_8',	'khaki',	'Nelia mini suede and leather bucket bag',	null,	null,	'NICO GIANI',	'b_image_8',	'bucket_image_8',	'Bucket_Bags', sysdate
+);
+insert into goods values(
+'b_9',	'white',	'Lorna mini paneled leather bucket bag',	null,	null,	'DANSE LENTE',	'b_image_9',	'bucket_image_9',	'Bucket_Bags', sysdate
+);
+insert into goods values(
+'b_10',	'pink',	'Amphora mini leather tote',		null,	null,	'CAROLINA SANTO DOMINGO',	'b_image_10',	'bucket_image_10',	'Bucket_Bags', sysdate
+);
+insert into goods values(
+'b_11',	'white',	'Johnny mini leather bucket bag',	null,	null,	'DANSE LENTE', 	'b_image_11',	'bucket_image_11',	'Bucket_Bags', sysdate
+);
+commit;
+select * from goods;
+insert into goods values(
+'b_12',
+'black',
+'Roy mini snake-effect leather bucket bagCHLOÉ',
+null,	
+30000,	
+'LOEFFLER RANDALL',	
+'b_image_12',	
+'bucket_image_12',	'Bucket_Bags', sysdate
+);
+insert into goods values(
+'b_13',	'yellow',	'Woven cotton bucket bag',		null,	null,	'ALIENINA',	'b_image_13',	'bucket_image_13',	'Bucket_Bags', sysdate
+);
+insert into goods values(
+'b_14',	'white',	'Laser-cut leather bucket bag',	null,	null,	'ALAÏA',	'b_image_14',	'bucket_image_14',	'Bucket_Bags', sysdate
+);
+commit;
+insert into goods values(
+'b_15',	'yellow',	'Colada leather-trimmed wicker tote',	null,	null,	'KAYU',	'b_image_15',	'bucket_image_15',	'Bucket_Bags', sysdate
+);
+insert into goods values(
+'b_16',	'black',	'Cleo woven leather bucket bag',	null,	null,	'LOEFFLER RANDALL',	'b_image_16',	'bucket_image_16'	,	'Bucket_Bags', sysdate
+);
+insert into goods values(
+'b_17',	'brown', 'Bucket tasseled woven raffia tote',	null,	null,	'NANNACAY',	'b_image_17',	'bucket_image_17',	'Bucket_Bags', sysdate
+);
+insert into goods values(
+'b_18',	'black',	'Bissett patent-leather bucket bag',	null,	null,	'STAUD',	'b_image_18',	'bucket_image_18',		'Bucket_Bags', sysdate
+);
+insert into goods values(
+'b_19',	'pink',	'Jesmyn velvet bucket bag',		null,	null,	'LOEFFLER RANDALL',	'b_image_19',	'bucket_image_19',	'Bucket_Bags', sysdate
+);
+insert into goods values(
+'b_20',	'pink',	'Lila pompom-embellished woven bucket bag',	null,	60000,	'SOPHIE ANDERSON',	'b_image_20',	'bucket_image_20',	'Bucket_Bags', sysdate
+); 
+
+--------------
+
+commit;
+
+ insert into goods values( 
+'c_1',	'black',	'Ellipse crystal-embellished suede clutch',	null,	30000,	'JIMMY CHOO',	'c_image_1',	'clutch_image_1',	'Clutch_Bags', sysdate
+); insert into goods values( 
+'c_2',	'pink',	'Angelou small tasseled crochet and resin clutch', 	null,	55000,	'CULT GAIA',	'c_image_2',	'clutch_image_2',	'Clutch_Bags', sysdate
+); insert into goods values( 
+'c_3',	'black',	'Lauren metallic intrecciato leather clutch',	null,	78000,	'BOTTEGA VENETA',	 'c_image_3',	'clutch_image_3',	'Clutch_Bags', sysdate
+); insert into goods values( 
+'c_4',	'pink',	'Lantern fringed leather clutch',	null,	98000,	'HILLIER BARTLEY',	'c_image_4',	'clutch_image_4',	'Clutch_Bags', sysdate
+);
+---
+insert into goods values( 
+'c_5',	'black',	'Vivienne glittered velvet clutch ',	null,	90000,	'JIMMY CHOO',	'c_image_5',	'clutch_image_5',	'Clutch_Bags', sysdate
+); 
+---
+insert into goods values( 
+'c_6',	'pink',	'Ark small acrylic clutch',		null,	80000,	'CULT GAIA',	'c_image_6',	'clutch_image_6',	'Clutch_Bags', sysdate
+);
+insert into goods values( 
+'c_7',	'black',	 'The Rockstud quilted cracked-leather pouch', 	null,	75000,	'VALENTINO',	'c_image_7',	'clutch_image_7',	'Clutch_Bags', sysdate
+);
+insert into goods values( 
+'c_8',	'black',	'Monogramme croc-effect leather pouch',	null,	36000,	'SAINT LAURENT',	'c_image_8',	'clutch_image_8',	'Clutch_Bags', sysdate
+); 
+insert into goods values( 
+'c_9',	'pink',	'Feather-trimmed straw pouch', 	null,	50000,	'LOEFFLER RANDALL',	'c_image_9',	'clutch_image_9',	 	'Clutch_Bags', sysdate
+); 
+insert into goods values( 
+'c_10',	'black',	'Le Sept chain-embellished leather clutch',	null,	70000,	'SAINT LAURENT',	'c_image_10',	'clutch_image_10',	'Clutch_Bags', sysdate
+); 
+insert into goods values( 
+'c_11',	'pink',	'intrecciato satin clutch', 	null,	50000,	 'BOTTEGA VENETA',	'c_image_11',	'clutch_image_11',	'Clutch_Bags', sysdate
+);
+commit;
+-----
+insert into goods values( 
+'c_12',	'black',	'Crystal-embellished crushed-velvet clutch',	null,	23000,	'ROGER VIVIER',	'c_image_12',	'clutch_image_12',		'Clutch_Bags', sysdate
+); 
+insert into goods values( 
+'c_13',	'black',	'Wristlet leather clutch',		null,	60000,	'THE ROW',	'c_image_13',	'clutch_image_13',	'Clutch_Bags', sysdate
+); 
+insert into goods values( 
+'c_14',	'pink',	'Valentino Garavani The Rockstud leather clutch', 	null,	70000,	'VALENTINO',	'c_image_14',	'clutch_image_14',	'Clutch_Bags', sysdate
+); 
+insert into goods values( 
+'c_15',	'black',	'Monogramme leather clutch',	null,	37000,	'SAINT LAURENT',	'c_image_15',	'clutch_image_15',	'Clutch_Bags', sysdate
+); 
+insert into goods values( 
+'c_16',	'red',	'Studded leather pouch',		null,	88000,	'PRADA',	'c_image_16',	'clutch_image_16',	'Clutch_Bags', sysdate
+); 
+insert into goods values( 
+'c_17',	'red',	'Printed textured-leather pouch',	null,	89000,	' GUCCI',	'c_image_17',	'clutch_image_17',	'Clutch_Bags', sysdate
+); 
+insert into goods values( 
+'c_18',	'black',	'Embossed leather clutch',		null,	45000,	'CALVIN KLEIN',		'c_image_18',	'clutch_image_18',	'Clutch_Bags', sysdate
+); 
+insert into goods values(
+'c_19',	'red',	'The Rockstud textured-leather pouch',	null,	70000,	'VALENTINO',	'c_image_19',	'clutch_image_19',	'Clutch_Bags', sysdate
+); 
+insert into goods values( 
+'c_20',	'black',	'Knuckle embellished croc-effect leather clutch',		null,	30000,	'ALEXANDER MCQUEEN',	'c_image_20',	'clutch_image_20',	'Clutch_Bags', sysdate
+);
+
+-------
+
+
+select * from goods;
+
+insert into goods values(
+'m_1',	'red',	'Micro laser-cut leather tote',	null,	null,	'ALAÏA',	'm_image_1',	'mini_image_1',	'Mini_Bags', sysdate
+); 
+insert into goods values(
+'m_2',	'brown',	'Adenia mini leather bucket bag',	null,	100000,	'NICO GIANI ',	'm_image_2',	'mini_image_2',	'Mini_Bags', sysdate
+); 
+insert into goods values(
+'m_3',	'brown',  'Tunilla mini leather shoulder bag',	null,	null,	'NICO GIANI ',	'm_image_3',	'mini_image_3',	'Mini_Bags', sysdate
+); 
+insert into goods values(
+'m_4',	'purple',	'Adenia mini leather bucket bag',	null,	null,	'NICO GIAN',	'm_image_4',	'mini_image_4',	'Mini_Bags', sysdate
+); 
+insert into goods values(
+'m_5',	'black',	'mini quilted leather shoulder bag',		null,	null,	'GUCCI',	'm_image_5',	'mini_image_5',	'Mini_Bags', sysdate
+);
+----
+
+insert into goods values(
+'m_6',	'black',	 'Mini Mini leather bucket bag',	null,	null,	 'MANSUR GAVRIEL', 	'm_image_6',	'mini_image_6',	'Mini_Bags', sysdate
+); 
+insert into goods values(
+'m_7',	'black',	'Drew mini textured-leather shoulder bag',	null,	null,	'CHLOÉ',	'm_image_7',	'mini_image_7',	'Mini_Bags', sysdate
+); 
+insert into goods values(
+'m_8',	'black',	'Micro laser-cut leather tote'	,	null,	null,	'ALAÏA',	'm_image_8',	'mini_image_8',	'Mini_Bags', sysdate
+); 
+insert into goods values(
+'m_9',	'black',	'The Marcie mini textured-leather shoulder bag',	null,	null,	'CHLOÉ',	'm_image_9',	'mini_image_9',		'Mini_Bags', sysdate
+); 
+insert into goods values(
+'m_10',	'white',	'Mini Mini leather bucket bag' ,	null,	null,	'MANSUR GAVRIEL',	'm_image_10',	'mini_image_10',	'Mini_Bags', sysdate
+);
+insert into goods values(
+'m_11',	'pink',	'Sun mini mini leather tote', 		null,	null,	'MANSUR GAVRIEL',	'm_image_11',	'mini_image_11',	'Mini_Bags', sysdate
+); 
+----
+commit; 
+insert into goods values(
+'m_12',	'black',	'Valentino Garavani Lock small leather shoulder bag',	null,	null,	'VALENTINO', 	'm_image_12',	'mini_image_12',		'Mini_Bags', sysdate
+); 
+insert into goods values(
+'m_13',	'red',	'Hortensia mini lizard-effect leather shoulder bag',	null,	'WANDLER',	'm_image_13',	'mini_image_13',	'Mini_Bags', sysdate
+); 
+insert into goods values(
+'m_14',	'purple',	'Nelia mini leather and suede',	null,	null,	'NICO GIANI',	'm_image_14',	'mini_image_14',	'Mini_Bags', sysdate
+); 
+insert into goods values(
+'m_15',	'black',	'Sun mini mini leather tote',		null,	60000,	'MANSUR GAVRIEL',	'm_image_15',	'mini_image_15',	'Mini_Bags', sysdate
+); 
+insert into goods values(
+'m_16',	'brown', 	'Bucket tasseled woven raffia tote',	null,	null,	' NANNACAY',	'm_image_16',	'mini_image_16',	'Mini_Bags', sysdate
+);
+insert into goods values(
+'m_17',	'black',	'Croc-effect leather camera bag',	null,	null,	'ALEXANDER MCQUEEN',	'm_image_17',	'mini_image_17',	'Mini_Bags', sysdate
+); 
+insert into goods values(
+'m_18',	'black',	'Double Circle small satin tote',	null,	75000,	'THE ROW',	'm_image_18',	'mini_image_18',	'Mini_Bags', sysdate
+); 
+insert into goods values(
+'m_19',	'white',	'Amphora leather tote' ,		null,	null,	'CAROLINA SANTO DOMINGO',	'm_image_19',	'mini_image_19',		'Mini_Bags', sysdate
+); 
+insert into goods values(
+'m_20',	'white',	'Sun mini mini leather tote',		null,	80000,	'MANSUR GAVRIEL',	'm_image_20',	'mini_image_20',	'Mini_Bags', sysdate ); 
 

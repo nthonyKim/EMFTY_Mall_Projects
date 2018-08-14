@@ -28,6 +28,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
    		,goods_Brand
    		,goods_Image1
    		,goods_Category
+   		,
   from goods  
  </select>
   
