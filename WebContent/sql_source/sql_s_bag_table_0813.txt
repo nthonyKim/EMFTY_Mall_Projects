@@ -123,27 +123,27 @@ values (
 
 insert into goods 
 values (
-'s_19',	'purple',	'GG Marmont mini quilted velvet' ,	'지지 마몽트 미니 퀼트 벨벳',	134800,	'GUCCI', 	's_image_19',	'shoulder_image_19',	'Shoulder_Bags'
+'s_19',	'purple',	'GG Marmont mini quilted velvet' ,	'지지 마몽트 미니 퀼트 벨벳',	134800,	'GUCCI', 	's_image_19',	'shoulder_image_19',	'Shoulder_Bags',sysdate);
 
 insert into goods 
 values (
-'s_20',	'white',	'Roy small leather bucket bag',	'로이 스몰 레더 버켓백',	367000,	'CHLOÉ', 	's_image_20',	'shoulder_image_20',	'Shoulder_Bags'
+'s_20',	'white',	'Roy small leather bucket bag',	'로이 스몰 레더 버켓백',	367000,	'CHLOÉ', 	's_image_20',	'shoulder_image_20',	'Shoulder_Bags',sysdate);
 
 insert into goods 
 values (
-'s_21',	'white',	'Miu Lady crystal-embellished matelassé leather shoulder bag',	'미우 레이디 크리스탈 엠블리시드 마텔라쎄 레더 숄더백',	326000,	'MIU MIU', 	's_image_21',	'shoulder_image_21',	'Shoulder_Bags'
+'s_21',	'white',	'Miu Lady crystal-embellished matelassé leather shoulder bag',	'미우 레이디 크리스탈 엠블리시드 마텔라쎄 레더 숄더백',	326000,	'MIU MIU', 	's_image_21',	'shoulder_image_21',	'Shoulder_Bags',sysdate);
 
 insert into goods 
 values (
-'s_22',	'green',	'Luna acrylic shoulder bag',	'루나 아크릴 숄더백',	72500,	'CULT GAIA',	's_image_22',	'shoulder_image_22',	'Shoulder_Bags'
+'s_22',	'green',	'Luna acrylic shoulder bag',	'루나 아크릴 숄더백',	72500,	'CULT GAIA',	's_image_22',	'shoulder_image_22',	'Shoulder_Bags',  sysdate);
 
 insert into goods 
 values (
-'s_23',	'yellow',	'Nile Bracelet mini textured-leather shoulder bag',	'나일 브레이슬렛 미니 텍스쳐 레더 숄더백',	420000,	'CHLOÉ',	's_image_23',	'shoulder_image_23',	'Shoulder_Bags'
+'s_23',	'yellow',	'Nile Bracelet mini textured-leather shoulder bag',	'나일 브레이슬렛 미니 텍스쳐 레더 숄더백',	420000,	'CHLOÉ',	's_image_23',	'shoulder_image_23',	'Shoulder_Bags' ,sysdate);
 
 insert into goods 
 values (
-'s_24',	'blue',	'Faye small leather and suede shoulder bag',	'파예 스몰 레더 스웨이드 숄더백',	98000	,'CHLOÉ',	's_image_24',	'shoulder_image_24',	'Shoulder_Bags'
+'s_24',	'blue',	'Faye small leather and suede shoulder bag',	'파예 스몰 레더 스웨이드 숄더백',	98000	,'CHLOÉ',	's_image_24',	'shoulder_image_24',	'Shoulder_Bags',sysdate);
 
 commit;
 
