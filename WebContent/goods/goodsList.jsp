@@ -3,11 +3,17 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+ <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-    
-
+<div class="adsense" style="text-align: center; padding:0px 0px 10px 10px"> 
+<table cellpadding="0" cellspacing="0" table width="100%">
+<tr>
+	<td width="50%">
+	<img src="images/banner_image.jpg" align=top>
+	</td>
+	<td width="50%"></td>
+</table>
 <table width="100%" cellspacing="0" cellpadding="0">
 	<tr>
 		<td>
@@ -35,16 +41,35 @@
 									</td>
 								</tr>
 								<tr>
-								
+								<td class= "td_default" align ="center">
+										<a class= "a_black">
+										${dto.goods_Brand}<br>
+										</a>
+										<font color="gray">
+										 <br>
+										</font>
+									</td>
 									<td height="10">
 								</tr>
 								<tr>
 									<td class= "td_default" align ="center">
-										<a class= "a_black" href="GoodsRetrieveServlet?gCode=${dto.gCode}"> 
+										<a class= "a_black" href="GoodsListServlet?goods_Code=${dto.goods_Code}"> 
 										${dto.goods_Name}<br>
 										</a>
 										<font color="gray">
-										 =================
+										 <br>
+										</font>
+									</td>
+									
+								</tr>
+								<br>
+								<tr>
+									<td class= "td_default" align ="center">
+										<a class= "a_black"></a>
+										${dto.goods_Price}<br>
+										</a>
+										<font color="gray">
+										 <br>
 										</font>
 									</td>
 									
@@ -52,7 +77,11 @@
 								<tr>
 									<td height="10">
 								</tr>
-								
+								<tr>
+									<td class="td_gray" align ="center">
+										${dto.goods_Content}
+									</td>
+								</tr>
 								<tr>
 									<td height="10">
 								</tr>
@@ -60,7 +89,7 @@
 									<td class="td_red" align ="center"><font color="red"><strong>
 									
 					<fmt:formatNumber value="${dto.goods_Price}" type="currency"> </fmt:formatNumber>				
-					
+					${dto.goods_Price}
 										</strong></font></td>
 								</tr>
 							</table>
