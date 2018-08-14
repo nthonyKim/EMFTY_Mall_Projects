@@ -15,9 +15,6 @@ public class GoodsService {
 		dao = new GoodsDAO();
 	}
 	
-
-	
-	
 	public List<GoodsDTO> goodsList(String goods_Category){
 		SqlSession session = MySqlSessionFactory.getSession();
 		List<GoodsDTO> list = null;
@@ -31,4 +28,23 @@ public class GoodsService {
 		}
 		return list;
 	}//end goodsList
+
+	public List<GoodsDTO> goodsAll() {
+		SqlSession session = MySqlSessionFactory.getSession();
+		List<GoodsDTO> list = null;
+		try {
+			list = dao.goodsAll(session);
+			
+		}catch(Exception  e) {
+			e.printStackTrace();
+		}finally {
+			session.close();
+		}
+		// TODO Auto-generated method stub
+		return list; 
+	}
+	
+	
+	//All tab 
+	
 }
