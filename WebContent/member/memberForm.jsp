@@ -45,7 +45,7 @@ $(document).ready(function(){
 			</tr>
 		<tr><td></td><td><input type="text" name="addr1" id="sample4_roadAddress" placeholder="도로명주소"></td>
 			<td><input type="text" name="addr2" id="sample4_jibunAddress" placeholder="지번주소"></td></tr>
-		<tr><td>휴대폰</td>
+		<tr><td>휴대폰</td>	
 			<td><select name="phone1">
 				<option value="011">011</option> 
 				<option value="010">010</option> 
