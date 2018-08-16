@@ -45,6 +45,22 @@ public class GoodsService {
 	}
 	
 	
-	//All tab 
+	//상품정보 상세페이지
+	public GoodsDTO goodsRetrieve(String goods_Code) {
+		SqlSession session = MySqlSessionFactory.getSession();
+		GoodsDTO dto = null;
+		try {
+			dto = dao.goodsRetrieve(session, goods_Code);
+		}catch(Exception  e) {
+			e.printStackTrace();
+		}finally {
+			session.close();
+		}
+		return dto;
+	}//end goodsRetrieve 
+	
+	
+	
+	
 	
 }
