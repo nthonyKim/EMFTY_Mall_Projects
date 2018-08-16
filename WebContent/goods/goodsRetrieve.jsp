@@ -121,9 +121,12 @@
 	      <input type="hidden" name="goods_Name" value="${goodsRetrieve.goods_Name}"> 
 	      <input type="hidden" name="goods_Price" value="${goodsRetrieve.goods_Price}">
 	<tr>
-	<img src="images/items/${goodsRetrieve.goods_Image2}.jpg">
-</tr>
-	
+	<img src="images/items/${goodsRetrieve.goods_Image2}.jpg" align="center">
+</tr><br> 
+<br>
+<br>
+<img src="images/wash_info.jpg"><br> 
+	<img src="images/divider_1.jpg"><br> 
 	</form>
 	<br> 
 <table>
