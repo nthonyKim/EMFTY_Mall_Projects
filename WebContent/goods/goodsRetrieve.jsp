@@ -113,11 +113,26 @@
 
 	<br> <button>구매</button>
 	&nbsp;&nbsp;
-	<button id="cart">장바구니</button>
+	<button id="cart">장바구니</button><br> 
+<img src="images/divider_1.jpg"><br> 
+<form name="goodRetrieveForm" method="GET" action="#">
+	    <input type="hidden" name="goods_Image1" value="${goodsRetrieve.goods_Image1}">
+	     <input type="hidden" name="goods_Code" value="${goodsRetrieve.goods_Code}">
+	      <input type="hidden" name="goods_Name" value="${goodsRetrieve.goods_Name}"> 
+	      <input type="hidden" name="goods_Price" value="${goodsRetrieve.goods_Price}">
+	<tr>
+	<img src="images/items/${goodsRetrieve.goods_Image2}.jpg">
+</tr>
 	
+	</form>
+	<br> 
 <table>
 <tr>
 <td>
-hello</td> </tr>
+<button id=shareInfo name=shareInfo>카톡으로 공유하기</button><!-- 구글링중--> 
+<button id=reviewBoard name=reviewBoard>리뷰</button><!-- db테이블 따로 만들고 모든 사용자에게 insert/update/delete/나와 운영자만 보기 권한 필요 sys:답글권한-->
+<button id=QnABoard name=QnABoard>Q&A</button><!-- 홈에 있는 질문게시판 -->
+<button id=wishCapture name=wishCapture>wishList</button><!-- sql문 wish 테이블(비회원기능) 따로만들어 insert -->
+</td> </tr>
 </table>
 </form>
