@@ -51,6 +51,19 @@ table {
 input {height:25px;padding:0 5px;background:#fff;border:1px solid #bbb;vertical-align:middle;}
 select {height:27px;padding:0 5px;}
 
+/* common 
+.sidemenu{
+	width: 20%;
+	height: 100%;
+	background-color: #000;
+	font: white;
+	float: left;	
+	padding: 70px;
+}
+.topmenu{background-color: #000;}
+.topmenu li{display: inline;}
+*/
+
 /* 회원가입 테이블 */
 .tbl {border-top:2px solid #bbb;}
 .tbl th, .tbl td {padding:12px 10px;vertical-align:middle;border-bottom:1px solid #bbb;}
