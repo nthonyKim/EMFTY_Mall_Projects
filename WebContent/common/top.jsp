@@ -9,9 +9,10 @@
 		<li>search</li>
 		<li><a href="CartUIServlet">CART</a></li>
 <c:if test="${empty login}">
-		<li><a href="MemberUIServlet">USER</a></li>
+		<li><a href="LoginUIServlet">USER</a></li>
 </c:if>
 <c:if test="${!empty login}">
+		<li><a href="MypageServlet">MYPAGE</a></li>
 		<li><a href="LogoutUIServlet">LOGOUT</a></li>
 </c:if> 
 	</ul>

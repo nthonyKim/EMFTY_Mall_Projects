@@ -1,7 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <script type="text/javascript">
-	$(document).ready(function(){		
+	$(document).ready(function(){	
+		//id 중복여부
 		$("#userid").on("keyup", function(){
 			$.ajax({
 				type:"GET",
@@ -58,11 +59,15 @@
 				e.preventDefault();
 			}
 		})
+		
+		$("#email3").on("change",function(){
+			$("#email2").val($(this).val());
+		})
 	})
 </script>
 
 <form action="MemberAddServlet" method="post">
-<h2>REGISTER</h2>
+<h1>REGISTER</h1>
 	<div class="memberForm">
 		<p class="tblInfo"><span>*</span> 필수입력</p>
 		<table class="tbl">
@@ -110,17 +115,17 @@
 				<td>
 					<select name="phone1">
 						<option value="011">011</option>
-						<option value="010">010</option>
-					</select> - <input type="text" name="phone2"> <input type="text" name="phone3">
+						<option value="010" selected="selected">010</option>
+					</select>  <input type="text" name="phone2"> <input type="text" name="phone3">
 				</td>
 			</tr>
 			<tr>
 				<th>이메일</th>
 				<td>
-					<input type="text" name="email1"> @ <input type="text" name="email2" id="emailaddress" placeholder="직접입력">
-					<select name="email3" id="emailAdd">
+					<input type="text" name="email1"> @ <input type="text" name="email2" id="email2" placeholder="직접입력">
+					<select name="email3" id="email3">
 						<option value="daum.net">daum.net</option>
-						<option value="naver.com">naver.com</option>
+						<option value="naver.com" selected="selected">naver.com</option>
 					</select>
 				</td>
 			</tr>
