@@ -14,18 +14,18 @@
    email2 VARCHAR2(20) NOT NULL );   
 
 
-
 create table goods
    ( goods_Code varchar2(20) PRIMARY KEY,
     goods_Color VARCHAR2(10) not null,
-     goods_Name varchar2(50) not null,
-     goods_Content varchar2(4000),
-goods_Price NUMBER(6),
+     goods_Name varchar2(80) not null,
+     goods_Content varchar2(1000),
+goods_Price NUMBER(8),
 goods_Brand varchar2(30) not null,
 goods_Image1 varchar2(20) not null ,
 goods_Image2 varchar2(22) not null,
  goods_Category varchar2(20) not null,
 goods_Date DATE  DEFAULT SYSDATE); 
+
 
 
 commit;
