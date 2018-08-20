@@ -4,7 +4,12 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<<<<<<< HEAD
 <title>Insert title here</title><!-- ddddd ddddd-->
+=======
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="css/common.css" />
+>>>>>>> refs/heads/Nthony
 </head>
 <body>
 
