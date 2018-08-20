@@ -94,5 +94,6 @@ public class MemberService {
 		}finally {
 			session.close();
 		}
+		return n;
 	}
 }
