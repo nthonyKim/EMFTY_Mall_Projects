@@ -11,7 +11,7 @@
 				<col width="*" />
 			</colgroup>
 	<tr>
-		<th>아이디:</th>
+		<th>아이디</th>
 		<td> ${login.userid}</td></tr>
 	<tr><th>비밀번호</th>
 		<td><input type="text" name="passwd" id="passwd1"></td></tr>
