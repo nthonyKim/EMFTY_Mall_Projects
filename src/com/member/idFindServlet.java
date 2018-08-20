@@ -46,7 +46,7 @@ public class idFindServlet extends HttpServlet {
 		String nextPage = null;
 		
 		String userid = service.idFind(dto);
-		
+		System.out.println("userid "+userid);
 		if(userid==null) {
 			nextPage="idFindUIservlet";
 			request.setAttribute("mesg", "사용자를 찾을 수 없습니다.");

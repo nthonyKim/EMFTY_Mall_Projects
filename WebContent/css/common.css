@@ -51,18 +51,26 @@ table {
 input {height:25px;padding:0 5px;background:#fff;border:1px solid #bbb;vertical-align:middle;}
 select {height:27px;padding:0 5px;}
 
-/* common 
-.sidemenu{
-	width: 20%;
-	height: 100%;
+ 
+/* common */
+.sidemenu{	
 	background-color: #000;
-	font: white;
 	float: left;	
 	padding: 70px;
+	font: #fff;
 }
-.topmenu{background-color: #000;}
+.topmenu{
+	background-color: #000; 
+	position: fixed; 
+	right: 0; 
+	width:100%;
+	padding: 20px;
+}
 .topmenu li{display: inline;}
-*/
+.content{ 
+	width:80% ;
+}
+
 
 /* 회원가입 테이블 */
 .tbl {border-top:2px solid #bbb;}

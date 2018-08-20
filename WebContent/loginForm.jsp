@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="css/common.css" />
 </head>
 <body>
 <div class="side"><jsp:include page="common/submenu.jsp" flush="true"/></div>

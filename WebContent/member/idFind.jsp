@@ -3,10 +3,9 @@
 <script type="text/javascript">
 	$(document).ready(function(){
 		//email
-		$("#email3").on("change",function(){
+		$("#email3").on("change",function(){			
 			$("#email2").val($(this).val());
-		})
-		
+		})		
 	})//
 
 </script>
@@ -16,7 +15,7 @@
 		<tr>
 		<th>이름</th><td><input type="text" name="username"></td></tr>
 		<tr>
-		<th>휴대폰</th>			
+			<th>휴대폰</th>			
 			<td><select name="phone1">
 			<option value="010" selected="selected">010</option>
 			<option value="011">011</option>
@@ -24,9 +23,9 @@
 			<input type="text" name="phone2">
 			<input type="text" name="phone3"></td></tr>
 		<tr>
-		<th>이메일</th>
-		<td><input type="text" name="email1">@<input type="text" name="email2">
-			<select name="email3">
+			<th>이메일</th>
+			<td><input type="text" name="email1">@<input type="text" name="email2" id="email2">
+			<select name="email3" id="email3">
 				<option value="naver.com" selected="selected">naver.com</option>
 				<option value="daum.net">daum.net</option>
 				</select></td></tr>		
