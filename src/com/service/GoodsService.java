@@ -13,7 +13,7 @@ public class GoodsService {
 	private GoodsDAO dao;
 	public GoodsService() {
 		dao = new GoodsDAO();
-	}
+	}///
 	
 	public List<GoodsDTO> goodsList(String goods_Category){
 		SqlSession session = MySqlSessionFactory.getSession();
