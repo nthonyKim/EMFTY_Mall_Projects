@@ -3,18 +3,21 @@
 
 <div class="sidemenu">
 	<h1><a href="home.jsp">logo</a></h1>
+	<br>
 	<ul id="side_category">
 		<li><a href="GoodsAllServlet">ALL</a></li>
-		<li><a href="GoodsListServlet?goods_Category=Bucket_Bags">Bucket_Bags</a><li>
+		<li><a href="GoodsListServlet?goods_Category=Bucket_Bags">BUCKET BAG</a><li>
 		<li><a href="GoodsListServlet?goods_Category=Shoulder_Bags">SHOULDER BAG</a></li>
 		<li><a href="GoodsListServlet?goods_Category=Clutch_Bags">CLUTCH BAGS</a></li>
 		<li><a href="GoodsListServlet?goods_Category=Mini_Bags">MINI BAG</a></li>
 	</ul>
+	<br>
 	<ul id="side_board">
 		<li><a href="">NOTICE</a></li>
 		<li><a href="">Q N A</a></li>
 		<li><a href="">REVIEW</a></li>
 	</ul>
+	<br>
 	<ul id="side_sns">
 		<li><a href="">twitter</a></li>
 		<li><a href="">instagram</a></li>

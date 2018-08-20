@@ -29,6 +29,7 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
+	background:#333333;
 }
 ol, ul {
 	list-style: none;
@@ -54,38 +55,50 @@ select {height:27px;padding:0 5px;}
  
 /* common */
 .sidemenu{	
-	background-color: #000;
 	float: left;	
-	padding: 70px;
-	font: #fff;
+	padding: 50px;
 }
 .topmenu{
-	background-color: #000; 
-	position: fixed; 
-	right: 0; 
-	width:100%;
+	background-color:#333333;
 	padding: 20px;
+	width:100%;
 }
-.topmenu li{display: inline;}
-.content{ 
-	width:80% ;
+.topmenu li{display: inline-block;}
+.topmenu ul{text-align: right; margin-right: 70px;}
+
+.wrap {width:100%;overflow:hidden; margin:0 auto;}
+.side {width:308px; float:left;}
+.side li{ margin:20px;
 }
+.body {width:992px; float:right;}
+.contents {background:#fff; padding:20px;min-height:700px;}
 
-
+.side a {
+    color: #fff;
+    text-decoration: none;
+}
+.side a:hover 
+{
+     color:#ffba00; 
+     text-decoration:underline; 
+     font-weight: bold;
+}
+.contents a{
+	
+}
 /* 회원가입 테이블 */
 .tbl {border-top:2px solid #bbb;}
 .tbl th, .tbl td {padding:12px 10px;vertical-align:middle;border-bottom:1px solid #bbb;}
-.tbl th {color:#333;font-weight:bold;background:#f6f6f6;border-right:1px solid #bbb;}
+.tbl th {color:#333;font-weight:bold;background:#F2F2F2;border-right:1px solid #bbb;}
 .address {display:block;margin-top:10px;}
 .address input{width:45%;}
-.required {position:relative;}
-.required:before {content:'*';display:block;position:absolute;left:-12px;top:1px;color:#f71a34;}
 .tblInfo {margin-bottom:10px;text-align:right;}
-.tblInfo span {display:inline-block;color:#f71a34;font-weight:bold;}
+.tblInfo span {display:inline-block;color:#ffba00;font-weight:bold;}
 
 
 .btnGroup {margin-top:30px;text-align:center;}
 .btn {padding:10px 20px;margin-right:3px;min-width:110px;height:auto;font-size:16px;line-height:21px;cursor:pointer;}
-.blue {background:#042f6c;color:#fff;border:1px solid #042f6c;}
-.gray {background:#ddd;}
+.blue {background:#ffba00;color:#fff;border:1px solid #DBA901;}
+.gray {background:#F2F2F2;}
 .small {padding:2px 0 1px;font-size:13px;}
+.contents h1{text-align: center; font-weight: bold; font-size: 20px;}
