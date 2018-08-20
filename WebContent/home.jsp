@@ -27,4 +27,5 @@
 <div class="body">
 	<div class="top"><jsp:include page="common/top.jsp" flush="true"/></div>
 	<div class="contents"><jsp:include page="main.jsp" flush="true"/></div>
+		<div class="top"><jsp:include page="common/boardList.jsp" flush="true"/></div>
 </div>
