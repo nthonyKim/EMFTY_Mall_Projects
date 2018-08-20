@@ -45,6 +45,15 @@
 			var userid = $("#userid");
 			var passwd = $("#passwd1");
 			var username = $("#username");
+			var sample4_postcode = $("#sample4_postcode");
+			var sample4_roadAddress = $("#sample4_roadAddresss");
+			var sample4_jibunAddress = $("#sample4_jibunAddress");
+			var phone1 = $("#phone1");
+			var phone2 = $("#phone2");
+			var phone3 = $("#phone3");
+			var email1 = $("#email1");
+			var email2 = $("#email2");
+			var email3 = $("#email3");
 			if(userid.val().length==0){
 				alert("아이디는 필수입력 사항입니다.");
 				userid.focus();
@@ -57,12 +66,24 @@
 				alert("이름은 필수입력 사항입니다.");
 				username.focus();
 				e.preventDefault();
+			}else if(sample4_postcode.val().length==0 || sample4_roadAddress.val().length==0 || sample4_jibunAddress.val().length==0){
+				alert("주소는 필수입력 사항입니다.");
+				sample4_postcode.focus();
+				e.preventDefault();
+			}else if(phone1.val().length==0 || phone2.val().length==0 || phone3.val().length==0){
+				alert("전화번호는 필수입력 사항입니다.");
+				phone1.focus();
+				e.preventDefault();
+			}else if(email1.val().length==0 || email2.val().length==0 || email3.val().length==0){
+				alert("이메일은 필수입력 사항입니다.");
+				email1.focus();
+				e.preventDefault();
 			}
 		})
 		
 		$("#email3").on("change",function(){
 			$("#email2").val($(this).val());
-		})
+		}) 
 	})
 </script>
 
@@ -100,7 +121,7 @@
 				<td><input type="text" name="username" id="username"></td>
 			</tr>
 			<tr>
-				<th>주소</th>
+				<th><span class="required" title="필수 입력">주소</span></th>
 				<td>
 					<input type="text" name="post" id="sample4_postcode" placeholder="우편번호">
 					<input type="button" onclick="sample4_execDaumPostcode()" class="btn gray small" value="우편번호 찾기">
@@ -111,18 +132,18 @@
 				</td>
 			</tr>
 			<tr>
-				<th>휴대폰</th>
+				<th><span class="required" title="필수 입력">휴대폰</span></th>
 				<td>
-					<select name="phone1">
+					<select name="phone1" id="phone1">
 						<option value="011">011</option>
 						<option value="010" selected="selected">010</option>
-					</select>  <input type="text" name="phone2"> <input type="text" name="phone3">
+					</select>  <input type="text" name="phone2" id="phone2"> <input type="text" name="phone3" id="phone3">
 				</td>
 			</tr>
 			<tr>
-				<th>이메일</th>
+				<th><span class="required" title="필수 입력">이메일</span></th>
 				<td>
-					<input type="text" name="email1"> @ <input type="text" name="email2" id="email2" placeholder="직접입력">
+					<input type="text" name="email1" id="email1"> @ <input type="text" name="email2" id="email2" placeholder="직접입력">
 					<select name="email3" id="email3">
 						<option value="daum.net">daum.net</option>
 						<option value="naver.com" selected="selected">naver.com</option>
