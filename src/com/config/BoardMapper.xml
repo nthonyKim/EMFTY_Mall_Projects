@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.goods">
+<!-- review(all), QnA, Notice 게시판 작업예정 -->
+<select id="selectNotice" resultType="NoticeDTO" parameterType="NoticeDTO">
+select seq
+	,title <!-- 글쓴이 관리자 뿐이라 sys라고 db와 연동없이 표기할 것 -->
+	, content
+	, reg_dts
+	, mod_dts 
+	from noticeboard
+	    <trim prefix="WHERE" prefixOverrides="AND | OR">
+          <if test='seq != null and !"".equals(seq)'>
+	      AND seq=#{seq} 
+	      </if>
+          <if test='title != null and !"".equals(title)'>
+          AND title LIKE '%' || #{title} || '%'
+         </if>
+        </trim> 
+<!-- git 저장 -->
+</select>
+
+ 
+  
+	
+</mapper>
