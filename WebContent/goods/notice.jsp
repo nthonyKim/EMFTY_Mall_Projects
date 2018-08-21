@@ -23,7 +23,10 @@
       <td>제목</td>
          <td>내용</td>
             <td>작성일</td>
-   </tr>
+                         <tr>
+   <td colspan="5"> <hr></td></tr>
+ 
+ 
 <%
     List<NoticeDTO> list = 
          (List<NoticeDTO>)request.getAttribute("list");
@@ -35,15 +38,17 @@
      <td><%= dto.getTitle()%></td>
       <td><%= dto.getContent()%></td>
         <td><%= dto.getReg_dts()%> </td> 
-
+</tr>
+   <tr>
+   <td colspan="5"> <hr></td></tr>
 
      
-   </tr>
+
 <%
     }//end for
 %> 
  </table>
- <a href="">글쓰기화면</a>
+ <button class="btn gray small" onclick="">관리(insert-sys전용 구현)</button>
 </body>
 </html>
 
