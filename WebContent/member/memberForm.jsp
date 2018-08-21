@@ -152,7 +152,7 @@
 			</tr>
 		</table>
 		<div class="btnGroup">
-			<input type="submit" value="회원가입" class="btn blue">
+			<input type="submit" value="회원가입" class="btn yellow">
 			<input type="reset" value="취소" class="btn gray">
 		</div>
 	</div>
