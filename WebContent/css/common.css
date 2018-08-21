@@ -112,8 +112,10 @@ select {height:27px;padding:0 5px;}
 .proView .imgSec, .proView dl {display:table-cell;vertical-align:middle;}
 .imgSec img {width:300px;}
 .proView dl {overflow:hidden; padding-left:50px;}
+.proView dl dt, .proView dl dd {display:inline-block;}
 .proView dl dt {width:20%;margin-top:20px;font-weight:bold;}
 .proView dl dd {width:70%;}
+.btnAmount {display:inline-block;vertical-align:middle;}
 
 .alignC {text-align:center;}    
 
