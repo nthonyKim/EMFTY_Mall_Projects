@@ -54,6 +54,7 @@ select {height:27px;padding:0 5px;}
 
  
 /* common */
+.wrap {width:100%; overflow:hidden; margin:0 auto;}
 .sidemenu{	
 	float: left;	
 	padding: 50px;
@@ -66,13 +67,8 @@ select {height:27px;padding:0 5px;}
 .topmenu li{display: inline-block;}
 .topmenu ul{text-align: right; margin-right: 70px;}
 
-.wrap {width:100%;overflow:hidden; margin:0 auto;}
 .side {width:308px; float:left;}
-.side li{ margin:20px;
-}
-.body {width:992px; float:right;}
-.contents {background:#fff; padding:20px;min-height:700px;}
-
+.side li{ margin:20px;}
 .side a {
     color: #fff;
     text-decoration: none;
@@ -83,6 +79,10 @@ select {height:27px;padding:0 5px;}
      text-decoration:underline; 
      font-weight: bold;
 }
+.body {width:992px; float:right;}
+.contents {background:#fff; padding:20px;min-height:700px;}
+
+
 .contents a{
 	
 }
