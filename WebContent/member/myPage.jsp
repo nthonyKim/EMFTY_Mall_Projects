@@ -45,9 +45,9 @@
 		<th>아이디</th>
 		<td> ${login.userid}</td></tr>
 	<tr><th>비밀번호</th>
-		<td><input type="text" name="passwd" id="passwd1" value="${login.passwd}"></td></tr>
+		<td><input type="password" name="passwd" id="passwd1" value="${login.passwd}"></td></tr>
 	<tr><th>비밀번호 확인</th>
-		<td><input type="text" name="passwd2" id="passwd2"> <span id="presult"></span></td></tr>
+		<td><input type="password" name="passwd2" id="passwd2"> <span id="presult"></span></td></tr>
 	<tr><th>이름</th><td> ${login.username}</td></tr>
 	<tr><th>주소</th>
 		<td><input type="text" value="${login.post}" name="post" id="sample4_postcode" placeholder="우편번호">
@@ -75,7 +75,7 @@
 		</select></td></tr>
 </table>
 <div class="btnGroup">
-	<input type="submit" value="수정" class="btn blue">
+	<input type="submit" value="수정" class="btn yellow">
 	<input type="reset" value="취소" class="btn gray">
 	</div>
 </form>
