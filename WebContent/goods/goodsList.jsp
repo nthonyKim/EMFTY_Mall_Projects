@@ -7,6 +7,7 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <div class="adsense" style="text-align: center; padding:0px 0px 10px 10px"> 
+
 <table cellpadding="0" cellspacing="0" table width="100%">
 <tr>
 	<td width="50%">
@@ -14,6 +15,36 @@
 	</td>
 	<td width="50%"></td>
 </table>
+<style type="text/css">
+.sortBox > button {padding:10px 20px; background:none;border:1px solid #bbb;}
+.sortBox .box {display:none;}
+</style>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$(".sortBox > button").on("click", function(){
+			$(".box").stop().slideToggle("300");
+		})
+	})
+</script>
+<div class="sortBox">
+	<button type="button">sort</button>
+	<div class="box">
+		<div>
+			색상 : 
+			<span><input type="checkbox" id="check1" name="check"> <label for="check1">가</label></span>
+			<span><input type="checkbox" id="check2" name="check"> <label for="check2">나</label></span>
+			<span><input type="checkbox" id="check3" name="check"> <label for="check3">다</label></span>
+		</div>
+		
+		<div>
+			브랜드 :
+			<span><input type="checkbox" id="check4" name="check"> <label for="check4">라</label></span>
+			<span><input type="checkbox" id="check5" name="check"> <label for="check5">마</label></span>
+			<span><input type="checkbox" id="check6" name="check"> <label for="check6">바</label></span>
+		</div>
+		<button class="btn gray small">버튼</button>
+	</div>
+</div>
 <table width="100%" cellspacing="0" cellpadding="0">
 	<tr>
 		<td>
