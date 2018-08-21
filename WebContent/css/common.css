@@ -59,12 +59,15 @@ select {height:27px;padding:0 5px;}
 	float: left;	
 	padding: 50px;
 }
+.sidemenu img{filter:invert(100%); width:16px; opacity: 30%;}
+.sidemenu #side_sns{display: inline-block; align-items: }
 .topmenu{
 	background-color:#333333;
 	padding: 20px;
 	width:100%;
 }
-.topmenu li{display: inline-block;}
+.topmenu li{display: inline-block; margin:10px; }
+.topmenu img{filter:invert(100%);}
 .topmenu ul{text-align: right; margin-right: 70px;}
 
 .side {width:308px; float:left;}
@@ -98,7 +101,7 @@ select {height:27px;padding:0 5px;}
 
 .btnGroup {margin-top:30px;text-align:center;}
 .btn {padding:10px 20px;margin-right:3px;min-width:110px;height:auto;font-size:16px;line-height:21px;cursor:pointer;}
-.blue {background:#ffba00;color:#fff;border:1px solid #DBA901;}
+.yellow {background:#ffba00;color:#fff;border:1px solid #DBA901;}
 .gray {background:#F2F2F2;}
 .small {padding:2px 0 1px;font-size:13px;}
-.contents h1{text-align: center; font-weight: bold; font-size: 20px;}
+.contents h1{text-align: center; font-weight: bold; font-size: 20px; margin:20px;}
