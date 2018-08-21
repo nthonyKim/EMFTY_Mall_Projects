@@ -19,7 +19,7 @@
 	</ul>
 	<br>
 	<ul id="side_sns">
-		<li><a href="">twitter</a></li>
-		<li><a href="">instagram</a></li>
+		<li><a href=""><img src="images/icon/twitter.png"></a></li>
+		<li><a href=""><img src="images/icon/instagram.png"></a></li>
 	</ul>
 </div>

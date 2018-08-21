@@ -7,13 +7,13 @@
 <div class="topmenu">
 	<ul>
 		<li>search</li>
-		<li><a href="CartUIServlet">CART</a></li>
+		<li><a href="CartUIServlet"><img src="images/icon/cart.png"></a></li>
 <c:if test="${empty login}">
-		<li><a href="LoginUIServlet">USER</a></li>
+		<li><a href="LoginUIServlet"><img src="images/icon/user.png"></a></li>
 </c:if>
 <c:if test="${!empty login}">
-		<li><a href="MypageServlet">MYPAGE</a></li>
-		<li><a href="LogoutUIServlet">LOGOUT</a></li>
+		<li><a href="MypageServlet"><img src="images/icon/user.png"></a></li>
+		<li><a href="LogoutUIServlet"><img src="images/icon/logout.png"></a></li>
 </c:if> 
 	</ul>
 </div>
