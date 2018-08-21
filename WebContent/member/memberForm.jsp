@@ -1,7 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+
 <script type="text/javascript">
-	$(document).ready(function(){	
+	$(function(){	
 		//id 중복여부
 		$("#userid").on("keyup", function(){
 			$.ajax({
@@ -41,9 +42,10 @@
 		});
 		
 		//form submit
-		$("form").on("submit",function(e){
+		$("form").on("submit", function(e){
 			var userid = $("#userid");
-			var passwd = $("#passwd1");
+			var passwd1 = $("#passwd1");
+			var passwd2 = $("#passwd2");
 			var username = $("#username");
 			var sample4_postcode = $("#sample4_postcode");
 			var sample4_roadAddress = $("#sample4_roadAddresss");
@@ -54,27 +56,32 @@
 			var email1 = $("#email1");
 			var email2 = $("#email2");
 			var email3 = $("#email3");
-			if(userid.val().length==0){
+	
+			if(userid.val() == ""){
 				alert("아이디는 필수입력 사항입니다.");
 				userid.focus();
 				e.preventDefault();
-			}else if(passwd.val().length==0){
+			}else if(passwd1.val() == ""){
 				alert("비밀번호는 필수입력 사항입니다.");
-				passwd.focus();
+				passwd1.focus();
 				e.preventDefault();
-			}else if(username.val().length==0){
+			}else if(passwd2.val() == ""){
+				alert("비밀번호를 확인해주세요");
+				passwd2.focus();
+				e.preventDefault();
+			}else if(username.val() == ""){
 				alert("이름은 필수입력 사항입니다.");
 				username.focus();
 				e.preventDefault();
-			}else if(sample4_postcode.val().length==0 || sample4_roadAddress.val().length==0 || sample4_jibunAddress.val().length==0){
+			}else if(sample4_postcode.val() == "" || sample4_roadAddress.val() == "" || sample4_jibunAddress.val() == ""){
 				alert("주소는 필수입력 사항입니다.");
 				sample4_postcode.focus();
 				e.preventDefault();
-			}else if(phone1.val().length==0 || phone2.val().length==0 || phone3.val().length==0){
+			}else if(phone2.val() == "" || phone3.val() == ""){
 				alert("전화번호는 필수입력 사항입니다.");
-				phone1.focus();
+				phone2.focus();
 				e.preventDefault();
-			}else if(email1.val().length==0 || email2.val().length==0 || email3.val().length==0){
+			}else if(email1.val() == "" || email2.val() == "" || email3.val() == ""){
 				alert("이메일은 필수입력 사항입니다.");
 				email1.focus();
 				e.preventDefault();
@@ -106,13 +113,13 @@
 			<tr>
 				<th><span class="required" title="필수 입력">비밀번호</span></th>
 				<td>
-					<input type="text" name="passwd1" id="passwd1">
+					<input type="password" name="passwd1" id="passwd1">
 				</td>
 			</tr>
 			<tr>
 				<th>비밀번호 확인</th>
 				<td>
-					<input type="text" name="passwd2" id="passwd2">
+					<input type="password" name="passwd2" id="passwd2">
 					<span id="result2"></span>
 				</td>
 			</tr>
