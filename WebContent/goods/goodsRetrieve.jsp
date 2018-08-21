@@ -22,6 +22,29 @@
     		$("form").attr("action","GoodsCartServlet");
     	});
     	
+    	var count = parseInt($("#goodsAmount").val());
+    	var input = $("#goodsAmount");
+    	
+    	$("#up").on("click", function(){	
+    		count++;
+    		console.log(count);
+    		input.val(count);
+    	})
+    	
+    	$("#down").on("click", function(){
+
+        	if(parseInt(input.val())<=1){
+        		input.val(1);
+        	}else {
+        		count--;
+        		input.val(count);
+        	}
+    	})
+    	
+    	$("#goodsAmount").on("keyup", function(){
+    		count = parseInt($("#goodsAmount").val());
+    	})
+    	
     });
 </script>
 <form name="goodRetrieveForm" method="GET" action="#">
@@ -55,6 +78,8 @@
 					<option value="black">black</option>
 					<option value="ivory">ivory</option>
 					<option value="white">white</option>
+					<option value="red">red</option>
+					<option value="purple">purple</option>
 				</select>
 			</dd>
 			<dt>주문수량</dt>
