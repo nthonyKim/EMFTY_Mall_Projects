@@ -11,7 +11,8 @@
 </script>
 <div>
 <form action="idFindServlet" method="post">
-	<table class="idfind">
+<h1>FIND ID</h1>
+	<table class="tbl">
 		<tr>
 		<th>이름</th><td><input type="text" name="username"></td></tr>
 		<tr>
@@ -30,6 +31,8 @@
 				<option value="daum.net">daum.net</option>
 				</select></td></tr>		
 	</table>
-	<input type="submit" value="메일 보내기"><input type="reset" value="취소">
+	<div class="btnGroup">
+	<input type="submit" value="메일 보내기" class="btn yellow"><input type="reset" value="취소" class="btn gray">
+	</div>
 </form>
 </div>

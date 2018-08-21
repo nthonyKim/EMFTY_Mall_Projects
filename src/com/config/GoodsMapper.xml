@@ -41,6 +41,41 @@ select goods_Code
    		,goods_Category
   from goods  
  </select>
+ 
+ <select id="goodsSortHighPrice" resultType="GoodsDTO">
+  select goods_Code
+   		,goods_Color
+   		,goods_Name
+   		,goods_Price
+   		,goods_Brand
+   		,goods_Image1
+   		,goods_Category
+  from goods 
+  order by goods_price desc 
+ </select>
   
+   <select id="goodsSortLowPrice" resultType="GoodsDTO">
+  select goods_Code
+   		,goods_Color
+   		,goods_Name
+   		,goods_Price
+   		,goods_Brand
+   		,goods_Image1
+   		,goods_Category
+  from goods 
+  order by goods_price asc 
+ </select>
+ 
+    <select id="goodsSortDate" resultType="GoodsDTO">
+  select goods_Code
+   		,goods_Color
+   		,goods_Name
+   		,goods_Price
+   		,goods_Brand
+   		,goods_Image1
+   		,goods_Category
+  from goods 
+  order by goods_price asc 
+ </select>
 	
 </mapper>
