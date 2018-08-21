@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<link rel="stylesheet" type="text/css" href="../css/common.css" />
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>LOGIN</h1><br>
+<h1>LOGIN</h1>
 <div class="loginForm">
 <form action="LoginServlet" method="post">
 <table class="tbl">

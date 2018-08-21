@@ -90,7 +90,7 @@
 <form action="MemberAddServlet" method="post">
 <h1>REGISTER</h1>
 	<div class="memberForm">
-		<p class="tblInfo"><span>*</span> 필수입력</p>
+		<!-- <p class="tblInfo"><span>*</span> 필수입력</p> -->
 		<table class="tbl">
 			<colgroup>
 				<col width="20%" />
