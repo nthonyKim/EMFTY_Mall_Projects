@@ -89,6 +89,7 @@ public class MemberService {
 		int n = 0;
 		try {
 			n = dao.memberUpdate(session, dto);
+			session.commit();
 		}catch(Exception e) {
 			e.printStackTrace();
 		}finally {
