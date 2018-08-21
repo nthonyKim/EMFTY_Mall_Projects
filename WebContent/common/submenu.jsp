@@ -13,7 +13,7 @@
 	</ul>
 	<br>
 	<ul id="side_board">
-		<li><a href="">NOTICE</a></li>
+		<li><a href="NoticeServlet">NOTICE</a></li>
 		<li><a href="">Q N A</a></li>
 		<li><a href="">REVIEW</a></li>
 	</ul>
