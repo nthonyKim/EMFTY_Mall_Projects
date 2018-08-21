@@ -8,3 +8,4 @@
 	<div class="contents"><jsp:include page="goods/goodsRetrieve.jsp" flush="true"/></div>
 </div>
 </div>
+<!-- DD -->
