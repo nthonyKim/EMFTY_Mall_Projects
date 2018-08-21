@@ -28,8 +28,8 @@
 							<table style='padding:15px'>
 								<tr>
 									<td>
-										<a href="GoodsRetrieveServlet?goods_Code=${dto.goods_Code}"> 
-											<img src="images/items/${dto.goods_Image1}.jpg" border="0" align="center" width="200">
+										<a href="GoodsRetrieveServlet?goods_Code=${dto.goods_Code}">
+											<img src="images/items/thum/${dto.goods_Image1}.jpg" border="0" align="center" width="200">
 										</a>
 									</td>
 								</tr>
@@ -46,7 +46,7 @@
 								</tr>
 								<tr>
 									<td class= "td_default" align ="center">
-										<a class= "a_black" href="GoodsListServlet?goods_Code=${dto.goods_Code}"> 
+										<a class= "a_black" href="GoodsRetrieveServlet?goods_Code=${dto.goods_Code}">
 										${dto.goods_Name}<br>
 										</a>
 										<font color="gray">

@@ -36,7 +36,7 @@
 								<tr>
 									<td>
 										<a href="GoodsRetrieveServlet?goods_Code=${dto.goods_Code}"> 
-											<img src="images/items/${dto.goods_Image1}.jpg" border="0" align="center" width="200">
+											<img src="images/items/thum/${dto.goods_Image1}.jpg" border="0" align="center" width="200">
 										</a>
 									</td>
 								</tr>
