@@ -8,7 +8,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <table width="100%" cellspacing="0" cellpadding="0">
-	<tr>
+	<tr><!--  -->
 		<td>
 			<table align="center" width="710" cellspacing="0" cellpadding="0"
 				border="0">
