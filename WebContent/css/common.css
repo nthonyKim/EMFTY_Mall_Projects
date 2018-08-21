@@ -99,7 +99,7 @@ select {height:27px;padding:0 5px;}
 .btnGroup {margin-top:30px;text-align:center;}
 .btn {padding:10px 20px;margin-right:3px;min-width:110px;height:auto;font-size:16px;line-height:21px;cursor:pointer;}
 .yellow {background:#ffba00;color:#fff;border:1px solid #DBA901;}
-.gray {background:#F2F2F2;}
+.gray {background:#F2F2F2;border:1px solid #bbb;}
 .small {padding:2px 0 1px;font-size:13px;}
 .contents h1{text-align: center; font-weight: bold; font-size: 20px;}
 
