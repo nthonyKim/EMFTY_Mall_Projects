@@ -32,4 +32,8 @@ public class MemberDAO {
 		return dto;
 	}
 	
+	public int memberUpdate(SqlSession session, MemberDTO dto ) {
+		int n = session.update("com.member.memberUpdate", dto);
+		return n;
+	};
 }

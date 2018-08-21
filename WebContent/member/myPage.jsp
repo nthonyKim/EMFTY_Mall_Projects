@@ -1,7 +1,37 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#passwd2").on("keyup", function(){
+			var passwd = $("#passwd1").val();
+			var passwd2 = $(this).val(); 
+			var mesg = "비밀번호 불일치";
+			
+			if(passwd == passwd2){
+				mesg = "비밀번호 일치"
+			}
+			
+			$("#presult").text(mesg);
+			
+			if(passwd2.length==0){
+				$("#presult").text("");
+			}
+		});
+		
+		$("form").on("submit", function(e){
+			if($("#passwd2").val().length==0){
+				alert("비밀번호를 한번 더 확인하세요.");
+				$("#passwd2").focus();
+				e.preventDefault();
+			}
+		})
+		
+		$("#emailAdd").on("change",function(){
+			$("#emailaddress").val($(this).val());
+		}) 
+	})
+</script>
 <h1>MY PAGE</h1><br>
 <form action="MemberUpdateServlet" method="post">
 <input type="hidden" name="userid" value=" ${login.userid}">
@@ -11,12 +41,12 @@
 				<col width="*" />
 			</colgroup>
 	<tr>
-		<th>아이디:</th>
+		<th>아이디</th>
 		<td> ${login.userid}</td></tr>
 	<tr><th>비밀번호</th>
-		<td><input type="text" name="passwd" id="passwd1"></td></tr>
+		<td><input type="text" name="passwd" id="passwd1" value="${login.passwd}"></td></tr>
 	<tr><th>비밀번호 확인</th>
-		<td><input type="text" name="passwd2" id="passwd2"><span id="presult"></span></td></tr>
+		<td><input type="text" name="passwd2" id="passwd2"> <span id="presult"></span></td></tr>
 	<tr><th>이름</th><td> ${login.username}</td></tr>
 	<tr><th>주소</th>
 		<td><input type="text" value="${login.post}" name="post" id="sample4_postcode" placeholder="우편번호">
