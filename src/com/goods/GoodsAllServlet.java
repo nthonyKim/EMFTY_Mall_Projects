@@ -18,7 +18,7 @@ import com.service.GoodsService;
 public class GoodsAllServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("ggg");
+		System.out.println("잘돌아가는 지 goodsAll확인 console");
 		GoodsService service = new GoodsService();
 		List<GoodsDTO> list = service.goodsAll();
 		
