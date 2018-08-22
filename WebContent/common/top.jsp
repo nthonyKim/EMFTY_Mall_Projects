@@ -7,7 +7,7 @@
 <div class="topmenu">
 	<ul>
 		<li>search</li>
-		<li><a href="CartUIServlet"><img src="images/icon/cart.png"></a></li>
+		<li><a href="GoodsCartListServlet"><img src="images/icon/cart.png"></a></li>
 <c:if test="${empty login}">
 		<li><a href="LoginUIServlet"><img src="images/icon/user.png"></a></li>
 </c:if>

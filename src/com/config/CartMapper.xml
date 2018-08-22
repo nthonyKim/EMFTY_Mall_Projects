@@ -7,4 +7,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		insert into cart(num, userid, goods_code, goods_name, goods_price, goods_color, goods_amount, goods_image, goods_brand)
 		values(cart_seq.nextval, #{userid}, #{gCode}, #{gName}, #{gPrice}, #{gColor}, #{gAmount}, #{gImage}, #{gBrand})
 	</insert>
+	
+	<select id="cartList" parameterType="String" resultType="CartDTO">
+		select num, userid, goods_code, goods_name, goods_price, goods_color, goods_amount, goods_image, goods_brand
+		from cart
+		where userid=#{userid}
+	</select>
 </mapper>
