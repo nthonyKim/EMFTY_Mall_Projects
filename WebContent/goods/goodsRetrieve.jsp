@@ -7,7 +7,6 @@
  <c:if test="${! empty mesg}">
   <script type="text/javascript">
     alert('${mesg}');
-    location.replace="";
     <%
     session.removeAttribute("mesg");
    %>
@@ -51,8 +50,8 @@
 	    <input type="hidden" name="goods_Code" value="${goodsRetrieve.goods_Code}">
 	    <input type="hidden" name="goods_Name" value="${goodsRetrieve.goods_Name}"> 
 	    <input type="hidden" name="goods_Price" value="${goodsRetrieve.goods_Price}">
-
-
+		<input type="hidden" name="goods_Brand" value="${goodsRetrieve.goods_Brand}">
+		<input type="hidden" name="goods_Color" value="${goodsRetrieve.goods_Color}">
 	<div class="proView">
 		<div class="imgSec">
 			<img src="images/items/thum/${goodsRetrieve.goods_Image1}.jpg">
@@ -64,26 +63,11 @@
 			<dd>${goodsRetrieve.goods_Name}</dd>
 			<dt>가격</dt>
 			<dd><fmt:formatNumber value="${goodsRetrieve.goods_Price}" type="currency" />원</dd>
-			<dt>배송비</dt>
-			<dd>
-				<strong style="color:#2e56a9">무료배송</strong>
-				<span>(도서산간지역 별도 배송비 추가)</span>
-			</dd>
-			<dt>상품옵션</dt>
-			<dd>
-				<select class="select_change" size="1" name="goods_Color" id="goods_Color">
-					<option selected="" value="색상선택">색상선택</option>
-					<option value="navy">navy</option>
-					<option value="black">black</option>
-					<option value="ivory">ivory</option>
-					<option value="white">white</option>
-					<option value="red">red</option>
-					<option value="purple">purple</option>
-				</select>
-			</dd>
+			<dt>브랜드</dt>
+			<dd>${goodsRetrieve.goods_Brand}</dd>
 			<dt>주문수량</dt>
 			<dd>
-				<input type="text" name="gAmount" value="1" id="goodsAmount">
+				<input type="text" name="goods_Amount" value="1" id="goodsAmount">
 				<span class="btnAmount"><img src="images/up.png" id="up"> <img src="images/down.png" id="down"></span>
 			</dd>
 		</dl>
