@@ -55,7 +55,7 @@
 
 	<div class="proView">
 		<div class="imgSec">
-			<img src="images/items/thum/${goodsRetrieve.goods_Image1}">
+			<img src="images/items/thum/${goodsRetrieve.goods_Image1}.jpg">
 		</div>
 		<dl>
 			<dt>제품코드</dt>
@@ -63,7 +63,7 @@
 			<dt>상품명</dt>
 			<dd>${goodsRetrieve.goods_Name}</dd>
 			<dt>가격</dt>
-			<dd>${goodsRetrieve.goods_Price}</dd>
+			<dd><fmt:formatNumber value="${goodsRetrieve.goods_Price}" type="currency" />원</dd>
 			<dt>배송비</dt>
 			<dd>
 				<strong style="color:#2e56a9">무료배송</strong>
@@ -94,7 +94,7 @@
 	</div>
 	<img src="images/divider_1.jpg">
 	<div class="alignC">
-		<img src="images/items/bucket_image_1.jpg">
+		<img src="images/items/${goodsRetrieve.goods_Image2}.jpg">
 		<img src="images/wash_info.jpg">
 		<img src="images/divider_1.jpg">
 	</div>
