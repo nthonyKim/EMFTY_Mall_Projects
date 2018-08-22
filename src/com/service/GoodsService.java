@@ -1,5 +1,6 @@
 package com.service;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
@@ -58,6 +59,81 @@ public class GoodsService {
 		}
 		return dto;
 	}//end goodsRetrieve 
+
+	public List<GoodsDTO> goodsSortHigh(String category) {
+		SqlSession session = MySqlSessionFactory.getSession();
+		List<GoodsDTO> list = null;
+		try {
+			list = dao.goodsSortHigh(session,category);
+			
+		}catch(Exception  e) {
+			e.printStackTrace();
+		}finally {
+			session.close();
+		}
+		// TODO Auto-generated method stub
+		return list; 
+	}
+
+	public List<GoodsDTO> goodsSortLow(String category) {
+		SqlSession session = MySqlSessionFactory.getSession();
+		List<GoodsDTO> list = null;
+		try {
+			list = dao.goodsSortLow(session,category);
+			
+		}catch(Exception  e) {
+			e.printStackTrace();
+		}finally {
+			session.close();
+		}
+		// TODO Auto-generated method stub
+		return list; 
+	}
+
+	public List<GoodsDTO> goodsSortBrand(String brand) {
+		SqlSession session = MySqlSessionFactory.getSession();
+		List<GoodsDTO> list = null;
+		try {
+			list = dao.goodsSortBrand(session,brand);
+			
+		}catch(Exception  e) {
+			e.printStackTrace();
+		}finally {
+			session.close();
+		}
+		// TODO Auto-generated method stub
+		return list; 
+	}
+
+	public List<GoodsDTO> goodsSortColor(String color) {
+		SqlSession session = MySqlSessionFactory.getSession();
+		List<GoodsDTO> list = null;
+		try {
+			list = dao.goodsSortColor(session,color);
+			
+		}catch(Exception  e) {
+			e.printStackTrace();
+		}finally {
+			session.close();
+		}
+		// TODO Auto-generated method stub
+		return list; 
+	}
+
+	public List<GoodsDTO> goodsSortBrandColor(HashMap<String, String> map) {
+		SqlSession session = MySqlSessionFactory.getSession();
+		List<GoodsDTO> list = null;
+		try {
+			list = dao.goodsSortBrandColor(session,map);
+			
+		}catch(Exception  e) {
+			e.printStackTrace();
+		}finally {
+			session.close();
+		}
+		// TODO Auto-generated method stub
+		return list;
+	}
 	
 	//test, test, test 
 	

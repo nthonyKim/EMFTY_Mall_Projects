@@ -6,14 +6,26 @@
  <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<script type="text/javascript">
+	$(document).ready(function(){
+		
+		$("#sortSelect").on("change",function(event){
+			$("form").attr("action","GoodsSortPriceServlet");
+			$("form").submit();			   
+			//event.preventDefault();
+		})	
+})
+</script>
 <div class="adsense" style="text-align: center; padding:0px 0px 10px 10px"> 
-<table cellpadding="0" cellspacing="0" table width="100%">
-<tr>
-	<td width="50%">
-	<img src="images/banner_image.jpg" align=top>
-	</td>
-	<td width="50%"></td>
-</table>
+<div class="select" >
+<form id="temp" method="post">
+	<select name="sortSelect" id="sortSelect">
+		<option selected="selected">선택없음</option>
+		<option value="가격순">가격순</option>
+		<option value="가격역순">가격역순</option>
+	</select>
+</form>	
+</div>
 <table width="100%" cellspacing="0" cellpadding="0">
 	<tr>
 		<td>
@@ -30,13 +42,14 @@
 					<td height="10"></td>
 				</tr>
 				<tr>
-    <c:forEach var="dto" items="${goodsList}" varStatus="status">	
+				
+    <c:forEach var="dto" items="${goodsList}" varStatus="status">
 						<td>
 							<table style='padding:15px'>
 								<tr>
 									<td>
 										<a href=""> 
-											<img src="images/items/${dto.goods_Image1}.jpg" border="0" align="center" width="200">
+											<img src="images/items/thum/${dto.goods_Image1}.jpg" border="0" align="center" width="200">
 										</a>
 									</td>
 								</tr>

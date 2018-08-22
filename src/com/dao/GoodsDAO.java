@@ -1,5 +1,6 @@
 package com.dao;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
@@ -14,8 +15,7 @@ public class GoodsDAO {
 		return list;
 		//dao test
 	}
-	public List<GoodsDTO> goodsAll(SqlSession session
-			){
+	public List<GoodsDTO> goodsAll(SqlSession session){
 		List<GoodsDTO> list = 
 				session.selectList("com.goods.goodsAll");
 		return list;
@@ -27,6 +27,26 @@ public class GoodsDAO {
 		GoodsDTO dao 
 		= session.selectOne("com.goods.goodsRetrieve", goods_Code);
 	return dao; 
+	}
+	public List<GoodsDTO> goodsSortHigh(SqlSession session, String category) {
+		List<GoodsDTO> list = session.selectList("com.goods.goodsSortHigh",category);
+		return list;
+	}
+	public List<GoodsDTO> goodsSortLow(SqlSession session, String category) {
+		List<GoodsDTO> list = session.selectList("com.goods.goodsSortLow",category);
+		return list;
+	}
+	public List<GoodsDTO> goodsSortBrand(SqlSession session, String brand) {
+		List<GoodsDTO> list = session.selectList("com.goods.goodsSortBrand",brand);
+		return list;
+	}
+	public List<GoodsDTO> goodsSortColor(SqlSession session, String color) {
+		List<GoodsDTO> list = session.selectList("com.goods.goodsSortColor",color);
+		return list;
+	}
+	public List<GoodsDTO> goodsSortBrandColor(SqlSession session, HashMap<String, String> map) {
+		List<GoodsDTO> list = session.selectList("com.goods.goodsSortBrandColor",map);
+		return list;
 	}
 	
 	
