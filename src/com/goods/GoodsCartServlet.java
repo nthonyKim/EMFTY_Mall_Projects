@@ -50,7 +50,7 @@ public class GoodsCartServlet extends HttpServlet {
 			
 			CartService service = new CartService();
 			int n = service.cartAdd(cDTO);
-			nextPage = "GoodsRetrieveServlet?gCode="+gCode;
+			nextPage = "GoodsRetrieveServlet?goods_Code="+gCode;
 			session.setAttribute("mesg", gCode+"카트저장 성공");
 		}
 		
