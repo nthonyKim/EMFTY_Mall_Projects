@@ -47,23 +47,23 @@
     });
 </script>
 <form name="goodRetrieveForm" method="GET" action="#">
-	    <input type="hidden" name="goods_Image1" value="b_image_1">
-	    <input type="hidden" name="goods_Code" value="b_1">
-	    <input type="hidden" name="goods_Name" value="Cleo woven leather bucket bag"> 
-	    <input type="hidden" name="goods_Price" value="57900">
+	    <input type="hidden" name="goods_Image1" value="${goodsRetrieve.goods_Image1}">
+	    <input type="hidden" name="goods_Code" value="${goodsRetrieve.goods_Code}">
+	    <input type="hidden" name="goods_Name" value="${goodsRetrieve.goods_Name}"> 
+	    <input type="hidden" name="goods_Price" value="${goodsRetrieve.goods_Price}">
 
 
 	<div class="proView">
 		<div class="imgSec">
-			<img src="images/items/b_image_1.jpg">
+			<img src="images/items/thum/${goodsRetrieve.goods_Image1}">
 		</div>
 		<dl>
 			<dt>제품코드</dt>
-			<dd>b_1</dd>
+			<dd>${goodsRetrieve.goods_Code}</dd>
 			<dt>상품명</dt>
-			<dd>Cleo woven leather bucket bag</dd>
+			<dd>${goodsRetrieve.goods_Name}</dd>
 			<dt>가격</dt>
-			<dd>57900</dd>
+			<dd>${goodsRetrieve.goods_Price}</dd>
 			<dt>배송비</dt>
 			<dd>
 				<strong style="color:#2e56a9">무료배송</strong>
