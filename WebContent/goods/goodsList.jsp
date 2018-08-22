@@ -15,10 +15,7 @@
 	</td>
 	<td width="50%"></td>
 </table>
-<style type="text/css">
-.sortBox > button {padding:10px 20px; background:none;border:1px solid #bbb;}
-.sortBox .box {display:none;}
-</style>
+
 <script type="text/javascript">
 	$(document).ready(function(){
 		$(".sortBox > button").on("click", function(){
