@@ -119,3 +119,6 @@ select {height:27px;padding:0 5px;}
 
 .alignC {text-align:center;}    
 
+/* sort */
+.sortBox > button {padding:10px 20px; background:none;border:1px solid #bbb;}
+.sortBox .box {display:none;}
