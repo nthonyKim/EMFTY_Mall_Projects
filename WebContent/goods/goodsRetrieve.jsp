@@ -53,7 +53,7 @@
 					</tr>
 
 					<tr>
-						<td rowspan="7"><img src="images/items/${goodsRetrieve.goods_Image1}.jpg"
+						<td rowspan="7"><img src="images/items/thum/${goodsRetrieve.goods_Image1}.jpg"
 							border="0" align="center" width="300" /></td>
 						<td class="td_title">제품코드</td>
 						<td class="td_default" colspan="2" style='padding-left: 30px'>
@@ -121,7 +121,7 @@
 	      <input type="hidden" name="goods_Name" value="${goodsRetrieve.goods_Name}"> 
 	      <input type="hidden" name="goods_Price" value="${goodsRetrieve.goods_Price}">
 	<tr>
-	<img src="images/items/${goodsRetrieve.goods_Image2}.jpg" align="center">
+	<img src="images/items/${goodsRetrieve.goods_Image2}" align="center">
 </tr><br> 
 <br>
 <br>

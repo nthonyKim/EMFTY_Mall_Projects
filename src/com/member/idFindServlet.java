@@ -51,8 +51,9 @@ public class idFindServlet extends HttpServlet {
 
 		if(userid==null) {
 			request.setAttribute("mesg", "사용자를 찾을 수 없습니다.");
-			nextPage="IdFindUIServlet";
+			nextPage="idFind.jsp";
 		}else {
+			request.setAttribute("mesg", "메일을 발송했습니다.");
 			nextPage="LoginUIServlet";
 			//mail			
 			String host = "smtp.naver.com";
