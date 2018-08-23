@@ -40,7 +40,35 @@ select goods_Code
   from goods  
  </select>
  
- <select id="goodsSortHighPrice" resultType="GoodsDTO">
+ <!-- sort -->
+ 
+ <select id="goodsSortHigh" resultType="GoodsDTO" parameterType="string">
+  select goods_Code
+   		,goods_Color
+   		,goods_Name
+   		,goods_Price
+   		,goods_Brand
+   		,goods_Image1
+   		,goods_Category
+  from goods 
+   where goods_Category = #{category}
+  order by goods_price desc 
+ </select>
+  
+   <select id="goodsSortLow" resultType="GoodsDTO" parameterType="string">
+  select goods_Code
+   		,goods_Color
+   		,goods_Name
+   		,goods_Price
+   		,goods_Brand
+   		,goods_Image1
+   		,goods_Category
+  from goods 
+  where goods_Category = #{category}
+  order by goods_price asc 
+ </select>
+ 
+  <select id="goodsSortHighAll" resultType="GoodsDTO">
   select goods_Code
    		,goods_Color
    		,goods_Name
@@ -52,7 +80,7 @@ select goods_Code
   order by goods_price desc 
  </select>
   
-   <select id="goodsSortLowPrice" resultType="GoodsDTO">
+   <select id="goodsSortLowAll" resultType="GoodsDTO">
   select goods_Code
    		,goods_Color
    		,goods_Name
@@ -74,6 +102,116 @@ select goods_Code
    		,goods_Category
   from goods 
   order by goods_price asc 
+ </select>
+ 
+    <select id="goodsSortColor" resultType="GoodsDTO" parameterType="hashmap">
+  select goods_Code
+   		,goods_Color
+   		,goods_Name
+   		,goods_Price
+   		,goods_Brand
+   		,goods_Image1
+   		,goods_Category
+  from goods 
+  where goods_category = #{category}
+  and goods_color in 
+  <foreach close=")" separator="," open="(" collection="color" index="index" item="item"> #{item} </foreach>
+ </select>
+ 
+     <select id="goodsSortBrand" resultType="GoodsDTO" parameterType="hashmap">
+  select goods_Code
+   		,goods_Color
+   		,goods_Name
+   		,goods_Price
+   		,goods_Brand
+   		,goods_Image1
+   		,goods_Category
+  from goods 
+  where goods_Category = #{category}
+    and goods_Brand in 
+  <foreach close=")" separator="," open="(" collection="brand" index="index" item="item"> #{item} </foreach>
+ </select>
+ 
+      <select id="goodsSortBrandColor" resultType="GoodsDTO" parameterType="hashmap">
+  select goods_Code
+   		,goods_Color
+   		,goods_Name
+   		,goods_Price
+   		,goods_Brand
+   		,goods_Image1
+   		,goods_Category
+  from goods 
+  where goods_Category = #{category}
+  and goods_Brand in
+  <foreach close=")" separator="," open="(" collection="brand" index="index" item="item"> #{item} </foreach>
+  and goods_Color in
+  <foreach close=")" separator="," open="(" collection="color" index="index" item="item"> #{item} </foreach>
+ </select>
+ 
+     <select id="goodsSortColorAll" resultType="GoodsDTO" parameterType="hashmap">
+  select goods_Code
+   		,goods_Color
+   		,goods_Name
+   		,goods_Price
+   		,goods_Brand
+   		,goods_Image1
+   		,goods_Category
+  from goods 
+  where goods_color in 
+  <foreach close=")" separator="," open="(" collection="color" index="index" item="item"> #{item} </foreach>
+ </select>
+ 
+      <select id="goodsSortBrandAll" resultType="GoodsDTO" parameterType="hashmap">
+  select goods_Code
+   		,goods_Color
+   		,goods_Name
+   		,goods_Price
+   		,goods_Brand
+   		,goods_Image1
+   		,goods_Category
+  from goods 
+  where goods_Brand in 
+  <foreach close=")" separator="," open="(" collection="brand" index="index" item="item"> #{item} </foreach>
+ </select>
+ 
+       <select id="goodsSortBrandColorAll" resultType="GoodsDTO" parameterType="hashmap">
+  select goods_Code
+   		,goods_Color
+   		,goods_Name
+   		,goods_Price
+   		,goods_Brand
+   		,goods_Image1
+   		,goods_Category
+  from goods 
+  where goods_Brand in 
+  <foreach close=")" separator="," open="(" collection="brand" index="index" item="item"> #{item} </foreach>
+  and goods_Color in
+   <foreach close=")" separator="," open="(" collection="color" index="index" item="item"> #{item} </foreach> 
+ </select>
+ 
+ 
+ <select id="goodsColorChart" parameterType="string" resultType="string">
+ select DISTINCT goods_Color
+	from goods
+	where GOODS_CATEGORY = #{category}
+ </select>
+ 
+  <select id="goodsBrandChart" parameterType="string" resultType="string">
+ select DISTINCT goods_Brand
+	from goods
+	where GOODS_CATEGORY = #{category}
+ </select>
+ 
+  <select id="goodsColorChartAll" resultType="string">
+ select DISTINCT goods_Color
+	from goods
+
+ </select>
+ 
+  <select id="goodsBrandChartAll" resultType="string">
+ select DISTINCT goods_Brand
+	from goods
+
  </select>
 	
 </mapper>

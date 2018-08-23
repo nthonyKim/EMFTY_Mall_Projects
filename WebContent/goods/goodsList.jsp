@@ -6,42 +6,58 @@
  <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<div class="adsense" style="text-align: center; padding:0px 0px 10px 10px"> 
-
-<table cellpadding="0" cellspacing="0" table width="100%">
-<tr>
-	<td width="50%">
-	<img src="images/banner_image.jpg" align=top>
-	</td>
-	<td width="50%"></td>
-</table>
-
 <script type="text/javascript">
 	$(document).ready(function(){
+		
+		$("#sortSelect").on("change",function(event){
+			$("#sortSelectForm").attr("action","GoodsSortPriceServlet");
+			$("#sortSelectForm").submit();			   
+			//event.preventDefault();
+		})	
+		
 		$(".sortBox > button").on("click", function(){
 			$(".box").stop().slideToggle("300");
 		})
-	})
+})
 </script>
+<div class="adsense" style="text-align: center; padding:0px 0px 10px 10px"> 
+
+<div class="select" >
+<form method="get" id="sortSelectForm">
+<input type="hidden" value="${category}" name="category">
+	<select name="sortSelect" id="sortSelect">
+		<option selected="selected">선택없음</option>
+		<option value="가격순">가격순</option>
+		<option value="가격역순">가격역순</option>
+	</select>
+</form>	
+</div>
+<form action="GoodsSortColorBrand" method="post">
+<input type="hidden" value="${category}" name="category">
 <div class="sortBox">
 	<button type="button">sort</button>
 	<div class="box">
 		<div>
 			색상 : 
-			<span><input type="checkbox" id="check1" name="check"> <label for="check1">가</label></span>
-			<span><input type="checkbox" id="check2" name="check"> <label for="check2">나</label></span>
-			<span><input type="checkbox" id="check3" name="check"> <label for="check3">다</label></span>
+<c:forEach var="clr" items="${colorChart}" varStatus="status">
+			<span><input type="checkbox" id="check1" name="color" value="${clr}"> <label for="check1">${clr}</label></span>
+</c:forEach>		
 		</div>
 		
 		<div>
 			브랜드 :
-			<span><input type="checkbox" id="check4" name="check"> <label for="check4">라</label></span>
-			<span><input type="checkbox" id="check5" name="check"> <label for="check5">마</label></span>
-			<span><input type="checkbox" id="check6" name="check"> <label for="check6">바</label></span>
+<c:forEach var="bnd" items="${brandChart}" varStatus="status">
+			<span><input type="checkbox" id="check4" name="brand" value="${bnd}"> <label for="check4">${bnd}</label></span>
+</c:forEach>				
 		</div>
-		<button class="btn gray small">버튼</button>
+		<button type="submit" class="btn gray small">버튼</button>
 	</div>
 </div>
+</form>
+
+
+
+>>>>>>> refs/remotes/origin/Nthony
 <table width="100%" cellspacing="0" cellpadding="0">
 	<tr>
 		<td>
@@ -58,12 +74,15 @@
 					<td height="10"></td>
 				</tr>
 				<tr>
-    <c:forEach var="dto" items="${goodsList}" varStatus="status">	
+				
+    <c:forEach var="dto" items="${goodsList}" varStatus="status">
 						<td>
 							<table style='padding:15px'>
 								<tr>
 									<td>
+
 										<a href="GoodsRetrieveServlet?goods_Code=${dto.goods_Code}"> 
+
 											<img src="images/items/thum/${dto.goods_Image1}.jpg" border="0" align="center" width="200">
 										</a>
 									</td>

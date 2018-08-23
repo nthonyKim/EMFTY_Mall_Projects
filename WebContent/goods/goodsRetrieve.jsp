@@ -47,6 +47,7 @@
 </script>
 <form name="goodRetrieveForm" method="GET" action="#">
 	    <input type="hidden" name="goods_Image1" value="${goodsRetrieve.goods_Image1}">
+
 	    <input type="hidden" name="goods_Code" value="${goodsRetrieve.goods_Code}">
 	    <input type="hidden" name="goods_Name" value="${goodsRetrieve.goods_Name}"> 
 	    <input type="hidden" name="goods_Price" value="${goodsRetrieve.goods_Price}">
@@ -88,4 +89,5 @@
 		<button id="QnABoard" name="QnABoard">Q&amp;A</button><!-- 홈에 있는 질문게시판 -->
 		<button id="wishCapture" name="wishCapture">wishList</button><!-- sql문 wish 테이블(비회원기능) 따로만들어 insert -->
 	</div>
+
 </form>
