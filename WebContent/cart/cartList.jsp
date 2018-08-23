@@ -4,6 +4,24 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<script type="text/javascript">
+	$(document).ready(function(){ 
+		//all check
+		$("#allCheck").on("click", function(){
+			var result = this.checked;
+			$(".check").each(function(idx,data){
+				this.checked = result;
+			})
+		})
+		
+		//삭제버튼
+		$(".delBtn").on("click", function(){
+			var num = $(this).attr("data-delBtn");
+			location.href="GoodsCartDelServlet?num="+num;
+		});
+	})
+	
+</script>
 
 <form name="myForm">   
 	<input type="hidden" name="num81" value="81" id="num81">
@@ -38,7 +56,7 @@
 		<tbody>
 		<c:forEach var="cartDTO" items="${cartList}">
 			<tr>
-				<td><input type="checkbox" name="check" id="check81" class="check" value="${cartDTO.num}"></td>
+				<td><input type="checkbox" name="check" class="check" value="${cartDTO.num}"></td>
 				<td>${cartDTO.num}</td>
 				<td>
 					<p class="img"><img src="images/items/thum/${cartDTO.goods_image}.jpg" /></p>
@@ -55,8 +73,8 @@
 				<td><fmt:formatNumber value="${cartDTO.goods_amount * cartDTO.goods_price}" type="currency" /></td>
 				<td>
 					<span class="btns">
-						<button class="btn xsmall yellow">주문</button>
-						<button class="btn xsmall darkGray">삭제</button>
+						<input type="button" class="btn xsmall yellow" id="order" value="주문" />
+						<input type="button" class="btn xsmall darkGray delBtn" data-delBtn="${cartDTO.num}" value="삭제" />
 					</span>
 				</td>
 			</tr>
