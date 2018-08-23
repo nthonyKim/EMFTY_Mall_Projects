@@ -19,6 +19,34 @@
 			var num = $(this).attr("data-delBtn");
 			location.href="GoodsCartDelServlet?num="+num;
 		});
+		
+		//수정버튼
+		$(".updateBtn").on("click", function(){
+			var num = $(this).attr("data-num");
+			var gAmount = $("#cartAmount"+num).val();
+			var gPrice = $(this).attr("data-price");
+			$.ajax({ 
+				type:"get",
+				url:"GoodsCartUpdateServlet",
+				dataType:"text", 
+				data:{ 
+					num:num,
+					gAmount:gAmount
+				},
+				success:function(data,status,xhr){
+					if(data=='success'){
+						var total = Number.parseInt(gAmount) * Number.parseInt(gPrice);
+						$("#sum"+num).text(total);
+					}else{
+						alert("로그인 하세요.");
+						location.href="LoginUIServlet";
+					}
+				}, 
+				error:function(xhr,status,error){
+					console.log(error); 
+				}
+			}); 
+		})
 	})
 	
 </script>
@@ -65,12 +93,12 @@
 				<td>
 					<fmt:formatNumber value="${cartDTO.goods_price}" type="currency" />
 					<span class="space">
-						<input class="alignR" type="text" name="cart_amount" id="cartAmount81" maxlength="3" style="width:50px;">
-						<input type="button" class="btn xsmall" value="수정" id="amountUpdate" />
+						<input class="alignR" type="text" name="cart_gAmount" value="${cartDTO.goods_amount}" id="cartAmount${cartDTO.num}" maxlength="3" style="width:50px;">
+						<input type="button" class="btn xsmall updateBtn" value="수정" data-num="${cartDTO.num}" data-price="${cartDTO.goods_price}" />
 					</span> 
 				</td>
 				<td>${cartDTO.goods_amount}</td>
-				<td><fmt:formatNumber value="${cartDTO.goods_amount * cartDTO.goods_price}" type="currency" /></td>
+				<td><span id="sum${cartDTO.num}"><fmt:formatNumber value="${cartDTO.goods_amount * cartDTO.goods_price}" type="currency" /></span></td>
 				<td>
 					<span class="btns">
 						<input type="button" class="btn xsmall yellow" id="order" value="주문" />

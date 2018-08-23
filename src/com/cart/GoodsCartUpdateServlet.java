@@ -1,6 +1,8 @@
-package com.goods;
+package com.cart;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.HashMap;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -15,26 +17,29 @@ import com.dto.CartDTO;
 import com.dto.MemberDTO;
 import com.service.CartService;
 
-@WebServlet("/GoodsCartListServlet")
-public class GoodsCartListServlet extends HttpServlet {
+@WebServlet("/GoodsCartUpdateServlet")
+public class GoodsCartUpdateServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();
 		MemberDTO dto = (MemberDTO)session.getAttribute("login");
+		
+		response.setContentType("text/html;charset=UTF-8");
+		PrintWriter out = response.getWriter();
+		
 		String nextPage = null;
 		if(dto == null) {
-			nextPage = "LoginUIServlet";
-			session.setAttribute("mesg", "로그인이 필요합니다.");
+			out.print("fail");
 		}else {
-			nextPage = "cartList.jsp";
-			String userid = dto.getUserid();
+			String num = request.getParameter("num");
+			String gAmount = request.getParameter("gAmount");
+			HashMap<String, Integer> map = new HashMap<>();
+			map.put("num", Integer.parseInt(num));
+			map.put("gAmount", Integer.parseInt(gAmount));
 			CartService service = new CartService();
-			List<CartDTO> list = service.cartList(userid);
-			request.setAttribute("cartList", list);
+			int n = service.cartUpdate(map);
+			
+			out.print("success");
 		}
-		
-		RequestDispatcher dis = request.getRequestDispatcher(nextPage);
-		dis.forward(request, response);
-	
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

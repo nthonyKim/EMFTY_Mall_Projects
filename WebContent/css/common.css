@@ -54,7 +54,7 @@ select {height:27px;padding:0 5px;}
 
  
 /* common */
-.wrap {width:100%; overflow:hidden; margin:0 auto;}
+.wrap {width:100%; overflow:hidden; margin:0 auto; min-width:1300px;}
 .sidemenu{	
 	float: left;	
 	padding: 50px;
