@@ -14,29 +14,35 @@ import javax.servlet.http.HttpSession;
 import com.dto.GoodsDTO;
 import com.service.GoodsService;
 
-
-@WebServlet("/GoodsAllServlet")
-public class GoodsAllServlet extends HttpServlet {
-
+/**
+ * Servlet implementation class GoodsSortPrice
+ */
+@WebServlet("/GoodsSortPriceServlet")
+public class GoodsSortPriceServlet extends HttpServlet {
+	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		HttpSession session = request.getSession();
+		String goods_Category = (String) session.getAttribute("category");
+		List<String> colorChart = (List<String>) session.getAttribute("colorChart");
+		List<String> brandChart = (List<String>) session.getAttribute("brandChart");
+		
+		String select = request.getParameter("sortSelect");
+		System.out.println("select: "+select);
 		GoodsService service = new GoodsService();
-		List<GoodsDTO> list = null;
-		List<String> color = null;
-		List<String> brand = null;
+		List<GoodsDTO> list = null;			
+		String nextPage = "goodsList.jsp";
 		
-		list = service.goodsAll();
-		color = service.colorChartAll();
-		brand = service.brandChartAll();
+		if(select.equals("가격역순")) {
+			list = service.goodsSortHigh(goods_Category);				
+		}else if(select.equals("가격순")) {
+			list = service.goodsSortLow(goods_Category);					
+		}
+		request.setAttribute("goodsList", list);
 		
-		request.setAttribute("goodsAll", list);
-		session.setAttribute("colorChartAll", color);
-		session.setAttribute("brandChartAll", brand);
-		
-		RequestDispatcher dis =
-				request.getRequestDispatcher("goodsAll.jsp");
+		RequestDispatcher dis = request.getRequestDispatcher(nextPage);
 		dis.forward(request, response);
+		
 	}
 
 	/**

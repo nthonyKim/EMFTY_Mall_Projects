@@ -80,6 +80,42 @@
 	</div>
 </form>
 
+
+<h1>ORDER LIST</h1>
+<table class="tbl">
+	<colgroup>
+		<col width="20%" />
+		<col width="*" />
+	</colgroup>
+	<tr>
+		<th>주문번호</th><th>주문내역</th><th>주문가격</th><th>상태</th></tr>
+<c:forEach var="dto" items="${orderList}" varStatus="status">
+	<tr><td>temp</td>
+		<td>temp</td>
+		<td>temp</td>
+		<td>temp</td>
+	</tr>
+</c:forEach>
+</table>
+<!-- 위시 테이블이 있는 경우에만 출력
+<c:if test="">
+<h1>WISH LIST</h1>
+<table class="tbl">
+	<colgroup>
+		<col width="20%" />
+		<col width="*" />
+	</colgroup>
+<c:forEach var="dto" items="${goodsList}" varStatus="status">
+	<tr><td></td>
+		<td>temp</td>
+		<td>temp</td>
+		<td>temp</td>
+	</tr>
+</c:forEach>
+</c:if>  -->
+</table>
+
+
 <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
 <script>
     //본 예제에서는 도로명 주소 표기 방식에 대한 법령에 따라, 내려오는 데이터를 조합하여 올바른 주소를 구성하는 방법을 설명합니다.
