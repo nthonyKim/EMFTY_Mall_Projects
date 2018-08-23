@@ -1,3 +1,30 @@
+--0823 QnA 게시판 테이블 업데이트, 원솔
+create table questionboard (
+    question_num number(5) primary key
+    ,title varchar2(20) not null
+    ,userid varchar2(20)
+    ,question_contents varchar2(1000) 
+    ,wirteday date default sysdate
+    ,image_name varchar2(20)   );
+--확인 
+
+    
+    
+    insert into questionboard values(
+    1, '배송질문', 'wonsol', '배송은 언제쯤 시작해요?', sysdate, null ) ;
+        insert into questionboard values(
+    2, '배송질문2', 'wonsol', '배송은 언제쯤 시작해요?2', sysdate, null ) ;
+        insert into questionboard values(
+    3, '배송질문3', 'wonsol', '배송은 언제쯤 시작해요?3', sysdate, null ) ;
+    
+    
+select * from questionboard;
+
+--commit 잊지말고 꼭 하기~
+
+
+
+
 --계정이름 및 비밀번호는 저의경우 test2/test2로 했지만 팀원분들은 그때그때 드라이버 이름 수정해주시면 될 것 같아요 ^_^
 --0821_update:wonsol:공지사항 게시판 create table update 합니다. 
 create table notice
