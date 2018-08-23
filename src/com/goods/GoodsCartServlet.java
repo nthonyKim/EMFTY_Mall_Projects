@@ -40,13 +40,13 @@ public class GoodsCartServlet extends HttpServlet {
 			
 			CartDTO cDTO = new CartDTO();
 			cDTO.setUserid(dto.getUserid());
-			cDTO.setgImage(gImage);
-			cDTO.setgCode(gCode);
-			cDTO.setgName(gName);
-			cDTO.setgPrice(Integer.parseInt(gPrice));
-			cDTO.setgBrand(gBrand);
-			cDTO.setgColor(gColor);
-			cDTO.setgAmount(Integer.parseInt(gAmount));
+			cDTO.setGoods_image(gImage);
+			cDTO.setGoods_code(gCode);
+			cDTO.setGoods_name(gName);
+			cDTO.setGoods_price(Integer.parseInt(gPrice));
+			cDTO.setGoods_brand(gBrand);
+			cDTO.setGoods_color(gColor);
+			cDTO.setGoods_amount(Integer.parseInt(gAmount));
 			
 			CartService service = new CartService();
 			int n = service.cartAdd(cDTO);
