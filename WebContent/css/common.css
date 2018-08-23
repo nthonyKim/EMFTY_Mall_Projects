@@ -98,27 +98,42 @@ select {height:27px;padding:0 5px;}
 .tblInfo {margin-bottom:10px;text-align:right;}
 .tblInfo span {display:inline-block;color:#ffba00;font-weight:bold;}
 
-
 .btnGroup {margin-top:30px;text-align:center;}
 .btn {padding:10px 20px;margin-right:3px;min-width:110px;height:auto;font-size:16px;line-height:21px;cursor:pointer;}
 .yellow {background:#ffba00;color:#fff;border:1px solid #DBA901;}
 .gray {background:#F2F2F2;border:1px solid #bbb;}
-.small {padding:2px 0 1px;font-size:13px;}
-.contents h1{text-align: center; font-weight: bold; font-size: 20px; margin:20px;}
+.darkGray {color:#fff;background:#555;border:1px solid #555;}
+.small {padding:2px 5px 1px;font-size:13px;}
+.xsmall {padding:2px 5px 1px;font-size:13px;min-width:auto;}
+a.btn {text-decoration:none;}
+a.gray{color:#333;}
 
+.contents h1{text-align: center; font-weight: bold; font-size: 20px; margin:20px;}
 
 /* 제품 상세 */
 .proView {display:table;}
 .proView .imgSec, .proView dl {display:table-cell;vertical-align:middle;}
 .imgSec img {width:300px;}
-.proView dl {overflow:hidden; padding-left:50px;}
+.proView dl {overflow:hidden;padding-left:50px;}
 .proView dl dt, .proView dl dd {display:inline-block;}
 .proView dl dt {width:20%;margin-top:20px;font-weight:bold;}
 .proView dl dd {width:70%;}
 .btnAmount {display:inline-block;vertical-align:middle;}
 
-.alignC {text-align:center;}    
+.alignC {text-align:center !important;}    
+.alignL {text-align:left !important;}
+.alignR {text-align:right !important;}
 
 /* sort */
-.sortBox > button {padding:10px 20px; background:none;border:1px solid #bbb;}
+.sortBox > button {padding:10px 20px;background:none;border:1px solid #bbb;}
 .sortBox .box {display:none;}
+
+/* 장바구니 리스트 */
+.tblList {border-top:2px solid #bbb;}
+.tblList th {font-weight:bold;color:#333;}
+.tblList th, .tblList td {padding:12px 10px;vertical-align:middle;border-bottom:1px solid #bbb;}
+.tblList td {text-align:center;}
+.img img {width:50px;}
+.space {display:block;margin-top:12px;}
+
+.btns .btn {margin-right:0;}
