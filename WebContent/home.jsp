@@ -12,6 +12,9 @@
 	<c:if test="${!empty success}">
 		<script type="text/javascript">
 			alert("${success}");
+			<%
+			session.removeAttribute("success");
+			%>
 		</script>
 	</c:if>
 	<c:if test="${!empty mesg}">
