@@ -111,7 +111,7 @@ a.gray{color:#333;}
 .contents h1{text-align: center; font-weight: bold; font-size: 20px; margin:20px;}
 
 /* 제품 상세 */
-.proView {display:table;}
+.proView {display:table;padding-left:50px;}
 .proView .imgSec, .proView dl {display:table-cell;vertical-align:middle;}
 .imgSec img {width:300px;}
 .proView dl {overflow:hidden;padding-left:50px;}
