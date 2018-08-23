@@ -18,4 +18,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		delete from cart
 		where num=#{num}
 	</delete>
+	
+	<update id="cartUpdate" parameterType="hashmap">
+		update cart
+		set goods_amount = #{gAmount}
+		where num = #{num}
+	</update>
 </mapper>
