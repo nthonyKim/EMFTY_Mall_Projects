@@ -14,7 +14,7 @@
    <tr>
     <td colspan="5">
     <form action="">
-      검색<select name="searchName">
+     검색<pre>   </pre><select name="searchName"> 
        <option value="author">작성자</option>
        <option value="title">제목</option>
       </select>
@@ -23,27 +23,31 @@
       </form>
     </td>
    </tr>
- 
- 
+ <td colspan="5"><hr></td></tr>
    <tr>
      <td>글번호</td>
      <td>제목</td>
      <td>작성자</td>
      <td>작성일</td>
    
-   </tr>
+   </tr><tr>
+   <td colspan="5"><hr></td></tr>
 <%
 	List<QuestionBoardDTO> list = 
          (List<QuestionBoardDTO>)request.getAttribute("list");
     for(QuestionBoardDTO dto : list){
 %> 
    <tr>
-     <td><%= dto.getQuestion_num() %></td>
-     <%-- <td><a href='MyBoardRetrieveServlet?num=<%= dto.getNum() %>'><%= dto.getTitle()%></a> </td> --%>
-     <td><%= dto.getTitle() %></td>
+    <td><%= dto.getQuestion_num() %></td> 
+      <td><a href='QuestionBoardDetailServlet?num=<%= dto.getQuestion_num() %>'><%= dto.getTitle()%></a> </td> 
+    <%--  <td><%= dto.getTitle() %></td> --%>
      <td><%= dto.getUserid() %></td>
      <td><%= dto.getWriteday() %></td>
    </tr>
+    <tr>
+   <td colspan="5"> <hr></td></tr>
+   
+   
 <%
     }//end for
 %> 
