@@ -3,8 +3,46 @@
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.board">
-
-
+	
+	
+	
+	<insert id="QuestionBoardInsert" parameterType="QuestionBoardDTO">
+	<!-- 질문하기 기능 -->
+	insert into questionboard 
+	(
+		Question_num 
+		,title 
+		,userid
+		,Question_contents 
+		,writeday
+		,image_name
+		)
+		values ( #{Question_num}
+		,#{title}
+		,#{userid}
+		,#{Question_contents}
+		,#{writeday}
+		,#{image_name}
+		)
+	</insert>
+	
+	
+	
+	
+	
+	<select id="selectDetail" resultType="QuestionBoardDTO"
+	        parameterType="string"><!-- 게시판 상세보기, 넘버값으로 -->
+	   	select 
+			  question_num 
+    ,title
+    ,userid 
+	,question_contents  
+    ,wirteday 
+    ,image_name  
+    from questionboard     
+	       where question_num=#{quesion_num} 
+	      
+	        </select>
 
 	<select id="selectAll" resultType="QuestionBoardDTO"
 	        parameterType="hashmap"><!-- 게시판 목록보기 -->
@@ -12,11 +50,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			  question_num 
     ,title
     ,userid 
-  <!--   ,question_contents  -->
+	,question_contents  
     ,wirteday 
-<!--     ,image_name  -->
-            		from questionboard 
-		
+    ,image_name  
+    from questionboard
 	<!-- 	
 		<where>
 		   <if test="searchName=='author'">
@@ -27,8 +64,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		   </if>
 		</where>
 		 -->
-		
-	
 	</select>
 	
 </mapper>

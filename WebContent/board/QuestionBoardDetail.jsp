@@ -8,12 +8,47 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
-<body>
-       <div id="wrap" align="center">
+   
        <h1>Question View </h1><pre></pre>
-<table border="1">
+<body>
+   <%
+   QuestionBoardDTO dto = (QuestionBoardDTO)request.getAttribute("list");
+   String Question_num= dto.getQuestion_num();
+   String title = dto.getTitle();
+   String userid = dto.getUserid();
+   String Question_contents = dto.getQuestion_contents();
+   String writeday = dto.getWriteday();
  
-   <tr>
+%>
+<!-- <table border="1">
+
+ </table> -->
+ <form>
+<img src="images/banner_2.jpg"><br> 
+ <input type="hidden" name="Question_num" value="<%= Question_num %>" id="Question_num"><br> 
+ 글번호<%= Question_num%><br>
+ 작성일<%= writeday %><br> 
+
+ 제목 <%= title %><br> <pre></pre>
+ <img src="images/banner_3.jpg"><br> 
+ 작성<%= userid %><br><pre></pre>
+ <img src="images/banner_3.jpg"><br> 
+<pre></pre>
+ 내용<%= Question_contents %>
+ </textarea>
+ <input type="submit" value="수정"> 
+<br> 
+  </form>
+ <button id="delete">삭제</button>
+ <a href=""></a><!-- QuestionBoardUpdateServlet 불러와서 위 양식 그대로 'input'으로 부른뒤 mapper의 update의 기능 구현 -->
+ <a href="QuestionBoardServlet">목록으로</a>
+ </body>
+
+ </html>
+ 
+ 
+ 
+  <%--  <tr>
     <td colspan="5">
     <form action="">
      검색<pre>   </pre><select name="searchName"> 
@@ -62,5 +97,5 @@
  <a href="">Back</a>
 </body>
 </html> 
-
+ --%>
 

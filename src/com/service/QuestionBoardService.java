@@ -49,13 +49,13 @@ public class QuestionBoardService {
 	
 	
 	
-	/*
-	public QuestionBoardDTO retrieve(int num) {
-		MyBoardDAO dao = new MyBoardDAO();
+
+	public QuestionBoardDTO retrieve(String num) {
+		QuestionBoardDAO dao = new QuestionBoardDAO();
 		SqlSession session = MySqlSessionFactory.getSession();
 		QuestionBoardDTO dto = null;
 		try {
-			dto = dao.retrieve(session,num);
+			dto = dao.selectDetail(session,num);
 
 			// }catch(Exception e) {
 			// e.printStackTrace();
@@ -64,7 +64,7 @@ public class QuestionBoardService {
 		}
 		return dto;
 	}// end select
-*/	
+
 	
 	/*public int write(QuestionBoardDTO dto) {
 		MyBoardDAO dao = new MyBoardDAO();
