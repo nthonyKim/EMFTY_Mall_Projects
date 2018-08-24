@@ -213,5 +213,19 @@ select goods_Code
 	from goods
 
  </select>
+ 
+ <select id="goodsSearch" resultType="GoodsDTO" parameterType="string">
+  select goods_Code
+   		,goods_Color
+   		,goods_Name
+   		,goods_Price
+   		,goods_Brand
+   		,goods_Image1
+   		,goods_Category
+  from goods 
+  where UPPER(goods_content) like UPPER('%'||#{search}||'%')
+	or UPPER(goods_brand) like UPPER('%'||#{search}||'%')
+	or UPPER(goods_name) like UPPER('%'||#{search}||'%')
+ </select>
 	
 </mapper>

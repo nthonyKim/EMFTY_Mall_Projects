@@ -7,6 +7,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" type="text/css" href="css/common.css" />
+ <script type="text/javascript" src="js/jquery-3.1.0.js"></script>
 </head>
 <body>
 	<c:if test="${!empty success}">

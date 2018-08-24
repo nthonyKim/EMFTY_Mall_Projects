@@ -22,11 +22,16 @@ public class GoodsAllServlet extends HttpServlet {
 		
 		HttpSession session = request.getSession();
 		GoodsService service = new GoodsService();
+		String search = request.getParameter("search");
 		List<GoodsDTO> list = null;
 		List<String> color = null;
 		List<String> brand = null;
 		
-		list = service.goodsAll();
+		if(search != null) {
+			list = service.goodsSearch(search);
+		}else {
+			list = service.goodsAll();			
+		}		
 		color = service.colorChartAll();
 		brand = service.brandChartAll();
 		

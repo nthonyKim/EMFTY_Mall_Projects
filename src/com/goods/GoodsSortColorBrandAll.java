@@ -35,8 +35,7 @@ public class GoodsSortColorBrandAll extends HttpServlet {
 		List<GoodsDTO> list = null;
 		List<String> clist = null;
 		List<String> blist = null;
-			
-				
+							
 		if(color != null && brand ==null) {
 			clist = Arrays.asList(color);
 			map.put("color", clist);
