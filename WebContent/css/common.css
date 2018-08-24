@@ -99,7 +99,7 @@ select {height:27px;padding:0 5px;}
      text-decoration:underline; 
      font-weight: bold;
 }
-.body {width:992px; float:right;}
+.body {width:calc(100% - 398px);/*992px*/ float:right;}
 .contents {background:#fff; padding:20px;min-height:700px;}
 
 
