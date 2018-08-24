@@ -35,7 +35,7 @@
  <img src="images/banner_3.jpg"><br> 
 <pre></pre>
  내용<%= Question_contents %>
- </textarea>
+
  <input type="submit" value="수정"> 
 <br> 
   </form>
@@ -43,7 +43,14 @@
  <a href=""></a><!-- QuestionBoardUpdateServlet 불러와서 위 양식 그대로 'input'으로 부른뒤 mapper의 update의 기능 구현 -->
  <a href="QuestionBoardServlet">목록으로</a>
  </body>
+<body>
+ <form>
+<img src="images/banner_2.jpg"><br> 
+commentor :<br> 
+comment:<textarea></textarea>
+</form>
 
+</body>
  </html>
  
  
