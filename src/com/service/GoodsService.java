@@ -266,6 +266,21 @@ public class GoodsService {
 		// TODO Auto-generated method stub
 		return list; 
 	}
+
+	public List<GoodsDTO> goodsSearch(String search) {
+		SqlSession session = MySqlSessionFactory.getSession();
+		List<GoodsDTO> list = null;
+		try {
+			list = dao.goodsSearch(session, search);
+			
+		}catch(Exception  e) {
+			e.printStackTrace();
+		}finally {
+			session.close();
+		}
+		// TODO Auto-generated method stub
+		return list; 
+	}
 	
 	//test, test, test 
 	

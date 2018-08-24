@@ -3,10 +3,6 @@
 <script type="text/javascript">
 	$(document).ready(function(){
 		
-		
-		
-		
-		
 		//email
 		$("#email3").on("change",function(){			
 			$("#email2").val($(this).val());

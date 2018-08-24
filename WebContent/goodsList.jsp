@@ -2,7 +2,6 @@
     pageEncoding="UTF-8"%>
  <script type="text/javascript" src="js/jquery-3.1.0.js"></script>
 <link rel="stylesheet" type="text/css" href="css/common.css" />
-<script type="text/javascript" src=js/jquery-3.1.0.js></script>
 <div class="wrap">
 <div class="side"><jsp:include page="common/submenu.jsp" flush="true"/></div>
 <div class="body">

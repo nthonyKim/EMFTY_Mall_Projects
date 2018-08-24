@@ -27,7 +27,7 @@ public class GoodsSortPriceServletAll extends HttpServlet {
 		List<String> brandChart = (List<String>) session.getAttribute("brandChartAll");
 		
 		String select = request.getParameter("sortSelect");
-		System.out.println("select: "+select);
+		System.out.println("selectAll: "+select);
 		GoodsService service = new GoodsService();
 		List<GoodsDTO> list = null;			
 		String nextPage = "goodsList.jsp";

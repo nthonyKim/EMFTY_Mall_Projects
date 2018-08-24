@@ -84,6 +84,11 @@ public class GoodsDAO {
 		List<GoodsDTO> list = session.selectList("com.goods.goodsSortColorAll", map);
 		return list;
 	}
+	public List<GoodsDTO> goodsSearch(SqlSession session, String search) {
+		System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!"+search);
+		List<GoodsDTO> list = session.selectList("com.goods.goodsSearch", search);
+		return list;
+	}
 	
 	
 }

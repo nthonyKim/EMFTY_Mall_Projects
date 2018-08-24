@@ -3,10 +3,22 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>        
+<script type="text/javascript">
+$(document).ready(function(){
+	$("#search").on("keypress",function(e){
+		if (e.which == 13) {
+			$("form").attr("action","GoodsAllServlet");
+			$(this).submit();
+		}
+	})
+})
 
+</script>
 <div class="topmenu">
 	<ul>
-		<li>search</li>
+	<form>
+		<li><input type="text" name="search" id="search" placeholder="search..."><img src="./images/icon/search.png"></li>
+	</form>
 		<li><a href="GoodsCartListServlet"><img src="images/icon/cart.png"></a></li>
 <c:if test="${empty login}">
 		<li><a href="LoginUIServlet"><img src="images/icon/user.png"></a></li>
