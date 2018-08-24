@@ -52,10 +52,7 @@
 		})
 	})
 </script>
-<style type="text/css">
-	.aLink {color:#333;text-decoration:none;}
-	.aLink:hover {text-decoration:underline;}
-</style>
+
 <form name="myForm">   
 	<input type="hidden" name="num81" value="81" id="num81">
 	<input type="hidden" name="gImage81" value="bottom1" id="gImage81">

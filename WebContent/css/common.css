@@ -154,3 +154,6 @@ a.gray{color:#333;}
 .space {display:block;margin-top:12px;}
 
 .btns .btn {margin-right:0;}
+
+.aLink {color:#333;text-decoration:none;}
+.aLink:hover {text-decoration:underline;}
