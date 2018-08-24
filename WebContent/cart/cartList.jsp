@@ -4,6 +4,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<script src="//cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js"></script>
 <script type="text/javascript">
 	$(document).ready(function(){ 
 		//all check
@@ -25,6 +26,7 @@
 			var num = $(this).attr("data-num");
 			var gAmount = $("#cartAmount"+num).val();
 			var gPrice = $(this).attr("data-price");
+			var total;
 			$.ajax({ 
 				type:"get",
 				url:"GoodsCartUpdateServlet",
@@ -35,8 +37,9 @@
 				},
 				success:function(data,status,xhr){
 					if(data=='success'){
-						var total = Number.parseInt(gAmount) * Number.parseInt(gPrice);
-						$("#sum"+num).text(total);
+						total = Number.parseInt(gAmount) * Number.parseInt(gPrice);
+						var txt = "￦"+numeral( total ).format('0,0');
+						$("#sum"+num).text(txt);
 					}else{
 						alert("로그인 하세요.");
 						location.href="LoginUIServlet";
@@ -48,9 +51,11 @@
 			}); 
 		})
 	})
-	
 </script>
-
+<style type="text/css">
+	.aLink {color:#333;text-decoration:none;}
+	.aLink:hover {text-decoration:underline;}
+</style>
 <form name="myForm">   
 	<input type="hidden" name="num81" value="81" id="num81">
 	<input type="hidden" name="gImage81" value="bottom1" id="gImage81">
@@ -65,9 +70,9 @@
 			<col style="width:12%">
 			<col style="width:10%">
 			<col style="width:*">
-			<col style="width:20%">
 			<col style="width:15%">
-			<col style="width:10%">
+			<col style="width:15%">
+			<col style="width:12%">
 			<col style="width:15%">
 		</colgroup>
 		<thead>
@@ -87,18 +92,19 @@
 				<td><input type="checkbox" name="check" class="check" value="${cartDTO.num}"></td>
 				<td>${cartDTO.num}</td>
 				<td>
-					<p class="img"><img src="images/items/thum/${cartDTO.goods_image}.jpg" /></p>
-					<p class="alignL">${cartDTO.goods_name}</p>
+					<p class="img"><a href="GoodsRetrieveServlet?goods_Code=${cartDTO.goods_code}" class="aLink"><img src="images/items/thum/${cartDTO.goods_image}.jpg" /></a></p>
+					<p class="alignL"><a href="GoodsRetrieveServlet?goods_Code=${cartDTO.goods_code}" class="aLink">${cartDTO.goods_name}</a></p>
 				</td>
 				<td>
 					<fmt:formatNumber value="${cartDTO.goods_price}" type="currency" />
-					<span class="space">
-						<input class="alignR" type="text" name="cart_gAmount" value="${cartDTO.goods_amount}" id="cartAmount${cartDTO.num}" maxlength="3" style="width:50px;">
-						<input type="button" class="btn xsmall updateBtn" value="수정" data-num="${cartDTO.num}" data-price="${cartDTO.goods_price}" />
-					</span> 
 				</td>
-				<td>${cartDTO.goods_amount}</td>
-				<td><span id="sum${cartDTO.num}"><fmt:formatNumber value="${cartDTO.goods_amount * cartDTO.goods_price}" type="currency" /></span></td>
+				<td>
+					<input class="alignR" type="text" name="cart_gAmount" value="${cartDTO.goods_amount}" id="cartAmount${cartDTO.num}" maxlength="3" style="width:50px;">
+					<input type="button" class="btn xsmall updateBtn" value="수정" data-num="${cartDTO.num}" data-price="${cartDTO.goods_price}" /> 
+				</td>
+				<td>
+					<span id="sum${cartDTO.num}"><fmt:formatNumber value="${cartDTO.goods_amount * cartDTO.goods_price}" type="currency" /></span>
+				</td>
 				<td>
 					<span class="btns">
 						<input type="button" class="btn xsmall yellow" id="order" value="주문" />
