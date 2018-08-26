@@ -77,11 +77,11 @@
 		<button class="btn yellow">구매</button>
 		<button class="btn gray" id="cart">장바구니</button> 
 	</div>
-	<img src="images/divider_1.jpg">
+	<p class="alignC"><img src="images/divider_1.jpg"></p>
 	<div class="alignC">
-		<img src="images/items/${goodsRetrieve.goods_Image2}.jpg">
-		<img src="images/wash_info.jpg">
-		<img src="images/divider_1.jpg">
+		<p><img src="images/items/${goodsRetrieve.goods_Image2}.jpg"></p>
+		<p><img src="images/wash_info.jpg"></p>
+		<p><img src="images/divider_1.jpg"></p>
 	</div>
 	<div>
 	<a href="QuestionBoardServlet"><img src="image/icon/question_icorn.png"></a>
