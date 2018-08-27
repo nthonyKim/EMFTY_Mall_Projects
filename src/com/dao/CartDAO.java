@@ -27,4 +27,10 @@ public class CartDAO {
 		int n = session.update("com.cart.cartUpdate", map);
 		return n;
 	}
+	
+	public int cartDelAll(SqlSession session, List<String> list){
+		int n = session.delete("com.cart.cartDelAll", list);
+		return 0;
+	}
 }
+
