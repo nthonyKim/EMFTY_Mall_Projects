@@ -62,7 +62,7 @@
     }//end for
 %> 
  </table>
- <a href="QuestionBoardInsertServlet">질문하기</a>
+ <a href="QuestionBoardWriteUIServlet">질문하기</a>
 </body>
 </html>
 
