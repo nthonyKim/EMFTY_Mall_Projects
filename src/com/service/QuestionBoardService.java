@@ -65,20 +65,20 @@ public class QuestionBoardService {
 		return dto;
 	}// end select
 
-	
-	/*public int write(QuestionBoardDTO dto) {
-		MyBoardDAO dao = new MyBoardDAO();
+	/*
+	public String write(QuestionBoardDTO dto) {
+		QuestionBoardDAO dao = new QuestionBoardDAO();
 		SqlSession session = MySqlSessionFactory.getSession();
-		int n = 0;
+		String p = ""; 
 		try {
-			n = dao.write(session, dto);
+			p = dao.write(session, dto);
 			session.commit();
 		} finally {
 			session.close();
 		}
-		return n;
+		return p; 
 	}*/
-
+	
 	public List<QuestionBoardDTO> select(HashMap<String, String> map) {
 		QuestionBoardDAO dao = new QuestionBoardDAO();
 		SqlSession session = MySqlSessionFactory.getSession();

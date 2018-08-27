@@ -17,8 +17,7 @@
  id="write-form" class="bbs-table">
 
 <tr>
-	<td>작성자</td><pre></pre>
-	<td>글번호</td><pre></pre>
+
     <td>제목</td>
     <td><input type="text" name="title" style="width: 90%;" /></td><pre></pre>
 </tr>
