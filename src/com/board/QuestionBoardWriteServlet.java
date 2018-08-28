@@ -13,7 +13,7 @@ import com.service.QuestionBoardService;
 
 @WebServlet("/QuestionBoardWriteServlet")
 public class QuestionBoardWriteServlet extends HttpServlet {
-
+/////
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//시간과 글번호는 자동부여로 매퍼에서 넣자 
 		String userid = request.getParameter("userid");
