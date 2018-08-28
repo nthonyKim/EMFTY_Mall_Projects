@@ -35,7 +35,7 @@ public class QuestionBoardWriteServlet extends HttpServlet {
 		 
 		
 		
-	}
+	}//
 
 	
 /*	question_num
