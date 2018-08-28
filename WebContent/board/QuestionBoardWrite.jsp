@@ -6,12 +6,16 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
+<h1 align="center">질문하기</h1><br>
+<c:if test="${! empty login}">
+ 글쓴이: ${login.username}님&nbsp;
+</c:if>     
+<br> 
 
 <body>
-<div id="content-categories">QnA</div>
-<h1>질문하기</h1>
+
 <form action="QuestionBoardWriteServlet" method="post"> 
-<input type="hidden" name="boardCd" value="free" />
+<input type="hidden" name="userid" value="${login.username}" />
 <table align="center" width="710" cellspacing="0" cellpadding="0"
 				border="0"
  id="write-form" class="bbs-table">
@@ -28,27 +32,16 @@
 </tr>
 <tr>
     <td>첨부 파일</td>
-    <td><input type="file" name="attachFile" /></td><pre></pre>
+    <td><input type="file" name="image_name" /></td><pre></pre>
 </tr>
 </table>
 <div style="text-align: center;padding-bottom: 15px;">
-    <input type="submit" value="전송" />
-    <input type="button" value="취소" />
-    <input type="button" value="목록" />
+    <input type="submit" value="등록" />
+    <input type="reset" value="다시쓰기" /> 
+
 </div>
 </form><br> 
 <a href="QuestionBoardServlet">목록보기</a>
-<!-- 본문 끝 -->
+
 </body>
-<!-- <form>
-
-제목<input type="text" name="title">
-작성자<input type="text" name="author">
-
- 내용<textarea rows="10" cols="10" name="content"></textarea>
-  <input type="submit" value="저장" >
-</table>
-</form>
-<a href="QuestionBoardServlet">목록보기</a>
-</body> -->
 </html>

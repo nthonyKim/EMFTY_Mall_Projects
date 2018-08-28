@@ -43,13 +43,25 @@ public class QuestionBoardService {
 		return n;
 	}*/
 	
+	public int write(QuestionBoardDTO dto) {
+	QuestionBoardDAO dao = new QuestionBoardDAO();
+	SqlSession session = MySqlSessionFactory.getSession();
+	int n = 0; 
+	try {
+		n = dao.write(session, dto);
+		session.commit(); 
+	}finally {
+		session.close(); 
+	}
+	return n; 
+	}
 	
 	
 	
 	
 	
 	
-
+//상세보기 
 	public QuestionBoardDTO retrieve(String num) {
 		QuestionBoardDAO dao = new QuestionBoardDAO();
 		SqlSession session = MySqlSessionFactory.getSession();
@@ -65,20 +77,8 @@ public class QuestionBoardService {
 		return dto;
 	}// end select
 
-	/*
-	public String write(QuestionBoardDTO dto) {
-		QuestionBoardDAO dao = new QuestionBoardDAO();
-		SqlSession session = MySqlSessionFactory.getSession();
-		String p = ""; 
-		try {
-			p = dao.write(session, dto);
-			session.commit();
-		} finally {
-			session.close();
-		}
-		return p; 
-	}*/
 	
+	//보기 
 	public List<QuestionBoardDTO> select(HashMap<String, String> map) {
 		QuestionBoardDAO dao = new QuestionBoardDAO();
 		SqlSession session = MySqlSessionFactory.getSession();
@@ -95,6 +95,7 @@ public class QuestionBoardService {
 		return list;
 		
 	}// end select
-	
+
+
 
 }

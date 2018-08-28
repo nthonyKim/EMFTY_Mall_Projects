@@ -32,7 +32,7 @@ public class QuestionBoardWriteUIServlet extends HttpServlet {
 		
 		
 		//목록보기 
-		response.sendRedirect("QuestionBoardListServlet");
+		response.sendRedirect("QuestionBoardWrite.jsp");
 	}
 
 	
