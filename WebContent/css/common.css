@@ -69,24 +69,14 @@ select {height:27px;padding:0 5px;}
 .topmenu li{display: inline-block; margin:10px; }
 .topmenu img{filter:invert(100%);}
 .topmenu ul{text-align: right; margin-right: 70px;}
-#search{
-    width: 30px;
-    box-sizing: border-box;
+#search{  
+	width: 150px;
     background-color: #fff;
     border-radius: 4px;
     font-size: 16px;    
-    background-image: url("images/icon/search.png");
-    background-position: 10px 10px; 
-    background-repeat: no-repeat;
     margin: 5px;
-    -webkit-transition: width 0.4s ease-in-out;
-    transition: width 0.4s ease-in-out;
 }
 
-#search:focus {
-    width: 100px;
-	background-color: white;
-}
 .side {width:308px; float:left;}
 .side li{ margin:20px;}
 .side a {
@@ -154,3 +144,6 @@ a.gray{color:#333;}
 .space {display:block;margin-top:12px;}
 
 .btns .btn {margin-right:0;}
+
+/* adminpage */
+.bold{font-weight: bold; text-align: left; color: #ccc;}

@@ -18,6 +18,7 @@
 			%>
 		</script>
 	</c:if>
+	
 	<c:if test="${!empty mesg}">
 		<script type="text/javascript">
 			alert("${mesg}");
@@ -26,6 +27,7 @@
 			%>
 		</script>
 	</c:if>	
+
 <div class="wrap">
 <div class="side"><jsp:include page="common/submenu.jsp" flush="true"/></div>
 

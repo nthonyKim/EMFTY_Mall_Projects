@@ -281,6 +281,36 @@ public class GoodsService {
 		// TODO Auto-generated method stub
 		return list; 
 	}
+
+	public int adminGoodsDel(String num) {
+		SqlSession session = MySqlSessionFactory.getSession();
+		int n = 0;
+		try {
+			n = dao.adminGoodsDel(session, num);			
+		}catch(Exception  e) {
+			e.printStackTrace();
+		}finally {
+			session.commit();
+			session.close();
+		}
+		// TODO Auto-generated method stub
+		return n; 
+	}
+
+	public int adminGoodsDelAll(List<String> list) {
+		SqlSession session = MySqlSessionFactory.getSession();
+		int n = 0;
+		try {
+			n = dao.adminGoodsDelAll(session, list);			
+		}catch(Exception  e) {
+			e.printStackTrace();
+		}finally {
+			session.commit();
+			session.close();
+		}
+		// TODO Auto-generated method stub
+		return n; 
+	}
 	
 	//test, test, test 
 	

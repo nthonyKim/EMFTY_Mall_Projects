@@ -85,9 +85,16 @@ public class GoodsDAO {
 		return list;
 	}
 	public List<GoodsDTO> goodsSearch(SqlSession session, String search) {
-		System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!"+search);
 		List<GoodsDTO> list = session.selectList("com.goods.goodsSearch", search);
 		return list;
+	}
+	public int adminGoodsDel(SqlSession session, String num) {
+		int n = session.delete("com.goods.adminGoodsDel", num);
+		return n;
+	}
+	public int adminGoodsDelAll(SqlSession session, List<String> list) {
+		int n = session.delete("com.goods.adminGoodsDelAll", list);
+		return n;
 	}
 	
 	

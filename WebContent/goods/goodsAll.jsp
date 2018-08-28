@@ -7,8 +7,7 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <script type="text/javascript">
-	$(document).ready(function(){
-		
+	$(document).ready(function(){		
 		$("#sortSelect").on("change",function(event){
 			$("#sortSelectForm").attr("action","GoodsSortPriceServletAll");
 			$("#sortSelectForm").submit();			   
@@ -22,7 +21,7 @@
 </script>
 <div class="adsense" style="text-align: center; padding:0px 0px 10px 10px"> 
 <div class="select" >
-<form method="get" id="sortSelectForm">
+<form method="post" id="sortSelectForm">
 	<select name="sortSelect" id="sortSelect">
 		<option selected="selected">선택없음</option>
 		<option value="가격순">가격순</option>

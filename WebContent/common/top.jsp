@@ -5,25 +5,34 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>        
 <script type="text/javascript">
 $(document).ready(function(){
+	$(".toggle").click(function(){
+        $("#search").animate({
+        	width: 'toggle'        
+        });
+    });//
+		
 	$("#search").on("keypress",function(e){
 		if (e.which == 13) {
 			$("form").attr("action","GoodsAllServlet");
 			$(this).submit();
 		}
-	})
+	})//
 })
 
 </script>
 <div class="topmenu">
 	<ul>
 	<form>
-		<li><input type="text" name="search" id="search" placeholder="search..."><img src="./images/icon/search.png"></li>
+		<li><input type="text" name="search" id="search" placeholder="search..."><img src="./images/icon/search.png" class="toggle"></li>
 	</form>
 		<li><a href="GoodsCartListServlet"><img src="images/icon/cart.png"></a></li>
 <c:if test="${empty login}">
 		<li><a href="LoginUIServlet"><img src="images/icon/user.png"></a></li>
 </c:if>
 <c:if test="${!empty login}">
+	<c:if test="${login.userid eq 'admin'}">
+		<li><a href="AdminPageServlet"><img src="images/icon/user.png"></a></li>
+	</c:if>
 		<li><a href="MypageServlet"><img src="images/icon/user.png"></a></li>
 		<li><a href="LogoutUIServlet"><img src="images/icon/logout.png"></a></li>
 </c:if> 

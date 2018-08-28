@@ -38,6 +38,7 @@ select goods_Code
    		,goods_Image1
    		,goods_Category
   from goods  
+  order by goods_code asc
  </select>
  
  <!-- sort -->
@@ -227,5 +228,29 @@ select goods_Code
 	or UPPER(goods_brand) like UPPER('%'||#{search}||'%')
 	or UPPER(goods_name) like UPPER('%'||#{search}||'%')
  </select>
-	
+
+<!-- admin -->	
+<delete id="adminGoodsDel" parameterType="string">
+delete from goods
+where goods_code = #{goods_code}
+</delete>
+<update id="adminGoodsUpdate" parameterType="GoodsDTO">
+update goods
+set    	goods_Color = #{goods_Color}
+   		,goods_Name = #{goods_Name}
+   		,goods_Price = #{goods_Price}
+   		,goods_Brand = #{goods_Brand}
+   		,goods_Image1 = #{goods_Image1}
+   		,goods_Image2 = #{goods_Image2}
+   		,goods_Content = #{goods_Content}
+   		,goods_Category = #{goods_Category}
+where goods_code = #{goods_code}
+</update>
+
+<delete id="adminGoodsDelAll" parameterType="list">
+delete from goods
+where goods_code in
+<foreach close=")" separator="," open="(" collection="list" index="index" item="item"> #{item} </foreach>
+</delete>
+
 </mapper>
