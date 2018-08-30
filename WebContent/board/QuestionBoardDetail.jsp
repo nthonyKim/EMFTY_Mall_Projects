@@ -22,8 +22,12 @@
    String userid = dto.getUserid();
    String Question_contents = dto.getQuestion_contents();
    String writeday = dto.getWriteday();
-
+   String image_name = ""; 
+	if(dto.getImage_name() != null){ image_name = dto.getImage_name(); }
+	
 %>
+
+
 </div>
 <!-- <table border="1">
  </table> -->
@@ -31,16 +35,32 @@
  <form>
 <img src="images/banner_2.jpg"><br> 
  <input type="hidden" name="Question_num" value="<%= Question_num %>" id="Question_num"><br> 
- <table>
-<tr> <td>글번호 <%= Question_num%>    		              			 작성일 <%= writeday %><br></td> </tr>
+<div class="content">
+ 	<table border="1" summary="">
+	
+<tr class="first"> 
+	<th scope="row"><td>글번호</th> <td><%= Question_num%></td></tr>	              		
+<tr>
+	<th scope="row">작성일</th>
+	<td> <%= writeday %></td> 
+</tr>
+ <tr>
+ 	<th scope="row">제목</th>
+ 	<td><%= title %></td>
+ </tr>
+ <tr>
+	 <th scope="row">작성자 </th>
+ 	<td><%= userid %></td>
+ </tr>
+ <tr>
+ 	<td scope="row">내용</td>
+ 	<td><%= Question_contents %></td>
+ </tr>
+<%--  <tr><td>첨부이미지<%= image_name  %></td></tr> --%>
 
- <tr><td>제목<%= title %><br> <pre></pre></td></tr>
-
- <tr><td>작성자  <%= userid %><br><pre></pre></td></tr>
- <!-- <isrc="images/banner_3.jpg"><br> 
-<pre></pre> -->
- <tr><td>내용<%= Question_contents %></td></tr>
+ <tr><td><img src="images/question/<%=image_name%>" border="0" width="300"></td></tr>
  </table>
+ </div>
 <br> 
  <input type="submit" value="수정"> 
 <br> 
@@ -68,65 +88,18 @@
      <td>조회수</td>
    </tr>
  </table>
- <p>----------------------------------------------------------------------------------------------------------</p>
+ <p>----------------------------------------------------------------------------------------------------------------------------</p>
 <form>
 commentor {#userid} 님 <br> 
 comment <textarea cols="150" rows="3">댓글을 입력하세요.</textarea><br> 
 <input type="submit" name="register" value="Register">
 </form> 
-<p>----------------------------------------------------------------------------------------------------------</p>
+<p>--------------------------------------------------------------------------------------------------------------------------</p>
 <br>
 <button bgcolor="white">글쓰기</button>
 <button bgcolor="white">목록으로</button>
- 
-  <%--  <tr>
-    <td colspan="5">
-    <form action="">
-     검색<pre>   </pre><select name="searchName"> 
-       <option value="author">작성자</option>
-       <option value="title">제목</option>
-      </select>
-      <input type="text" name="searchValue">
-      <input type="submit" value="검색">
-      </form>
-    </td>
-   </tr>
- <td colspan="5"><hr></td></tr>
-   <tr>
-     <th>글번호</th>
-     <th>제목</th>
-     </tr>
-     <tr>
-     <td>작성자</td>
-
-     
-     <td>작성일</td>
-   
-   </tr><tr>
-   <td colspan="5"><hr></td></tr>
-<%
-	List<QuestionBoardDTO> list = 
-         (List<QuestionBoardDTO>)request.getAttribute("list");
-    for(QuestionBoardDTO dto : list){
-%> 
-   <tr>
-    <td><th><%= dto.getQuestion_num() %></th></td> 
-     <td><th><%= dto.getTitle() %></th></td></tr>
-     <tr>
-     <td><%= dto.getUserid() %></td>
- 
-     <td><%= dto.getWriteday() %></td>
-   </tr>
-    <tr>
-   <td colspan="5"> <hr></td></tr>
-   
-   
-<%
-    }//end for
-%> 
- </table><pre></pre>
- <a href="">Back</a>
 </body>
-</html> 
- --%>
+</html>
+
+
 

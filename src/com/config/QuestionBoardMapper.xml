@@ -49,6 +49,7 @@ seq_question_num.NEXTVAL
     from questionboard     
 	       where question_num=#{quesion_num} 
 	      
+	      
 	        </select>
 
 	<select id="selectAll" resultType="QuestionBoardDTO"
@@ -61,6 +62,7 @@ seq_question_num.NEXTVAL
     ,wirteday 
     ,image_name  
     from questionboard
+     order by question_num 
 	<!-- 	
 		<where>
 		   <if test="searchName=='author'">
