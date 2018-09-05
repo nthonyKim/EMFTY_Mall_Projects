@@ -253,4 +253,30 @@ where goods_code in
 <foreach close=")" separator="," open="(" collection="list" index="index" item="item"> #{item} </foreach>
 </delete>
 
+<insert id="adminGoodsInsert" parameterType="GoodsDTO">
+insert into goods (
+		 goods_Code
+   		,goods_Color
+   		,goods_Name
+   		,goods_Price
+   		,goods_Brand
+   		,goods_Image1
+   		,goods_Image2
+   		,goods_Content
+   		,goods_Category
+   		,goods_date)   		
+values (
+   		#{goods_Code},
+   		#{goods_Color},
+   		#{goods_Name},
+   		#{goods_Price},
+   		#{goods_Brand}, 
+   		#{goods_Image1},
+   		#{goods_Image2}, 
+   		#{goods_Content},
+   		#{goods_Category}, 
+   		 sysdate   		
+   		)
+   		
+</insert>
 </mapper>

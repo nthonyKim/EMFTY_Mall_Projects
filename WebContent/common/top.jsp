@@ -22,9 +22,11 @@ $(document).ready(function(){
 </script>
 <div class="topmenu">
 	<ul>
+		<li>
 	<form>
-		<li><input type="text" name="search" id="search" placeholder="search..."><img src="./images/icon/search.png" class="toggle"></li>
+		<input type="text" name="search" id="search" placeholder="search..."><img src="./images/icon/search.png" class="toggle">
 	</form>
+		</li>
 		<li><a href="GoodsCartListServlet"><img src="images/icon/cart.png"></a></li>
 <c:if test="${empty login}">
 		<li><a href="LoginUIServlet"><img src="images/icon/user.png"></a></li>

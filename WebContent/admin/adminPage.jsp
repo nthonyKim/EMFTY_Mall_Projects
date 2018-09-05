@@ -90,7 +90,7 @@
 	</table>	
 
 <div class="btnGroup">
-	<a class="btn yellow" href="AdminGoodsAddServlet">제품등록</a>
+	<a class="btn yellow" href="adminAddGoodsPage.jsp">제품등록</a>
 	<button class="btn darkGray" id="delAll">선택 삭제하기</button>
 </div>
 </form>

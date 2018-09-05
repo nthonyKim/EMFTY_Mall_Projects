@@ -96,6 +96,14 @@ public class GoodsDAO {
 		int n = session.delete("com.goods.adminGoodsDelAll", list);
 		return n;
 	}
+	public int adminGoodsUpdate(SqlSession session, String num) {
+		int n = session.update("com.goods.adminGoodsUpdate", num);
+		return n;
+	}
+	public int adminGoodsInsert(SqlSession session, GoodsDTO dto) {
+		int n = session.insert("com.goods.adminGoodsInsert", dto);
+		return n;
+	}
 	
 	
 }

@@ -49,25 +49,25 @@ table {
 }
 
 
-input {height:25px;padding:0 5px;background:#fff;border:1px solid #bbb;vertical-align:middle;}
+input {height:25px;padding:0 5px;background:#fff;border-bottom:1px solid #bbb;vertical-align:middle;}
 select {height:27px;padding:0 5px;}
 
  
 /* common */
-.wrap {width:100%; overflow:hidden; margin:0 auto; min-width:1300px;}
+.wrap {width:100%; overflow:hidden; margin:0 auto; min-width:1300px; border-top: solid 5px; border-top-color: #ffba00; }
 .sidemenu{	
 	float: left;	
 	padding: 50px;
 }
 .sidemenu img{filter:invert(100%); width:16px; opacity: 30%;}
-.sidemenu #side_sns{display: inline-block; align-items: }
+.sidemenu #side_sns{display: inline-block;}
 .topmenu{
-	background-color:#333333;
+	background-color:#fff;
 	padding: 20px;
-	width:100%;
+	width:100%;	
 }
-.topmenu li{display: inline-block; margin:10px; }
-.topmenu img{filter:invert(100%);}
+.topmenu li{display: inline-block; margin:10px; box-sizing: border-box; }
+.topmenu img{}
 .topmenu ul{text-align: right; margin-right: 70px;}
 #search{  
 	width: 150px;
@@ -75,6 +75,7 @@ select {height:27px;padding:0 5px;}
     border-radius: 4px;
     font-size: 16px;    
     margin: 5px;
+    box-sizing: border-box;
 }
 
 .side {width:308px; float:left;}
@@ -86,9 +87,11 @@ select {height:27px;padding:0 5px;}
 .side a:hover 
 {
      color:#ffba00; 
-     text-decoration:underline; 
+     text-decoration:underline;
+      
      font-weight: bold;
 }
+
 .body {width:992px; float:right;}
 .contents {background:#fff; padding:20px;min-height:700px;}
 
