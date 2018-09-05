@@ -50,12 +50,16 @@
 				}
 			}); 
 		})
+		
+		//전체 삭제
+		$("#delAllCart").on("click", function(e){
+			$("form").attr("action", "GoodsCartAllDelServlet");
+			$("form").submit();
+			e.preventDefault();
+		})
 	})
 </script>
-<style type="text/css">
-	.aLink {color:#333;text-decoration:none;}
-	.aLink:hover {text-decoration:underline;}
-</style>
+
 <form name="myForm">   
 	<input type="hidden" name="num81" value="81" id="num81">
 	<input type="hidden" name="gImage81" value="bottom1" id="gImage81">
@@ -119,7 +123,7 @@
 
 <div class="btnGroup">
 	<a class="btn yellow" href="javascript:orderAllConfirm(myForm)">전체 주문하기</a>
-	<a class="btn darkGray" href="javascript:delAllCart(myForm)">전체 삭제하기</a>
-	<a class="btn gray" href="index.jsp">계속 쇼핑하기</a>
+	<a class="btn darkGray" href="#" id="delAllCart">전체 삭제하기</a>
+	<a class="btn gray" href="home.jsp">계속 쇼핑하기</a>
 </div>
 

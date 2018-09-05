@@ -23,7 +23,7 @@ public class AdminGoodsUpdateServlet extends HttpServlet {
 		if(num != null) {
 			n = service.adminGoodsUpdate(num);
 		}
-		response.sendRedirect("AdminPageServlet");	
+		response.sendRedirect("adminUpdateGoodsPage.jsp");	
 	}
 
 	/**

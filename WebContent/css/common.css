@@ -92,7 +92,8 @@ select {height:27px;padding:0 5px;}
      font-weight: bold;
 }
 
-.body {width:992px; float:right;}
+.body {width:calc(100% - 308px); float:right;}
+
 .contents {background:#fff; padding:20px;min-height:700px;}
 
 
@@ -123,8 +124,9 @@ a.gray{color:#333;}
 /* 제품 상세 */
 .proView {display:table;padding-left:50px;}
 .proView .imgSec, .proView dl {display:table-cell;vertical-align:middle;}
+.imgSec {width:40%;text-align:center;}
 .imgSec img {width:300px;}
-.proView dl {overflow:hidden;padding-left:50px;}
+.proView dl {overflow:hidden;width:60%;}
 .proView dl dt, .proView dl dd {display:inline-block;}
 .proView dl dt {width:20%;margin-top:20px;font-weight:bold;}
 .proView dl dd {width:70%;}
@@ -148,5 +150,9 @@ a.gray{color:#333;}
 
 .btns .btn {margin-right:0;}
 
+
 /* adminpage */
 .bold{font-weight: bold; text-align: left; color: #ccc;}
+.aLink {color:#333;text-decoration:none;}
+.aLink:hover {text-decoration:underline;}
+

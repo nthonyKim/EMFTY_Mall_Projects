@@ -24,4 +24,14 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		set goods_amount = #{gAmount}
 		where num = #{num}
 	</update>
+	
+	<delete id="cartDelAll" parameterType="arraylist">
+		delete from cart
+		where num
+		in
+		<foreach item="item" index="index" collection="list" open="(" separator="," close=")">
+			#{item}
+		</foreach>
+	</delete>
+	
 </mapper>

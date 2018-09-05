@@ -23,6 +23,13 @@
 			}
 		});
 		
+		//수정
+		$(".updateBtn").on("click", function(){
+			var num = $(this).attr("data-updateBtn");
+			location.href="AdminGoodsUpdateServlet?goods_Code="+num;
+			
+		});
+		
 		//delAll
 		$("#delAll").on("click",function(e){
 			var txt = confirm("삭제하시겠습니까?");
@@ -80,7 +87,7 @@
 				</td>				
 				<td>
 					<span class="btns">
-						<input type="button" class="btn xsmall yellow" id="update" value="수정" />
+						<input type="button" class="btn xsmall yellow updateBtn" data-updateBtn="${dto.goods_Code}" value="수정" />
 						<input type="button" class="btn xsmall darkGray delBtn" data-delBtn="${dto.goods_Code}" value="삭제" />
 					</span>
 				</td>

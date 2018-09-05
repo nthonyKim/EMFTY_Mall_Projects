@@ -6,7 +6,7 @@
 <script type="text/javascript">
 $(document).ready(function(){
 	$(".toggle").click(function(){
-        $("#search").animate({
+        $("#search").stop().animate({
         	width: 'toggle'        
         });
     });//

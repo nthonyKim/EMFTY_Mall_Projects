@@ -9,6 +9,25 @@ import com.dto.QuestionBoardDTO;
 
 public class QuestionBoardDAO {
 	
+	//질문하기 
+	
+	public int write(SqlSession session, QuestionBoardDTO dto) {
+		
+		int n = session.insert("com.board.QuestionBoardInsert", dto); 
+		return n; 
+	}
+	
+	
+	
+	
+	//질문상세보기 
+	public QuestionBoardDTO selectDetail(SqlSession session, String num){
+	QuestionBoardDTO dto = 
+				session.selectOne("com.board.selectDetail", num);
+	return dto; 
+	}
+	
+	//질문목록 
 	public List<QuestionBoardDTO> select(SqlSession session
 							,HashMap<String, String> map) {
 		System.out.println("questionCheckDAO");

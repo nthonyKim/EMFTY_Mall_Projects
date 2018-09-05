@@ -23,21 +23,21 @@ import com.service.QuestionBoardService;
 public class QuestionBoardDetailServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("questionCheck");
+		System.out.println("questionDetailCheck");
 		request.setCharacterEncoding("UTF-8");
 	
 		String searchName= request.getParameter("searchName");
 		String searchValue= request.getParameter("searchValue");
-		
+		String num = request.getParameter("Question_num"); 
 		HashMap<String, String> map = new HashMap<>();
 		map.put("searchName", searchName);
 		map.put("searchValue", searchValue);
 		
 		QuestionBoardService service = new  QuestionBoardService();
-		List<QuestionBoardDTO> list = service.select(map);
+		QuestionBoardDTO dto = service.retrieve(num); 
 		
-		request.setAttribute("list", list);
-		System.out.println(list);
+		request.setAttribute("list", dto);
+		System.out.println(dto);
 		RequestDispatcher dis = 
 				request.getRequestDispatcher("QuestionBoardDetail.jsp");
 		dis.forward(request, response);
