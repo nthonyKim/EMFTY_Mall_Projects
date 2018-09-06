@@ -65,11 +65,13 @@ select {height:27px;padding:0 5px;}
 	background-color:#fff;
 	padding: 20px;
 	width:100%;	
+	/* position: fixed; */
 }
 .topmenu li{display: inline-block; margin:10px; box-sizing: border-box; }
 .topmenu img{}
 .topmenu ul{text-align: right; margin-right: 70px;}
 #search{  
+	display: none;
 	width: 150px;
     background-color: #fff;
     border-radius: 4px;

@@ -26,7 +26,7 @@
 		//수정
 		$(".updateBtn").on("click", function(){
 			var num = $(this).attr("data-updateBtn");
-			location.href="AdminGoodsUpdateServlet?goods_Code="+num;
+			location.href="AdminGoodsUpdateUIServlet?goods_Code="+num;
 			
 		});
 		

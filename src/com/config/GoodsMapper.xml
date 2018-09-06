@@ -244,7 +244,7 @@ set    	goods_Color = #{goods_Color}
    		,goods_Image2 = #{goods_Image2}
    		,goods_Content = #{goods_Content}
    		,goods_Category = #{goods_Category}
-where goods_code = #{goods_code}
+where goods_code = #{goods_Code}
 </update>
 
 <delete id="adminGoodsDelAll" parameterType="list">
@@ -276,7 +276,20 @@ values (
    		#{goods_Content},
    		#{goods_Category}, 
    		 sysdate   		
-   		)
-   		
+   		)   		
 </insert>
+
+<select id="adminGoodsSel" parameterType="string" resultType="GoodsDTO">
+select goods_Code
+   		,goods_Color
+   		,goods_Name
+   		,goods_Price
+   		,goods_Brand
+   		,goods_Image1
+   		,goods_Image2
+   		,goods_Content
+   		,goods_Category
+ from goods
+ where goods_code = #{goods_code}
+</select>
 </mapper>

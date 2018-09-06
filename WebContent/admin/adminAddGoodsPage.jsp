@@ -102,7 +102,7 @@
 	</table>	
 	</span>
 <div class="btnGroup">
-	<input type="submit" class="btn yellow">제품등록</a>
+	<input type="submit" class="btn yellow" value="제품등록"></a>
 	<button type="reset" class="btn darkGray">취소</button>
 </div>
 </form>

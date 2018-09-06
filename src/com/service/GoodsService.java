@@ -312,11 +312,11 @@ public class GoodsService {
 		return n; 
 	}
 
-	public int adminGoodsUpdate(String num) {
+	public int adminGoodsUpdate(GoodsDTO dto) {
 		SqlSession session = MySqlSessionFactory.getSession();
 		int n = 0;
 		try {
-			n = dao.adminGoodsUpdate(session, num);			
+			n = dao.adminGoodsUpdate(session, dto);			
 		}catch(Exception  e) {
 			e.printStackTrace();
 		}finally {
@@ -340,6 +340,22 @@ public class GoodsService {
 		}
 		// TODO Auto-generated method stub
 		return n; 
+	}
+
+	public GoodsDTO adminGoodsSel(String goods_Code) {
+		SqlSession session = MySqlSessionFactory.getSession();
+		GoodsDTO dto = null;
+		try {
+			dto = dao.adminGoodsSel(session, goods_Code);
+			
+		}catch(Exception  e) {
+			e.printStackTrace();
+		}finally {
+			session.close();
+		}
+		// TODO Auto-generated method stub
+		return dto; 
+
 	}
 
 	

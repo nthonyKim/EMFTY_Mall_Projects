@@ -96,13 +96,17 @@ public class GoodsDAO {
 		int n = session.delete("com.goods.adminGoodsDelAll", list);
 		return n;
 	}
-	public int adminGoodsUpdate(SqlSession session, String num) {
-		int n = session.update("com.goods.adminGoodsUpdate", num);
+	public int adminGoodsUpdate(SqlSession session, GoodsDTO dto) {
+		int n = session.update("com.goods.adminGoodsUpdate", dto);
 		return n;
 	}
 	public int adminGoodsInsert(SqlSession session, GoodsDTO dto) {
 		int n = session.insert("com.goods.adminGoodsInsert", dto);
 		return n;
+	}
+	public GoodsDTO adminGoodsSel(SqlSession session, String goods_Code) {
+		GoodsDTO dto = session.selectOne("com.goods.adminGoodsSel", goods_Code);
+		return dto;
 	}
 	
 	

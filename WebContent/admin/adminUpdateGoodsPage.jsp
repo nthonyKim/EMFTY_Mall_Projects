@@ -48,12 +48,17 @@
 	        reader.readAsDataURL(f);
 	    })
 
-	    ;
+	    
 	}
 	});
 </script>
-<form name="myForm" method="post" enctype="multipart/form-data" action="AdminGoodsAddServlet">   
-<p id="hidden"></p>
+<form name="myForm" method="post" enctype="multipart/form-data" action="AdminGoodsUpdateServlet">   
+<p id="hidden">
+	<input type="hidden" name="goods_Code" value="${goodDTO.goods_Code}">
+	
+</p>
+	
+	
 	<h1>상품등록</h1>
 	<span>
     	<div>
@@ -68,7 +73,7 @@
 	<table class="tbl" border="1px">
 			<tr>			
 				<th>상품번호</th>
-				<td>${goods_Code}</td>
+				<td>${goodDTO.goods_Code}</td>				
 			</tr>
 			<tr>			
 				<th>이미지 파일</th>
@@ -76,33 +81,33 @@
 			</tr>
 			<tr>
 				<th>카테고리</th>
-				<td><input type="text" name="goods_Category"></td>
+				<td><input type="text" name="goods_Category" value="${goodDTO.goods_Category}"></td>
 			</tr>
 			<tr>
 				<th>브랜드</th>	
-				<td><p><input type="text" name="goods_Brand"></p>
+				<td><p><input type="text" name="goods_Brand" value="${goodDTO.goods_Brand}"></p>
 			</tr>
 			<tr>
 				<th>상품이름</th>
-				<td><input type="text" name="goods_Name"></td>
+				<td><input type="text" name="goods_Name" value="${goodDTO.goods_Name}"></td>
 			</tr>
 			<tr>
 				<th>상품정보</th>
-				<td><input type="text" name="goods_Content"></td>
+				<td><input type="text" name="goods_Content" value="${goodDTO.goods_Content}"></td>
 			</tr>
 			<tr>
 				<th>색상</th>
-				<td><input type="text" name="goods_Color"></td>
+				<td><input type="text" name="goods_Color" value="${goodDTO.goods_Color}"></td>
 			</tr>
 			<tr>
 				<th>상품가격</th>
-				<td><input type="text" name="goods_Price"></td>
+				<td><input type="text" name="goods_Price" value="${goodDTO.goods_Price}"></td>
 			</tr>
 
 	</table>	
 	</span>
 <div class="btnGroup">
-	<input type="submit" class="btn yellow">제품수정</a>
+	<input type="submit" class="btn yellow" value="제품수정"></a>
 	<button type="reset" class="btn darkGray">취소</button>
 </div>
 </form>
