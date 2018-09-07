@@ -6,15 +6,19 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <!-- 코멘트 -->
 <select id="questionboard_comments" resultType="QuestionBoard_CommentsDTO" parameterType="string"> 
-select 
-author
-,comment_contents
-,comment_num 
-,fk_question_num
-from questionboard_comments 
- where fk_question_num=#{fk_question_num} 
+<!-- select questionboard_comments.author as author
+,questionboard_comments.comment_contents as comment_contents
+,questionboard_comments.comment_num as comment_num
+,questionboard_comments.fk_question_num as fk_question_num
+from questionboard_comments , questionboard
+where questionboard_comments.fk_question_num = #{question_num}  -->
+select questionboard_comments.author as author
+,questionboard_comments.comment_contents as comment_contents
+,questionboard_comments.comment_num as comment_num
+,questionboard_comments.fk_question_num as fk_question_num
+from questionboard_comments , questionboard
+where questionboard.question_num = #{question_num}
 </select>
-
 
 
 <update id="QuestionBoardUpdate" parameterType="QuestionBoardDTO">

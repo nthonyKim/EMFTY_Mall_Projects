@@ -35,7 +35,7 @@ public class QuestionBoardDAO {
 	QuestionBoardDTO dto = 
 				session.selectOne("com.board.selectDetail", num);
 	return dto; 
-	}
+	} 
 	
 	//질문목록 
 	public List<QuestionBoardDTO> select(SqlSession session

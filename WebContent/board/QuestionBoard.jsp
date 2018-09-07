@@ -48,7 +48,7 @@
     for(QuestionBoardDTO dto : list){
 %> 
    <tr>
-    <td><%= dto.getQuestion_num() %></td> 
+    <td><%= dto.getQuestion_num() %></td>
       <td><a href='QuestionBoardDetailServlet?Question_num=<%= dto.getQuestion_num() %>'><%= dto.getTitle()%></a> </td> 
     <%--  <td><%= dto.getTitle() %></td> --%>
      <td><%= dto.getUserid() %></td>

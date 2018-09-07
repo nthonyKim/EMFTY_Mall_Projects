@@ -12,6 +12,7 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
     <typeAlias type="com.dto.NoticeDTO" alias="NoticeDTO"/>
  	<typeAlias type="com.dto.CartDTO" alias="CartDTO"/>
  	<typeAlias type="com.dto.QuestionBoardDTO" alias="QuestionBoardDTO"/>
+ 	<typeAlias type="com.dto.QuestionBoard_CommentsDTO" alias="QuestionBoard_CommentsDTO" /> 
    </typeAliases>
    
 	<environments default="development">

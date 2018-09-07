@@ -1,5 +1,7 @@
+<%@page import="org.apache.jasper.tagplugins.jstl.core.ForEach"%>
 <%@page import="com.dto.QuestionBoardDTO"%>
 <%@page import="java.util.List"%>
+<%@page import="com.dto.QuestionBoard_CommentsDTO" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -91,18 +93,30 @@ background-color: #fff;
 <body>
 <!-- form action으로 comment 테이블 insert 반복문이므로 table 형태-->
 <!-- --------------------------------------------------------------------------------------------------- -->
+  <div id="QuestionCommentView" background-color: #333
+    height: 100px
+    position: relative>
+<table>
+<thead>
+<tr>
+	<th>작성자</th>
+	<th>댓글</th>
+</tr>
+</thead>
+ <td colspan="5"><hr></td></tr>
+   <%
+   	List<QuestionBoard_CommentsDTO> list2 = (List<QuestionBoard_CommentsDTO>)request.getAttribute("list2");
+   for(QuestionBoard_CommentsDTO dto2 : list2){
 
-<table border="1"> 
- 
-   <tr>
-    <td colspan="5"></td>
-   <tr>
-	<td>코멘트 내용</td>
-     <td>작성자</td>
-     <td>작성일</td>
-     <td>조회수</td>
-   </tr>
- </table>
+%>
+<tr>
+<td><%= dto2.getAuthor() %></td>
+<td><%= dto2.getComment_contents() %></td>
+</tr>
+<% } %>
+</table>
+
+
  <p>----------------------------------------------------------------------------------------------------------------------------</p>
 <form>
 commentor {#userid} 님 <br> 
