@@ -43,6 +43,24 @@ public class QuestionBoardService {
 		return n;
 	}*/
 	
+	// 질문 수정하기 
+	
+	public int update(QuestionBoardDTO dto) {
+		QuestionBoardDAO dao = new QuestionBoardDAO(); 
+			SqlSession session = MySqlSessionFactory.getSession();
+			int n = 0;
+			try {
+				n = dao.update(session, dto);
+				session.commit();
+			} finally {
+				session.close();
+			}
+			return n;
+	
+	}
+
+	
+	
 	public int write(QuestionBoardDTO dto) {
 	QuestionBoardDAO dao = new QuestionBoardDAO();
 	SqlSession session = MySqlSessionFactory.getSession();

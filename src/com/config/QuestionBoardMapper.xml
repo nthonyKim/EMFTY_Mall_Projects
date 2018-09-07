@@ -3,6 +3,30 @@
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.board">
+
+<!-- 코멘트 -->
+<select id="questionboard_comments" resultType="QuestionBoard_CommentsDTO" parameterType="string"> 
+select 
+author
+,comment_contents
+,comment_num 
+,fk_question_num
+from questionboard_comments 
+ where fk_question_num=#{fk_question_num} 
+</select>
+
+
+
+<update id="QuestionBoardUpdate" parameterType="QuestionBoardDTO">
+update questionboard 
+set title = #{title}
+	,question_contents = #{question_contents}
+	,image_name = #{image_name} 
+	where question_num = #{question_num} 
+</update>
+	
+	
+	
 	
 <!-- 	
     <insert id="write" parameterType="MyBoardDTO">
@@ -62,7 +86,7 @@ seq_question_num.NEXTVAL
     ,wirteday 
     ,image_name  
     from questionboard
-     order by question_num 
+     order by question_num desc
 	<!-- 	
 		<where>
 		   <if test="searchName=='author'">

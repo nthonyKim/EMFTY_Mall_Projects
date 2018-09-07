@@ -14,17 +14,18 @@
 <title>Insert title here</title>
 </head>
 <body>
- <table border="1">
+
+ <table class="tbl" border="1">
  
 
  
    <tr>
-   <td>글번호</td>
-      <td>제목</td>
-         <td>내용</td>
-            <td>작성일</td>
-                         <tr>
-   <td colspan="5"> <hr></td></tr>
+   <th>글번호</th>
+      <th>제목</th>
+         <th>내용</th>
+            <th>작성일</th>
+                         <!-- <tr> -->
+  <!--  <td colspan="5"> <hr></td></tr> -->
  
  
 <%
@@ -39,8 +40,8 @@
       <td><%= dto.getContent()%></td>
         <td><%= dto.getReg_dts()%> </td> 
 </tr>
-   <tr>
-   <td colspan="5"> <hr></td></tr>
+<!--    <tr>
+   <td colspan="5"> <hr></td></tr> -->
 
      
 

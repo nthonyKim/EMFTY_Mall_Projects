@@ -9,6 +9,16 @@ import com.dto.QuestionBoardDTO;
 
 public class QuestionBoardDAO {
 	
+	
+	//질문 수정 하기
+	
+	public int update(SqlSession session, QuestionBoardDTO dto) {
+		int n = session.update("com.board.QuestionBoardInsert", dto);
+		return n ; 
+		
+	}
+	
+	
 	//질문하기 
 	
 	public int write(SqlSession session, QuestionBoardDTO dto) {

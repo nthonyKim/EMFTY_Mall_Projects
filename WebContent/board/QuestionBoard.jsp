@@ -25,7 +25,7 @@
     </td>
    </tr>
 </table>
-<table border="1">
+<table class="tbl" border="1">
  <colgroup>
  	<col style="width:5%">
 	<col style="width:20%">
