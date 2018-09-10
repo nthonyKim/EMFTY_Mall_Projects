@@ -68,7 +68,7 @@
 			</tr>
 		</thead>
 		<tbody>
-		<c:forEach var="dto" items="${list}">
+		<c:forEach var="dto" items="${pageDto.getList()}">
 			<tr>
 				<td><input type="checkbox" name="check" class="check" value="${dto.goods_Code}"></td>
 				<td>${dto.goods_Code}</td>
@@ -93,6 +93,9 @@
 				</td>
 			</tr>
 		</c:forEach>
+			<tr>
+			<input type="text" name="currentPage" value="${pageDto.getCurrentPage()}">
+			</tr>
 		</tbody>
 	</table>	
 

@@ -49,7 +49,7 @@ table {
 }
 
 
-input {height:25px;padding:0 5px;background:#fff;border-bottom:1px solid #bbb;vertical-align:middle;}
+input {height:25px;padding:0 5px;background:#fff;vertical-align:middle;}
 select {height:27px;padding:0 5px;}
 
  
@@ -114,7 +114,7 @@ select {height:27px;padding:0 5px;}
 .btnGroup {margin-top:30px;text-align:center;}
 .btn {padding:10px 20px;margin-right:3px;min-width:110px;height:auto;font-size:16px;line-height:21px;cursor:pointer;}
 .yellow {background:#ffba00;color:#fff;border:1px solid #DBA901;}
-.gray {background:#F2F2F2;border:1px solid #bbb;}
+.gray {background:#F2F2F2;border:1px solid #aaa;}
 .darkGray {color:#fff;background:#555;border:1px solid #555;}
 .small {padding:2px 5px 1px;font-size:13px;}
 .xsmall {padding:2px 5px 1px;font-size:13px;min-width:auto;}
@@ -122,6 +122,7 @@ a.btn {text-decoration:none;}
 a.gray{color:#333;}
 
 .contents h1{text-align: center; font-weight: bold; font-size: 20px; margin:20px;}
+.contents h3{text-align: center; font-weight: bold; font-size: 16px; margin:50px 0px 15px 0px;; border-bottom: 2px;}
 
 /* 제품 상세 */
 .proView {display:table;padding-left:50px;}
@@ -146,7 +147,8 @@ a.gray{color:#333;}
 .tblList {border-top:2px solid #bbb;}
 .tblList th {font-weight:bold;color:#333;}
 .tblList th, .tblList td {padding:12px 10px;vertical-align:middle;border-bottom:1px solid #bbb;}
-.tblList td {text-align:center;}
+.tblList td {text-align: center;}
+.tbllist p {text-align:left;}
 .img img {width:50px;}
 .space {display:block;margin-top:12px;}
 
@@ -154,7 +156,14 @@ a.gray{color:#333;}
 
 
 /* adminpage */
-.bold{font-weight: bold; text-align: left; color: #ccc;}
+.bold{font-weight: bold; text-align: left; color: #000;}
 .aLink {color:#333;text-decoration:none;}
 .aLink:hover {text-decoration:underline;}
+
+/*adminUpdate*/
+.imgs_wrap p{
+	margin: 5px;
+}
+	
+/* order */
 

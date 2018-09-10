@@ -23,6 +23,7 @@ public class GoodsSortPriceServletAll extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		HttpSession session = request.getSession();
+		
 		List<String> colorChart = (List<String>) session.getAttribute("colorChartAll");
 		List<String> brandChart = (List<String>) session.getAttribute("brandChartAll");
 		
@@ -30,7 +31,7 @@ public class GoodsSortPriceServletAll extends HttpServlet {
 		System.out.println("selectAll: "+select);
 		GoodsService service = new GoodsService();
 		List<GoodsDTO> list = null;			
-		String nextPage = "goodsList.jsp";
+		String nextPage = "goodsAll.jsp";
 				
 		if(select.equals("가격역순")) {
 			list = service.goodsSortLowAll();

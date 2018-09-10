@@ -4,7 +4,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<link rel="stylesheet" type="text/css" href="css/common.css" />  
     <style type="text/css">
         .imgs_wrap {
         	float:left;
@@ -16,6 +15,7 @@
         }
         
     </style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>   
 <script type="text/javascript">
 	var sel_files = [];
 	
@@ -25,9 +25,12 @@
 	function handleImgsFilesSelect(e) {
 	    var files = e.target.files;
 	    var filesArr = Array.prototype.slice.call(files);
-		console.log(files);
-		console.log(filesArr);
-	    filesArr.forEach(function(f) {
+	    console.log(filesArr);
+	//    filesArr.forEach(function(f) {
+	 for(var i=0; i< filesArr.length; i++){
+		  
+	       var f = filesArr[i];
+	    	console.log(">>",f);
 	        if(!f.type.match("image.*")) {
 	            alert("확장자는 이미지 확장자만 가능합니다.");
 	            return;
@@ -38,15 +41,17 @@
 	        var reader = new FileReader();
 	        reader.onload = function(e) {
 	            var img_html = "<p><img src=\"" + e.target.result + "\" /></p>";	           
-	            $(".imgs_wrap").append(img_html);
+	            $(".imgs_wrap").prepend(img_html);
 	        }
 	        	
-	        	var goods_Image = "<input type='hidden' name='goods_Image' value='"+f.name+"'>";
-	          $(".goods_Image").append("<p>"+f.name+"</p>");
+	        	var goods_Image = "<input type='hidden' name='goods_Image"+(i+1)+"' value='"+f.name+"'>";
+	        	console.log(f.name);
+	          $(".goods_Image").prepend("<p>"+f.name+"</p>");
 	          $("#hidden").append(goods_Image);
 	          console.log($("#hidden").html())
 	        reader.readAsDataURL(f);
-	    })
+	    //})
+	  }
 
 	    
 	}
@@ -62,11 +67,10 @@
 	<h1>상품등록</h1>
 	<span>
     	<div>
-        	<div class="imgs_wrap">            
-        	</div>
+        	
    		</div>
 		<div>        
-        	<input type="file" id="input_imgs" multiple name="goods_file" />
+        	
     	</div> 
 	</span>
 	<span class="table">
@@ -77,7 +81,11 @@
 			</tr>
 			<tr>			
 				<th>이미지 파일</th>
-				<td name="goods_Image" class="goods_Image"></td>
+				<td>
+				<div class="imgs_wrap goods_Image">
+				<input type="file" id="input_imgs" multiple name="goods_file" />
+				</div>
+				</td>				
 			</tr>
 			<tr>
 				<th>카테고리</th>

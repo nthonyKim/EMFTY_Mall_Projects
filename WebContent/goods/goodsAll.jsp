@@ -19,9 +19,10 @@
 		})
 })
 </script>
+
 <div class="adsense" style="text-align: center; padding:0px 0px 10px 10px"> 
 <div class="select" >
-<form method="post" id="sortSelectForm">
+<form method="get" id="sortSelectForm">
 	<select name="sortSelect" id="sortSelect">
 		<option selected="selected">선택없음</option>
 		<option value="가격순">가격순</option>
@@ -66,7 +67,7 @@
 					<td height="10"></td>
 				</tr>
 				<tr>
-    <c:forEach var="dto" items="${goodsAll}" varStatus="status">	
+    <c:forEach var="dto" items="${goodsList}" varStatus="status">	
 						<td>
 							<table style='padding:15px'>
 								<tr>

@@ -3,9 +3,11 @@ package com.dao;
 import java.util.HashMap;
 import java.util.List;
 
+import org.apache.ibatis.session.RowBounds;
 import org.apache.ibatis.session.SqlSession;
 
 import com.dto.GoodsDTO;
+import com.dto.PageDTO;
 
 public class GoodsDAO {
 	public List<GoodsDTO> goodsList(SqlSession session, 
@@ -107,6 +109,23 @@ public class GoodsDAO {
 	public GoodsDTO adminGoodsSel(SqlSession session, String goods_Code) {
 		GoodsDTO dto = session.selectOne("com.goods.adminGoodsSel", goods_Code);
 		return dto;
+	}
+	
+	public int totalCount(SqlSession session) {
+		int n = session.selectOne("com.goods.totalCount");
+		return n;
+	}
+	
+	public PageDTO selectPage(SqlSession session, int curPage) {		
+		PageDTO pageDto = new PageDTO();
+		int offset = (curPage - 1) * pageDto.getPerPage();
+		List<GoodsDTO> list = session.selectList("com.goods.goodsAll", null, new RowBounds(offset,pageDto.getPerPage())); 
+		
+		pageDto.setList(list);
+		pageDto.setCurrentPage(curPage);
+		pageDto.setTotalCount(totalCount(session));
+		
+		return pageDto;
 	}
 	
 	

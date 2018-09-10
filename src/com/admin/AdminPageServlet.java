@@ -13,6 +13,7 @@ import javax.servlet.http.HttpSession;
 
 import com.dto.GoodsDTO;
 import com.dto.MemberDTO;
+import com.dto.PageDTO;
 import com.service.GoodsService;
 
 @WebServlet("/AdminPageServlet")
@@ -24,15 +25,22 @@ public class AdminPageServlet extends HttpServlet {
 		MemberDTO dto = (MemberDTO)session.getAttribute("login");
 		GoodsService service = new GoodsService();
 		List<GoodsDTO> list = null;
-		String nextPage = "null";
+		String nextPage = null;
 		
 		if(dto.getUserid().equals("admin")) {
-			list = service.goodsAll();
+			String currentPage = request.getParameter("currentPage");
+			if(currentPage == "" || currentPage == null ){
+			currentPage = "1";
+			}	
+
+			PageDTO pageDto = service.selectPage(Integer.parseInt(currentPage));
+			
 			nextPage = "adminPage.jsp";
-			request.setAttribute("list", list);	
+			request.setAttribute("pageDto", pageDto);		
+			
 		}else {
 			nextPage = "LoginUIServlet";
-			session.setAttribute("mesg", "로그인이 필요합니다.");
+			session.setAttribute("mesg", "관리자가 아닙니다.");
 		}
 
 		RequestDispatcher dis =	request.getRequestDispatcher(nextPage);

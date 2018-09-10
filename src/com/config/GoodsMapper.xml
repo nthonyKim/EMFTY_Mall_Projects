@@ -292,4 +292,10 @@ select goods_Code
  from goods
  where goods_code = #{goods_code}
 </select>
+
+<select id="totalCount" resultType="int">
+select count(*)
+from goods
+</select>
+
 </mapper>

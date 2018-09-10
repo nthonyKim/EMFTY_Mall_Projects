@@ -30,7 +30,17 @@ public class CartDAO {
 	
 	public int cartDelAll(SqlSession session, List<String> list){
 		int n = session.delete("com.cart.cartDelAll", list);
-		return 0;
+		return n;
+	}
+
+	public CartDTO cartToOrder(SqlSession session, int num) {
+		CartDTO dto = session.selectOne("com.cart.cartToOrder", num);
+		return dto;
+	}
+
+	public List<CartDTO> cartToOrderAll(SqlSession session, List<String> list) {
+		List<CartDTO> cartList = session.selectList("com.cart.cartToOrderAll", list);
+		return cartList;
 	}
 }
 

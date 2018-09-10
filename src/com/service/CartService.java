@@ -47,10 +47,10 @@ public class CartService {
 		int n = 0;
 		try {
 			n = dao.cartDel(session, num);
-			session.commit();
 		}catch(Exception e) {
 			e.printStackTrace();
 		}finally {
+			session.commit();
 			session.close();
 		}
 		return n;
@@ -61,10 +61,10 @@ public class CartService {
 		int n = 0;
 		try {
 			n = dao.cartUpdate(session, map);
-			session.commit();
 		}catch(Exception e) {
 			e.printStackTrace();
 		}finally {
+			session.commit();
 			session.close();
 		}
 		return n;
@@ -75,13 +75,37 @@ public class CartService {
 		int n = 0;
 		try {
 			n = dao.cartDelAll(session, list);
-			session.commit();
 		}catch(Exception e) {
 			e.printStackTrace();
 		}finally {
+			session.commit();
 			session.close();
 		}
 		return n;
 		
+	}
+	public CartDTO cartToOrder(int num) {
+		SqlSession session = MySqlSessionFactory.getSession();
+		CartDTO dto = null;
+		try {
+			dto = dao.cartToOrder(session, num);
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			session.close();
+		}		
+		return dto;
+	}
+	public List<CartDTO> cartToOrderAll(List<String> list) {
+		SqlSession session = MySqlSessionFactory.getSession();
+		List<CartDTO> cartList = null;
+		try {
+			cartList = dao.cartToOrderAll(session, list);
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			session.close();
+		}		
+		return cartList;
 	}
 }

@@ -21,6 +21,7 @@ public class GoodsAllServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		HttpSession session = request.getSession();
+		session.removeAttribute("category");
 		GoodsService service = new GoodsService();
 		String search = request.getParameter("search");
 		List<GoodsDTO> list = null;
@@ -35,7 +36,7 @@ public class GoodsAllServlet extends HttpServlet {
 		color = service.colorChartAll();
 		brand = service.brandChartAll();
 		
-		request.setAttribute("goodsAll", list);
+		request.setAttribute("goodsList", list);
 		session.setAttribute("colorChartAll", color);
 		session.setAttribute("brandChartAll", brand);
 		

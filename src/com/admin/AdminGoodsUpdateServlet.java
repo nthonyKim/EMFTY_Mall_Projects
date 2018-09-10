@@ -3,6 +3,7 @@ package com.admin;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 
@@ -99,8 +100,8 @@ public class AdminGoodsUpdateServlet extends HttpServlet {
 			String fileName = "";
 			List<String> list = new ArrayList<String>();
 			long sizeInBytes = 0;
-			//HashMap<String, String> dto_info = new HashMap<>();	
-			List<String> dto_info = new ArrayList<>();
+			HashMap<String, String> dto_info = new HashMap<>();	
+			//List<String> dto_info = new ArrayList<>();
 			Iterator<FileItem> iter = items.iterator();
 			while (iter.hasNext()) {
 				FileItem item = iter.next();
@@ -110,8 +111,8 @@ public class AdminGoodsUpdateServlet extends HttpServlet {
 					String name = item.getFieldName();
 					 value = item.getString("UTF-8");
 					System.out.println(name + "\t" + value);
-					//dto_info.put(name, value);
-					dto_info.add(value);
+					dto_info.put(name, value);
+					//dto_info.add(value);
 									
 				} else {
 					// type="file" 것.
@@ -134,21 +135,20 @@ public class AdminGoodsUpdateServlet extends HttpServlet {
 				list.add(fileName);
 				
 			}//반복
-			String goods_Code = dto_info.get(0);
+			String goods_Code = dto_info.get("goods_Code");
 			GoodsDTO dto = new GoodsDTO(); 
-			dto.setGoods_Image1(dto_info.get(1));
-			dto.setGoods_Image2(dto_info.get(2));
+			dto.setGoods_Image1(dto_info.get("goods_Image1"));
+			dto.setGoods_Image2(dto_info.get("goods_Image2"));
 			dto.setGoods_Code(goods_Code);
-			dto.setGoods_Category(dto_info.get(3));
-			dto.setGoods_Brand(dto_info.get(4));
-			dto.setGoods_Name(dto_info.get(5));
-			dto.setGoods_Content(dto_info.get(6));
-			dto.setGoods_Color(dto_info.get(7));
-			dto.setGoods_Price(dto_info.get(8));
+			dto.setGoods_Category(dto_info.get("goods_Category"));
+			dto.setGoods_Brand(dto_info.get("goods_Brand"));
+			dto.setGoods_Name(dto_info.get("goods_Name"));
+			dto.setGoods_Content(dto_info.get("goods_Content"));
+			dto.setGoods_Color(dto_info.get("goods_Color"));
+			dto.setGoods_Price(dto_info.get("goods_Price"));
 			System.out.println(dto);		
 			GoodsService service = new GoodsService();
 			int n = service.adminGoodsUpdate(dto);
-			System.out.println(n);
 			response.sendRedirect("AdminPageServlet");
 			}
 	}

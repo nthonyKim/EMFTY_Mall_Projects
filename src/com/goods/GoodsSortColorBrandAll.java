@@ -25,6 +25,7 @@ public class GoodsSortColorBrandAll extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		HttpSession session = request.getSession();
+	
 		List<String> colorChart = (List<String>) session.getAttribute("colorChartAll");
 		List<String> brandChart = (List<String>) session.getAttribute("brandChartAll");
 		
@@ -56,7 +57,7 @@ public class GoodsSortColorBrandAll extends HttpServlet {
 				
 		request.setAttribute("goodsList", list);
 		
-		RequestDispatcher dis = request.getRequestDispatcher("goodsList.jsp");
+		RequestDispatcher dis = request.getRequestDispatcher("goodsAll.jsp");
 		dis.forward(request, response);
 	}
 
