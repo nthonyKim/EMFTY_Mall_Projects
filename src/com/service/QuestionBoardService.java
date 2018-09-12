@@ -12,8 +12,8 @@ import com.dao.QuestionBoardDAO;
 import com.dto.QuestionBoardDTO;
 
 public class QuestionBoardService {
-/*
-	public int update(QuestionBoardDTO dto) {
+
+/*	public int update(QuestionBoardDTO dto) {
 		MyBoardDAO dao = new MyBoardDAO();
 		SqlSession session = MySqlSessionFactory.getSession();
 		int n = 0;
@@ -25,13 +25,13 @@ public class QuestionBoardService {
 		}
 		return n;
 	}
+	*/
 	
 	
 	
 	
-	
-	public int delete(int num) {
-		MyBoardDAO dao = new MyBoardDAO();
+	public int QuestionBoardDelete(int num) {
+		QuestionBoardDAO dao = new QuestionBoardDAO();
 		SqlSession session = MySqlSessionFactory.getSession();
 		int n = 0;
 		try {
@@ -41,7 +41,7 @@ public class QuestionBoardService {
 			session.close();
 		}
 		return n;
-	}*/
+	}
 	
 	// 질문 수정하기 
 	
@@ -71,6 +71,7 @@ public class QuestionBoardService {
 	}finally {
 		session.close(); 
 	}
+	System.out.println("QuestionBoard 서비스  wirte 메서드");
 	return n; 
 	}
 	

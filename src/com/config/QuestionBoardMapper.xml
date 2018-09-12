@@ -4,6 +4,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.board">
 
+
+
+
+
+
+
 <!-- 코멘트 -->
 <select id="questionboard_comments" resultType="QuestionBoard_CommentsDTO" parameterType="string"> 
 <!-- select questionboard_comments.author as author
@@ -61,10 +67,7 @@ seq_question_num.NEXTVAL
 )
 </insert> 
 	
-	
-	
-	
-	
+
 	<select id="selectDetail" resultType="QuestionBoardDTO"
 	        parameterType="string"><!-- 게시판 상세보기, 넘버값으로 -->
 	   	select 
@@ -102,6 +105,13 @@ seq_question_num.NEXTVAL
 		</where>
 		 -->
 	</select>
+	
+	<delete id="QuestionBoardDelete" parameterType="int">
+	delete from questionboard 
+	where question_num = #{question_num} 
+	</delete>	
+	
+	
 	
 </mapper>
 

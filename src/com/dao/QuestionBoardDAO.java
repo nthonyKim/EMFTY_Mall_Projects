@@ -10,6 +10,16 @@ import com.dto.QuestionBoardDTO;
 public class QuestionBoardDAO {
 	
 	
+	//질문 삭제하기 
+	public int delete(SqlSession session, int num) {
+		System.out.println("QuestionBoardDelete DAO 테스트") ; 
+		int n = session.delete("com.board.QuestionBoardDelete", num);
+		return n; 
+	}
+	
+	
+	
+	
 	//질문 수정 하기
 	
 	public int update(SqlSession session, QuestionBoardDTO dto) {
@@ -23,6 +33,7 @@ public class QuestionBoardDAO {
 	
 	public int write(SqlSession session, QuestionBoardDTO dto) {
 		
+		System.out.println("QuestionBoard DAO wirte 메서드 확인");
 		int n = session.insert("com.board.QuestionBoardInsert", dto); 
 		return n; 
 	}

@@ -10,20 +10,21 @@
 <c:if test="${! empty login}">
  글쓴이: ${login.username}님&nbsp;
 </c:if>     
+<pre></pre>
 <br> 
-
 <body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>   
+<script type="text/javascript">
 
-<form action="QuestionBoardWriteServlet" method="post"> 
+</script>
+<form action="QuestionBoardWriteServlet" method="post" enctype="multipart/form-data">
 <input type="hidden" name="userid" value="${login.username}" />
-<table align="center" width="710" cellspacing="0" cellpadding="0"
-				border="0"
- id="write-form" class="bbs-table">
+<table class="tbl">
 
 <tr>
 
     <td>제목</td>
-    <td><input type="text" name="title" style="width: 90%;" /></td><pre></pre>
+    <td colspan="2"><input type="text" name="title" style="width: 80%;" /></td><pre></pre>
 </tr>
 <tr>
     <td align="center" colspan="2">
@@ -32,7 +33,7 @@
 </tr>
 <tr>
     <td>첨부 파일</td>
-    <td><input type="file" name="image_name" /></td><pre></pre>
+    <td><input type="file" name="image_name" id="image_name" /></td><pre></pre>
 </tr>
 </table>
 <div style="text-align: center;padding-bottom: 15px;">

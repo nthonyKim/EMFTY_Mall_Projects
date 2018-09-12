@@ -4,6 +4,14 @@
 <%@page import="com.dto.QuestionBoard_CommentsDTO" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	$("#QuestionBoardDelete").on("click",function(){
+		var Question_num = $("#Question_num").val();
+		location.href="QuestionBoardDeleteServlet?Question_num="+Question_num;
+	});
+</script>
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,11 +33,10 @@ background-color: #fff;
 </head>
 <body>
    
-       <h1>Question View </h1>
+ <h1 text-align=left>Question View </h1>
        <div id="QuestionView" background-color: #333
     height: 100px
     position: relative>
-
    <%
    QuestionBoardDTO dto = (QuestionBoardDTO)request.getAttribute("list");
    String Question_num= dto.getQuestion_num();
@@ -41,20 +48,15 @@ background-color: #fff;
 	if(dto.getImage_name() != null){ image_name = dto.getImage_name(); }
 	
 %>
-
-
 </div>
-<!-- <table border="1">
- </table> -->
- 
+
  <form>
-<img src="images/banner_2.jpg"><br> 
  <input type="hidden" name="Question_num" value="<%= Question_num %>" id="Question_num"><br> 
 <div class="content">
- 	<table>
+ 	<table class="tbl">
 	
 <tr> 
-	<th><td>글번호</th> 
+	<th width:30%>글번호</th> 
 	<td><%= Question_num%></td>
 </tr>	              		
 <tr>
@@ -62,41 +64,37 @@ background-color: #fff;
 	<td> <%= writeday %></td> 
 </tr>
  <tr>
- 	<th class="a">제목</th>
+ 	<th width:30%>제목</th>
  	<td><%= title %></td>
  </tr>
  <tr>
-	 <th>작성자 </th>
+	 <th width:30%>작성자 </th>
  	<td><%= userid %></td>
  </tr>
  <tr>
- 	<td>내용</td>
+ 	<td width:30%>내용</td>
  	<td><%= Question_contents %></td>
- </tr>
-<%--  <tr><td>첨부이미지<%= image_name  %></td></tr> --%>
-
- <tr>
- 	<td>이미지</td>
- 	<td><img src="images/question/<%=image_name%>" border="10" width="200"></td>
+</tr>
+ <tr> 
+ 	
+ 	<td ><img src="images/question/<%=image_name%>" border="10" width="200"></td>
  </tr>
  </table>
  </div>
 <br> 
- <input type="submit" value="수정"> 
-<br> 
+
   </form>
-<!--   <a href="QuestionBoard_WirteUIServlet">글쓰기</a> -->
- <a href=""></a><!-- QuestionBoardUpdateServlet 불러와서 위 양식 그대로 'input'으로 부른뒤 mapper의 update의 기능 구현 -->
- <a href="QuestionBoardServlet">목록으로</a>
- <a href="">수정하기</a><!-- QuestionBoardUpdateServlet?해당코드->go -->
  </body>
 <body>
-<!-- form action으로 comment 테이블 insert 반복문이므로 table 형태-->
+<!--   <a href="QuestionBoard_WirteUIServlet">글쓰기</a> -->
+<a href="QuestionBoardServlet">목록으로</a>
+<button id="QuestionBoardDelete">삭제하기</button>
+<a href="QuestionBoardUpdateUIServlet">수정하기</a>
 <!-- --------------------------------------------------------------------------------------------------- -->
   <div id="QuestionCommentView" background-color: #333
     height: 100px
     position: relative>
-<table>
+<table class="tbl">
 <thead>
 <tr>
 	<th>작성자</th>
@@ -110,24 +108,19 @@ background-color: #fff;
 
 %>
 <tr>
-<td><%= dto2.getAuthor() %></td>
-<td><%= dto2.getComment_contents() %></td>
+<td font-size:10px;><%= dto2.getAuthor() %></td>
+<td font-size:10px;><%= dto2.getComment_contents() %></td>
 </tr>
 <% } %>
-</table>
-
-
- <p>----------------------------------------------------------------------------------------------------------------------------</p>
-<form>
-commentor {#userid} 님 <br> 
-comment <textarea cols="150" rows="3">댓글을 입력하세요.</textarea><br> 
+</table></div>
+<form> 
+<p font-size:8px;>{#userid} 님 :</p>
+<textarea cols="100" rows="5">댓글 입력은 로그인 후 가능합니다.</textarea>
 <input type="submit" name="register" value="Register">
 </form> 
-
-<p>---------------------------------------------------------------------------------------------------------------------------</p>
 <br>
-<button bgcolor="white">글쓰기</button>
-<button bgcolor="white">목록으로</button>
+<a href="QuestionBoardWriteUIServlet">질문하기</a>
+<!-- <button bgcolor="white">목록으로</button> -->
 </body>
 </html>
 

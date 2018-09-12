@@ -167,3 +167,24 @@ a.gray{color:#333;}
 	
 /* order */
 
+
+/*게시판 테이블*/ 
+.commenttbl {border-top:2px solid #bbb;}
+.commenttbl th {font-weight:bold;color:#333;}
+.commenttbl th, ..commenttbl td {padding:10px 10px;vertical-align:middle;border-bottom:1px solid #bbb;}
+.commenttbl td {text-align: center;}
+.commenttbl p {text-align:left;}
+.img img {width:100px;}
+.space {display:block;margin-top:10px;}
+.btnGroup {margin-top:30px;text-align:center;}
+.btn {padding:10px 20px;margin-right:3px;min-width:110px;height:auto;font-size:16px;line-height:21px;cursor:pointer;}
+.yellow {background:#ffba00;color:#fff;border:1px solid #DBA901;}
+.gray {background:#F2F2F2;border:1px solid #aaa;}
+.darkGray {color:#fff;background:#555;border:1px solid #555;}
+.small {padding:2px 5px 1px;font-size:13px;}
+.xsmall {padding:2px 5px 1px;font-size:13px;min-width:auto;}
+a.btn {text-decoration:none;}
+a.gray{color:#333;}
+
+.contents h1{text-align: center; font-weight: bold; font-size: 20px; margin:20px;}
+.contents h3{text-align: center; font-weight: bold; font-size: 16px; margin:50px 0px 15px 0px;; border-bottom: 2px;}

@@ -113,7 +113,7 @@ public class AdminGoodsUpdateServlet extends HttpServlet {
 					System.out.println(name + "\t" + value);
 					dto_info.put(name, value);
 					//dto_info.add(value);
-									
+			
 				} else {
 					// type="file" 것.
 					String fieldName = item.getFieldName();
