@@ -13,7 +13,6 @@ import javax.servlet.http.HttpSession;
 
 import com.dto.GoodsDTO;
 import com.dto.MemberDTO;
-import com.dto.PageDTO;
 import com.service.GoodsService;
 
 @WebServlet("/AdminPageServlet")
@@ -28,7 +27,7 @@ public class AdminPageServlet extends HttpServlet {
 		String nextPage = null;
 		
 		if(dto.getUserid().equals("admin")) {
-			String currentPage = request.getParameter("currentPage");
+/*			String currentPage = request.getParameter("currentPage");
 			if(currentPage == "" || currentPage == null ){
 			currentPage = "1";
 			}	
@@ -36,7 +35,10 @@ public class AdminPageServlet extends HttpServlet {
 			PageDTO pageDto = service.selectPage(Integer.parseInt(currentPage));
 			
 			nextPage = "adminPage.jsp";
-			request.setAttribute("pageDto", pageDto);		
+			request.setAttribute("pageDto", pageDto);*/		
+			list = service.goodsAll();
+			nextPage = "adminPage.jsp";
+			request.setAttribute("list", list);
 			
 		}else {
 			nextPage = "LoginUIServlet";

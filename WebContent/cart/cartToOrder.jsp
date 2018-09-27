@@ -12,6 +12,18 @@
 <script type="text/javascript" src="js/jquery-3.1.0.js"></script>
 <script type="text/javascript">
 $(document).ready(function() {
+	
+	//
+	var sum = 0;
+	$(".price").each(function(index){		
+		sum = (sum + parseInt($(this).val()));		
+	})
+	$("#sum").text(format(sum));
+	
+	function format(sum) {
+	    return "￦"+sum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+	}
+	
 	$("#same").on("click",function(){
 		if(this.checked){
 			$("#name_same").val($("#name").val());
@@ -70,7 +82,10 @@ $(document).ready(function() {
 		</td>
 		<td>${cartDTO.goods_color}</td>
 		<td>${cartDTO.goods_amount}</td>
-		<td><fmt:formatNumber value="${cartDTO.goods_price * cartDTO.goods_amount}" type="currency" /></td>		
+		<td><fmt:formatNumber value="${cartDTO.goods_price * cartDTO.goods_amount}" type="currency" /></td>	
+		<input type="hidden" class="price" value="${cartDTO.goods_price * cartDTO.goods_amount}">
+		<tr class="highlight gray"><th colspan="2">합계</th>
+			<td colspan="4" id="sum" style="font-weight: bold;"></td></tr>	
 </table>
 
 <h3>고객정보</h3>

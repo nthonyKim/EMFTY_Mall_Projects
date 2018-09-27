@@ -8,7 +8,6 @@ import org.apache.ibatis.session.SqlSession;
 import com.config.MySqlSessionFactory;
 import com.dao.GoodsDAO;
 import com.dto.GoodsDTO;
-import com.dto.PageDTO;
 
 public class GoodsService {
   
@@ -170,7 +169,7 @@ public class GoodsService {
 		List<String> list = null;
 		try {
 			list = dao.colorChartAll(session);
-			
+			System.out.println("dao "+list.size());
 		}catch(Exception  e) {
 			e.printStackTrace();
 		}finally {
@@ -184,6 +183,7 @@ public class GoodsService {
 		List<String> list = null;
 		try {
 			list = dao.brandChartAll(session);
+			System.out.println("dao "+list.size());
 			
 		}catch(Exception  e) {
 			e.printStackTrace();
@@ -359,16 +359,5 @@ public class GoodsService {
 
 	}
 
-	public PageDTO selectPage(int curPage) {
-		GoodsDAO dao = new GoodsDAO();
-		SqlSession session = MySqlSessionFactory.getSession();
-		PageDTO pageDto = null;		
-		try {
-			pageDto = dao.selectPage(session,curPage);
-		}finally {
-			session.close();
-		}		
-		return pageDto;
-	}	
 	
 }

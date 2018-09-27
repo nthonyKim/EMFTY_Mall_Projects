@@ -22,13 +22,16 @@ public class GoodsAllServlet extends HttpServlet {
 		
 		HttpSession session = request.getSession();
 		session.removeAttribute("category");
+		session.removeAttribute("colorChartAll");
+		session.removeAttribute("brandChartAll");
+		
 		GoodsService service = new GoodsService();
 		String search = request.getParameter("search");
 		List<GoodsDTO> list = null;
 		List<String> color = null;
 		List<String> brand = null;
 		
-		if(search != null) {
+		if(search != null || search == "") {
 			list = service.goodsSearch(search);
 		}else {
 			list = service.goodsAll();			
@@ -40,8 +43,7 @@ public class GoodsAllServlet extends HttpServlet {
 		session.setAttribute("colorChartAll", color);
 		session.setAttribute("brandChartAll", brand);
 		
-		RequestDispatcher dis =
-				request.getRequestDispatcher("goodsAll.jsp");
+		RequestDispatcher dis =	request.getRequestDispatcher("goodsAll.jsp");
 		dis.forward(request, response);
 	}
 

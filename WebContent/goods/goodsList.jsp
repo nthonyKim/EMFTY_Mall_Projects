@@ -54,15 +54,10 @@
 	</div>
 </div>
 </form>
-
-
-
-
-<table width="100%" cellspacing="0" cellpadding="0">
+<table>
 	<tr>
 		<td>
-			<table align="center" width="710" cellspacing="0" cellpadding="0"
-				border="0">
+			<table>
 				
 				<tr>
 					<td height="5"></td>
@@ -129,7 +124,7 @@
 									<td class="td_red" align ="center"><font color="red"><strong>
 									
 					<fmt:formatNumber value="${dto.goods_Price}" type="currency"> </fmt:formatNumber>				
-					<%-- ${dto.goods_Price} --%>
+					
 										</strong></font></td>
 								</tr>
 							</table>
@@ -148,3 +143,37 @@
 		<td height="10">
 	</tr>
 </table>
+
+
+<%-- <table class="tbl">
+		    	<table style="width: 20%">
+		    		<tr><td>
+		    			<ul>
+		    <c:forEach var="dto" items="${goodsList}" varStatus="status">
+		    				<li>
+		    					<div class="image">
+			    					<a href="GoodsRetrieveServlet?goods_Code=${dto.goods_Code}"> 
+			    					<img src="images/items/thum/${dto.goods_Image1}.jpg" width="200px"/>
+			    					</a>
+		    					</div>
+		    					<div>
+		    						<a class= "bold">
+										${dto.goods_Brand}<br>
+									</a>
+									<br>
+									<a class= "a_black" href="GoodsRetrieveServlet?goods_Code=${dto.goods_Code}"> 
+										${dto.goods_Name}
+									</a>
+									<p>${dto.goods_Content}</p>
+									<br>
+									<p><fmt:formatNumber value="${dto.goods_Price}" type="currency"> </fmt:formatNumber></p>
+									
+		    					</div>
+		    				</li>
+			</c:forEach>
+		    			</ul>									
+						</td></tr>
+					</table>
+
+	    	</table>
+</table> --%>

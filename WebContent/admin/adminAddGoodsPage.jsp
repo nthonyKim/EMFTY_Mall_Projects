@@ -37,10 +37,10 @@
 	        var reader = new FileReader();
 	        reader.onload = function(e) {
 	            var img_html = "<p><img src=\"" + e.target.result + "\" /></p>";	           
-	            $(".imgs_wrap").append(img_html);
+	            $(".imgs_wrap").prepend(img_html);
 	        }	        	
 	        	var goods_Image = "<input type='hidden' name='goods_Image' value='"+f.name+"'>";
-	          $(".goods_Image").append("<p>"+f.name+"</p>");
+	          $(".goods_Image").prepend("<p>"+f.name+"</p>");
 	          $("#hidden").append(goods_Image);
 	          console.log($("#hidden").html())
 	        reader.readAsDataURL(f);
@@ -94,15 +94,7 @@
 <form name="myForm" method="post" enctype="multipart/form-data" action="AdminGoodsAddServlet">   
 <p id="hidden"></p>
 	<h1>상품등록</h1>
-	<span>
-    	<div>
-        	<div class="imgs_wrap">            
-        	</div>
-   		</div>
-		<div>        
-        	<input type="file" id="input_imgs" multiple name="goods_file" />
-    	</div> 
-	</span>
+
 	<span class="table">
 	<table class="tbl" border="1px">
 			<tr>			
@@ -111,7 +103,11 @@
 			</tr>
 			<tr>			
 				<th>이미지 파일</th>
-				<td name="goods_Image" class="goods_Image"></td>
+				<td>
+				<div class="imgs_wrap goods_Image">
+				<input type="file" id="input_imgs" multiple name="goods_file" />
+				</div>
+				</td>	
 			</tr>
 			<tr>
 				<th>카테고리</th>

@@ -41,6 +41,9 @@
 			}
 		})//
 		
+		
+		
+		
 	})
 </script>
 <style type="text/css">
@@ -68,7 +71,7 @@
 			</tr>
 		</thead>
 		<tbody>
-		<c:forEach var="dto" items="${pageDto.getList()}">
+		<c:forEach var="dto" items="${list}">
 			<tr>
 				<td><input type="checkbox" name="check" class="check" value="${dto.goods_Code}"></td>
 				<td>${dto.goods_Code}</td>
@@ -93,9 +96,11 @@
 				</td>
 			</tr>
 		</c:forEach>
-			<tr>
-			<input type="text" name="currentPage" value="${pageDto.getCurrentPage()}">
-			</tr>
+			<%-- <tr><td colspan="7">
+			<c:forEach items="${pageDto.getTotalCount()}">
+			<input type="text" name="currentPage" id="page" value="${pageDto.getCurrentPage()}">
+			</c:forEach>
+			</td></tr> --%>
 		</tbody>
 	</table>	
 

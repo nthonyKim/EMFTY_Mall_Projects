@@ -36,14 +36,14 @@
 	<div class="box">
 		<div>
 			색상 : 
-<c:forEach var="clr" items="${colorChart}" varStatus="status">
+<c:forEach var="clr" items="${colorChartAll}" varStatus="status">
 			<span><input type="checkbox" id="check1" name="color" value="${clr}"> <label for="check1">${clr}</label></span>
 </c:forEach>		
 		</div>
 		
 		<div>
 			브랜드 :
-<c:forEach var="bnd" items="${brandChart}" varStatus="status">
+<c:forEach var="bnd" items="${brandChartAll}" varStatus="status">
 			<span><input type="checkbox" id="check4" name="brand" value="${bnd}"> <label for="check4">${bnd}</label></span>
 </c:forEach>				
 		</div>

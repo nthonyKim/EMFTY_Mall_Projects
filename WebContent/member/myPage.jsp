@@ -81,7 +81,7 @@
 </form>
 
 
-<h1>ORDER LIST</h1>
+<%-- <h1>ORDER LIST</h1>
 <table class="tbl">
 	<colgroup>
 		<col width="20%" />
@@ -96,7 +96,7 @@
 		<td>temp</td>
 	</tr>
 </c:forEach>
-</table>
+</table> --%>
 <!-- 위시 테이블이 있는 경우에만 출력
 <c:if test="">
 <h1>WISH LIST</h1>

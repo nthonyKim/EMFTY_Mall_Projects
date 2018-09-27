@@ -7,7 +7,6 @@ import org.apache.ibatis.session.RowBounds;
 import org.apache.ibatis.session.SqlSession;
 
 import com.dto.GoodsDTO;
-import com.dto.PageDTO;
 
 public class GoodsDAO {
 	public List<GoodsDTO> goodsList(SqlSession session, 
@@ -116,17 +115,6 @@ public class GoodsDAO {
 		return n;
 	}
 	
-	public PageDTO selectPage(SqlSession session, int curPage) {		
-		PageDTO pageDto = new PageDTO();
-		int offset = (curPage - 1) * pageDto.getPerPage();
-		List<GoodsDTO> list = session.selectList("com.goods.goodsAll", null, new RowBounds(offset,pageDto.getPerPage())); 
-		
-		pageDto.setList(list);
-		pageDto.setCurrentPage(curPage);
-		pageDto.setTotalCount(totalCount(session));
-		
-		return pageDto;
-	}
 	
 	
 }
