@@ -26,12 +26,7 @@
    </tr>
 </table>
 <table class="tbl" border="1">
- <colgroup>
- 	<col style="width:5%">
-	<col style="width:20%">
-	<col style="width:10%">
-	<col style="width:20%">
- </colgroup>
+
  <thead>
  <td colspan="5"><hr></td></tr>
    <tr>
@@ -41,7 +36,7 @@
      <th>작성일</th>
    </tr>
    </thead> 
-   <td colspan="5"><hr></td></tr>
+
 <%
 	List<QuestionBoardDTO> list = 
          (List<QuestionBoardDTO>)request.getAttribute("list");
@@ -52,16 +47,17 @@
       <td><a href='QuestionBoardDetailServlet?Question_num=<%= dto.getQuestion_num() %>'><%= dto.getTitle()%></a> </td> 
     <%--  <td><%= dto.getTitle() %></td> --%>
      <td><%= dto.getUserid() %></td>
-     <td><%= dto.getWriteday() %></td>
+     <td><%= dto.getWirteday () %></td>
    </tr>
     <tr>
-   <td colspan="5"> <hr></td></tr>
+
    
    
 <%
     }//end for
 %> 
  </table>
+ <br> 
  <a href="QuestionBoardWriteUIServlet">질문하기</a>
 </body>
 </html>

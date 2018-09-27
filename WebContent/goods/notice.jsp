@@ -49,7 +49,9 @@
     }//end for
 %> 
  </table>
- <button class="btn gray small" onclick="">관리(insert-sys전용 구현)</button>
+ <c:if test="${login.userid eq 'admin'}">
+ <a href="NoticeAddServlet">공지추가</button>
+</c:if>
 </body>
 </html>
 

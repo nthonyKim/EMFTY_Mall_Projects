@@ -11,7 +11,7 @@ public class QuestionBoardDTO {
 	private String title; 
 	private String question_contents; 
 	private String userid;
-	private String writeday;
+	private String wirteday; 
 	private String image_name; 
 	
 	public QuestionBoardDTO() {
@@ -22,7 +22,7 @@ public class QuestionBoardDTO {
 	@Override
 	public String toString() {
 		return "QuestionBoardDTO [question_num=" + question_num + ", title=" + title + ", question_contents="
-				+ question_contents + ", userid=" + userid + ", writeday=" + writeday + ", image_name=" + image_name
+				+ question_contents + ", userid=" + userid + ", writeday=" + wirteday + ", image_name=" + image_name
 				+ "]";
 	}
 
@@ -33,7 +33,7 @@ public class QuestionBoardDTO {
 		this.title = title;
 		this.question_contents = question_contents;
 		this.userid = userid;
-		this.writeday = writeday;
+		this.wirteday = wirteday;
 		this.image_name = image_name;
 	}
 
@@ -69,12 +69,12 @@ public class QuestionBoardDTO {
 		this.userid = userid;
 	}
 
-	public String getWriteday() {
-		return writeday;
+	public String getWirteday() {
+		return wirteday;
 	}
 
 	public void setWriteday(String writeday) {
-		this.writeday = writeday;
+		this.wirteday = wirteday;
 	}
 
 	public String getImage_name() {
