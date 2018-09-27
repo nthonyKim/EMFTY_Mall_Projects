@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 
 <div class="sidemenu">
-	<h1><a href="home.jsp">logo</a></h1>
+	<h1><a href="home.jsp">Empty</a></h1>
 	<br>
 	<ul id="side_category">
 		<li><a href="GoodsAllServlet">ALL</a></li>

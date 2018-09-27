@@ -43,7 +43,7 @@ background-color: #fff;
    String title = dto.getTitle();
    String userid = dto.getUserid();
    String Question_contents = dto.getQuestion_contents();
-   String writeday = dto.getWriteday();
+   String wirteday = dto.getWirteday();
    String image_name = ""; 
 	if(dto.getImage_name() != null){ image_name = dto.getImage_name(); }
 	
@@ -61,7 +61,7 @@ background-color: #fff;
 </tr>	              		
 <tr>
 	<th>작성일</th>
-	<td> <%= writeday %></td> 
+	<td> <%= wirteday %></td> 
 </tr>
  <tr>
  	<th width:30%>제목</th>
@@ -113,8 +113,12 @@ background-color: #fff;
 </tr>
 <% } %>
 </table></div>
-<form> 
-<p font-size:8px;>{#userid} 님 :</p>
+
+<!-- -------코멘트------------------------------------------------- -->
+<form action="QuestionCommentAddServlet" method="GET">
+<c:if test="${! empty login}"></form>
+ 글쓴이: ${login.username}님&nbsp;
+</c:if>   
 <textarea cols="100" rows="5">댓글 입력은 로그인 후 가능합니다.</textarea>
 <input type="submit" name="register" value="Register">
 </form> 
